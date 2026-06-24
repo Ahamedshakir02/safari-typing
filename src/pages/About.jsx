@@ -1,121 +1,122 @@
 import Seo from '../components/Seo.jsx'
-import Arabic from '../components/Arabic.jsx'
-import Button from '../components/Button.jsx'
 import Reveal from '../components/Reveal.jsx'
-import ServiceIcon from '../components/ServiceIcon.jsx'
-import Map from '../components/Map.jsx'
-import TrustStrip from '../sections/TrustStrip.jsx'
-import WhyUs from '../sections/WhyUs.jsx'
-import Languages from '../sections/Languages.jsx'
-import { ABOUT, CONTACT } from '../data/site.js'
-import { waLink } from '../lib/wa.js'
+import Eyebrow from '../components/Eyebrow.jsx'
+import Icon from '../components/Icon.jsx'
+import { ABOUT_STATS, VALUES } from '../data/content.js'
+import { CONTACT } from '../data/site.js'
+import { telLink } from '../lib/wa.js'
+
+const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(CONTACT.mapsQuery)}&output=embed`
 
 export default function About() {
   return (
     <>
       <Seo
         title="About"
-        description="Safari Typing Services is a trusted government typing & document centre in Sharjah, UAE — multilingual staff handling visas, Emirates ID, Tasheel, attestation and more under one roof."
+        description="For over a decade, Safari Typing Services has been the neighbourhood document-services centre at Nazir Plaza — trusted by thousands of residents and businesses across the UAE."
         path="/about"
       />
 
-      {/* Intro + banner */}
-      <section className="bg-gradient-to-b from-navy-50/60 to-offwhite px-5 py-16 sm:px-8 sm:py-20">
-        <div className="mx-auto grid max-w-content items-center gap-10 lg:grid-cols-2 lg:gap-14">
-          <Reveal>
-            <span className="mb-3 inline-flex items-center gap-2 font-body text-xs font-semibold uppercase tracking-[0.2em] text-red">
-              <span className="h-px w-6 bg-red" aria-hidden="true" />
-              About us
-            </span>
-            <h1 className="font-display text-4xl font-semibold tracking-tight text-navy sm:text-5xl">
-              {ABOUT.heading}
-            </h1>
-            <Arabic className="mt-2 block text-xl text-muted sm:text-2xl">{ABOUT.headingAr}</Arabic>
-            <div className="mt-6 space-y-4">
-              {ABOUT.lines.map((line, i) => (
-                <p key={i} className="font-body text-base leading-relaxed text-ink/80 sm:text-lg">
-                  {line}
-                </p>
-              ))}
-            </div>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button as="a" href={waLink()} target="_blank" rel="noopener noreferrer" variant="primary" icon="whatsapp">
-                WhatsApp Us
-              </Button>
-              <Button as="route" to="/contact" variant="ghost" iconRight="arrowRight">
-                Visit or contact us
-              </Button>
-            </div>
-          </Reveal>
+      {/* Intro */}
+      <Reveal as="section" className="mx-auto max-w-[880px] px-5 pb-6 pt-[84px] text-center sm:px-7">
+        <Eyebrow className="mb-5">ABOUT US</Eyebrow>
+        <h1 className="mb-6 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
+          Paperwork is our <em className="italic text-sage">profession.</em>
+        </h1>
+        <p className="mx-auto max-w-[640px] font-body text-[19px] text-soft">
+          For over a decade, Safari Typing Services has been the neighbourhood go-to at Nazir Plaza — a
+          small typing desk grown into a full document-services centre trusted by thousands of residents
+          and businesses.
+        </p>
+      </Reveal>
 
-          <Reveal delay={120} className="rounded-3xl border border-navy/10 bg-white p-5 shadow-cardHover sm:p-7">
-            <img
-              src="/safari-banner.jpeg"
-              alt="Safari Typing Services — سفاري لخدمات الطباعة"
-              className="w-full rounded-xl"
-              loading="lazy"
-              decoding="async"
-            />
-          </Reveal>
+      {/* Image */}
+      <Reveal as="section" className="mx-auto max-w-content px-5 pt-12 sm:px-7">
+        <div className="overflow-hidden rounded-[28px] border border-line sm:rounded-[240px_240px_28px_28px]">
+          <img
+            src="/safari-banner.jpeg"
+            alt="The Safari Typing Services team at Nazir Plaza, Shop 4"
+            className="aspect-[16/9] w-full object-cover sm:aspect-[16/7]"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
-      </section>
+      </Reveal>
 
       {/* Stats */}
-      <TrustStrip />
-
-      {/* Why us */}
-      <WhyUs />
-
-      {/* Location & landmarks */}
-      <section aria-labelledby="location-heading" className="px-5 py-20 sm:px-8 sm:py-28">
-        <div className="mx-auto grid max-w-content items-start gap-10 lg:grid-cols-2 lg:gap-14">
-          <Reveal>
-            <span className="mb-3 inline-flex items-center gap-2 font-body text-xs font-semibold uppercase tracking-[0.2em] text-red">
-              <span className="h-px w-6 bg-red" aria-hidden="true" />
-              Find us
-            </span>
-            <h2 id="location-heading" className="font-display text-3xl text-navy sm:text-4xl">
-              Conveniently located in Sharjah.
-            </h2>
-            <p className="mt-4 font-body text-base leading-relaxed text-muted">
-              You'll find us at {CONTACT.address.line1}, in the heart of Sharjah — easy to reach whether
-              you're a resident sorting personal paperwork or a business handling labour and licensing.
-              Prefer to stay home? Send your documents on WhatsApp and we'll take it from there.
-            </p>
-
-            <ul className="mt-6 space-y-3 font-body text-sm">
-              <li className="flex items-start gap-3">
-                <ServiceIcon name="mapPin" size={20} className="mt-0.5 shrink-0 text-red" />
-                <span className="text-ink/80">
-                  <span className="font-semibold text-navy">{CONTACT.address.line1}</span>
-                  <br />
-                  {CONTACT.address.city}, {CONTACT.address.country}
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <ServiceIcon name="clock" size={20} className="mt-0.5 shrink-0 text-red" />
-                <span className="flex flex-col gap-0.5 text-ink/80">
-                  {CONTACT.hours.map((h) => (
-                    <span key={h.days}>
-                      <span className="font-semibold text-navy">{h.days}:</span> {h.time}
-                    </span>
-                  ))}
-                </span>
-              </li>
-            </ul>
-
-            <Button as="route" to="/contact" variant="navy" className="mt-7" iconRight="arrowRight">
-              Get directions & contact
-            </Button>
-          </Reveal>
-
-          <Reveal delay={120}>
-            <Map />
-          </Reveal>
+      <Reveal as="section" className="mx-auto max-w-content px-5 py-14 sm:px-7">
+        <div className="grid grid-cols-2 gap-6 border-y border-line py-[34px] text-center sm:grid-cols-4">
+          {ABOUT_STATS.map((s, i) => (
+            <div key={s.label} className={i > 0 ? 'sm:border-l sm:border-line' : ''}>
+              <div className={`font-display text-[46px] ${s.accent ? 'text-sage' : 'text-ink'}`}>{s.value}</div>
+              <div className="font-body text-[12.5px] uppercase tracking-[0.06em] text-gold">{s.label}</div>
+            </div>
+          ))}
         </div>
-      </section>
+      </Reveal>
 
-      <Languages />
+      {/* Values */}
+      <Reveal as="section" className="mx-auto max-w-content px-5 pb-16 pt-12 sm:px-7">
+        <div className="mx-auto mb-14 max-w-[560px] text-center">
+          <Eyebrow className="mb-4">HOW WE WORK</Eyebrow>
+          <h2 className="text-[36px] font-medium sm:text-[46px]">The values behind every file.</h2>
+        </div>
+        <div className="grid gap-12 sm:grid-cols-3">
+          {VALUES.map((v) => (
+            <div key={v.title}>
+              <div className="mb-3.5 font-display text-[30px] italic text-sage">{v.title}</div>
+              <p className="font-body text-[15.5px] text-soft">{v.body}</p>
+            </div>
+          ))}
+        </div>
+      </Reveal>
+
+      {/* Location */}
+      <Reveal as="section" className="bg-cream-100">
+        <div className="mx-auto grid max-w-content items-center gap-10 px-5 py-20 sm:px-7 lg:grid-cols-2 lg:gap-14">
+          <div>
+            <Eyebrow className="mb-4">FIND US</Eyebrow>
+            <h2 className="mb-5 text-[34px] font-medium sm:text-[42px]">Right at Nazir Plaza, Shop 4.</h2>
+            <p className="mb-[26px] font-body text-[16.5px] text-soft">
+              Drop in any day of the week. Free parking nearby, and our counter is rarely a long wait.
+            </p>
+            <div className="flex flex-col gap-3.5 font-body">
+              <div className="flex items-center gap-[13px]">
+                <span className="shrink-0 text-sage">
+                  <Icon name="pin" size={18} strokeWidth={1.7} />
+                </span>
+                <span className="text-[15.5px] font-medium text-ink">{CONTACT.address.line1}</span>
+              </div>
+              <div className="flex items-center gap-[13px]">
+                <span className="shrink-0 text-sage">
+                  <Icon name="phone" size={18} strokeWidth={1.7} />
+                </span>
+                <a
+                  href={telLink(CONTACT.phones[0].e164)}
+                  className="text-[15.5px] font-medium text-ink transition-colors hover:text-sage"
+                >
+                  {CONTACT.phones[0].display}
+                </a>
+              </div>
+              <div className="flex items-center gap-[13px]">
+                <span className="shrink-0 text-sage">
+                  <Icon name="clock" size={18} strokeWidth={1.7} />
+                </span>
+                <span className="text-[15.5px] font-medium text-ink">{CONTACT.hoursShort}</span>
+              </div>
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-[24px] border border-line">
+            <iframe
+              title="Map to Safari Typing Services, Nazir Plaza"
+              src={mapSrc}
+              className="aspect-[4/3] w-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+      </Reveal>
     </>
   )
 }

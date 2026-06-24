@@ -4,12 +4,8 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './index.css'
 
-// Self-hosted fonts (see index.html for the Google Fonts fallback note).
-// Variable families register as "Space Grotesk Variable" / "Inter Variable".
-import '@fontsource-variable/space-grotesk'
-import '@fontsource-variable/inter'
-import '@fontsource/ibm-plex-sans-arabic/400.css'
-import '@fontsource/ibm-plex-sans-arabic/600.css'
+// Fonts (EB Garamond + Figtree) are loaded via the Google Fonts <link> in
+// index.html to match the brand design exactly.
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

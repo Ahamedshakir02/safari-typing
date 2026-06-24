@@ -2,16 +2,17 @@ import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import ScrollToTop from './lib/ScrollToTop.jsx'
 import SkipLink from './components/SkipLink.jsx'
+import SiteLoader from './components/SiteLoader.jsx'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
-import FloatingButtons from './components/FloatingButtons.jsx'
 import Logo from './components/Logo.jsx'
 import Home from './pages/Home.jsx' // eager — the primary route
 
 // Secondary routes are code-split so the home bundle stays lean.
-const About = lazy(() => import('./pages/About.jsx'))
 const Services = lazy(() => import('./pages/Services.jsx'))
-const ServiceDetail = lazy(() => import('./pages/ServiceDetail.jsx'))
+const About = lazy(() => import('./pages/About.jsx'))
+const Pricing = lazy(() => import('./pages/Pricing.jsx'))
+const Faq = lazy(() => import('./pages/Faq.jsx'))
 const ContactPage = lazy(() => import('./pages/ContactPage.jsx'))
 const NotFound = lazy(() => import('./pages/NotFound.jsx'))
 
@@ -19,7 +20,7 @@ const NotFound = lazy(() => import('./pages/NotFound.jsx'))
 function RouteFallback() {
   return (
     <div className="flex min-h-[60vh] items-center justify-center" aria-busy="true" aria-label="Loading">
-      <Logo size={56} className="animate-pulse" />
+      <Logo size={56} className="animate-float" />
     </div>
   )
 }
@@ -27,6 +28,7 @@ function RouteFallback() {
 export default function App() {
   return (
     <>
+      <SiteLoader />
       <SkipLink />
       <ScrollToTop />
       <Header />
@@ -34,16 +36,16 @@ export default function App() {
         <Suspense fallback={<RouteFallback />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/faq" element={<Faq />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>
       <Footer />
-      <FloatingButtons />
     </>
   )
 }

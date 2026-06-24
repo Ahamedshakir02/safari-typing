@@ -1,20 +1,19 @@
 /**
- * Brand mark — the actual circular Safari Typing Services logo (served from
- * /public). Used in the header, footer, mobile menu and 404. The source image
- * has a white circular badge, so `rounded-full` keeps it clean on dark surfaces
- * (e.g. the navy footer) too.
+ * Brand mark — the Safari Typing Services badge (served from /public).
+ * Used standalone in the 404 page and composed into <Brand /> for the
+ * header/footer lockup.
  */
-export default function Logo({ size = 44, className = '', eager = false }) {
+export default function Logo({ size = 40, className = '', eager = false }) {
   return (
     <img
-      src="/safari-logo.jpeg"
+      src="/safari-mark.svg"
       width={size}
       height={size}
-      style={{ width: size, height: size }}
+      style={{ height: size, width: 'auto' }}
       alt="Safari Typing Services"
       loading={eager ? 'eager' : 'lazy'}
       decoding="async"
-      className={`rounded-full object-cover ${className}`}
+      className={className}
     />
   )
 }

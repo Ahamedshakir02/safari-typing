@@ -31,16 +31,16 @@ export const CONTACT = {
   ],
 
   // wa.me requires the number WITHOUT the leading '+'.  [CONFIRM] WhatsApp line.
-  whatsapp: { display: '+971 56 632 2299', number: '971566322299' },
+  whatsapp: { display: '+971 50 405 7575', number: '971504057575' },
 
   email: 'safaritypingservices@gmail.com',
 
-  // [CONFIRM] actual opening days/times. UAE federal weekend = Sat–Sun (since
-  // Jan 2022) but private Sharjah typing centres commonly open daily.
+  // [CONFIRM] actual opening days/times.
   hours: [
-    { days: 'Saturday – Thursday', time: '9:00 AM – 9:00 PM' },
-    { days: 'Friday', time: '3:00 PM – 9:00 PM' },
+    { days: 'Saturday – Thursday', time: '8:00 AM – 9:00 PM' },
+    { days: 'Friday', time: '2:00 PM – 9:00 PM' },
   ],
+  hoursShort: 'Sat–Thu 8AM–9PM · Fri 2PM–9PM',
 
   // Google Maps embed query (no API key needed via &output=embed).
   mapsQuery: 'Nazir Plaza Building, Sharjah, UAE',
@@ -57,8 +57,10 @@ export const CONTACT = {
 // Primary navigation — real multi-page routes.
 export const NAV_LINKS = [
   { label: 'Home', to: '/' },
-  { label: 'About', to: '/about' },
   { label: 'Services', to: '/services' },
+  { label: 'About', to: '/about' },
+  { label: 'Pricing', to: '/pricing' },
+  { label: 'FAQ', to: '/faq' },
   { label: 'Contact', to: '/contact' },
 ]
 

@@ -5,51 +5,56 @@
 @layer base {
   :root {
     color-scheme: light;
-    /* Sticky-header height — used for in-page anchor offset (scrollToId) and
-       CSS scroll-padding so anchored sections never hide under the header. */
-    --header-offset: 104px;
+    /* Sticky-header height — drives anchor offset + CSS scroll-padding so
+       in-page targets never hide under the header. */
+    --header-offset: 80px;
   }
 
   html {
     -webkit-text-size-adjust: 100%;
-    background-color: theme('colors.offwhite');
+    background-color: theme('colors.cream.DEFAULT');
     scroll-padding-top: var(--header-offset);
   }
 
   body {
     margin: 0;
-    color: theme('colors.ink');
-    background-color: theme('colors.offwhite');
+    color: theme('colors.body');
+    background-color: theme('colors.cream.DEFAULT');
     font-family: theme('fontFamily.body');
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4 {
     font-family: theme('fontFamily.display');
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.05;
+    color: theme('colors.ink.DEFAULT');
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
   }
 
   ::selection {
-    background: theme('colors.navy.DEFAULT');
-    color: theme('colors.offwhite');
+    background: theme('colors.sage.DEFAULT');
+    color: #fff;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: theme('colors.sage.DEFAULT');
+    box-shadow: 0 0 0 3px rgba(94, 114, 87, 0.15);
   }
 
   :focus-visible {
-    outline: 3px solid theme('colors.red.DEFAULT');
+    outline: 3px solid theme('colors.sage.DEFAULT');
     outline-offset: 2px;
     border-radius: 2px;
   }
 }
 
 @layer utilities {
-  .font-arabic {
-    font-family: theme('fontFamily.arabic');
-  }
-
-  /* Minimum 44x44 tap target — critical for the older mobile audience. */
+  /* Minimum 44x44 tap target. */
   .tap {
     min-height: 44px;
     min-width: 44px;
@@ -58,7 +63,7 @@
     justify-content: center;
   }
 
-  /* Standard visually-hidden helper that becomes visible on focus (skip link). */
+  /* Visually-hidden helper that reveals on focus (skip link). */
   .sr-only {
     position: absolute;
     width: 1px;
@@ -82,9 +87,8 @@
 }
 
 /* ---------------------------------------------------------------------------
-   Lightweight scroll-reveal (IntersectionObserver toggles `.is-visible`).
-   Content is only offset while still hidden; reduced-motion users get the
-   visible state immediately (the Reveal component skips observing).
+   Scroll-reveal (IntersectionObserver toggles `.is-visible`). Reduced-motion
+   users get the visible state immediately — content is never trapped hidden.
 --------------------------------------------------------------------------- */
 .reveal {
   opacity: 0;
@@ -97,21 +101,53 @@
   transform: none;
 }
 
+/* ---------------------------------------------------------------------------
+   First-load brand loader. Fades out once the app + window have loaded.
+--------------------------------------------------------------------------- */
+.site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: theme('colors.cream.DEFAULT');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  opacity: 1;
+  transition: opacity 0.7s ease;
+}
+.site-loader.is-done {
+  opacity: 0;
+  pointer-events: none;
+}
+.site-loader .loader-logo {
+  height: clamp(120px, 30vw, 158px);
+  width: auto;
+  animation: float 2.6s ease-in-out infinite, rise 0.8s cubic-bezier(.16, .84, .44, 1) both;
+}
+.site-loader .loader-track {
+  width: 118px;
+  height: 2px;
+  background: theme('colors.line');
+  border-radius: 2px;
+  overflow: hidden;
+}
+.site-loader .loader-bar {
+  width: 38%;
+  height: 100%;
+  background: theme('colors.sage.DEFAULT');
+  animation: bar 1.2s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
     transform: none;
     transition: none;
   }
-  /* Disable the marquee + bob for motion-sensitive users. */
-  .animate-marquee,
-  .animate-bob {
+  .site-loader .loader-logo,
+  .site-loader .loader-bar {
     animation: none !important;
   }
-}
-
-/* Faint procedural grain — ties the flat sections together. Very subtle. */
-.grain {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  mix-blend-mode: multiply;
 }

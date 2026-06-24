@@ -1,68 +1,69 @@
 import Seo from '../components/Seo.jsx'
-import Button from '../components/Button.jsx'
 import Reveal from '../components/Reveal.jsx'
-import ServiceCard from '../components/ServiceCard.jsx'
-import { SERVICES } from '../data/services.js'
-import { CONTACT } from '../data/site.js'
-import { waLink, telLink } from '../lib/wa.js'
+import Eyebrow from '../components/Eyebrow.jsx'
+import CtaBlock from '../components/CtaBlock.jsx'
+import LinkButton from '../components/LinkButton.jsx'
+import { SERVICES } from '../data/content.js'
 
 export default function Services() {
   return (
     <>
       <Seo
         title="Services"
-        description="Government typing & document services in Sharjah — business setup, PRO, family & company visas, Emirates ID, Tasheel (MOHRE), ICP, attestation, legal translation, vehicle, passport, registrations and insurance."
+        description="Ten service areas covering every government, immigration and business formality in the UAE — Tasheel, Amer, Emirates ID, attestation, business setup, PRO, medical, vehicle and passport services."
         path="/services"
       />
 
       {/* Header */}
-      <section className="bg-gradient-to-b from-navy-50/60 to-offwhite px-5 py-16 sm:px-8 sm:py-20">
-        <div className="mx-auto max-w-content">
-          <span className="mb-3 inline-flex items-center gap-2 font-body text-xs font-semibold uppercase tracking-[0.2em] text-red">
-            <span className="h-px w-6 bg-red" aria-hidden="true" />
-            What we do
-          </span>
-          <h1 className="max-w-3xl font-display text-4xl font-semibold tracking-tight text-navy sm:text-5xl">
-            Almost every government service, under one roof.
-          </h1>
-          <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-muted sm:text-lg">
-            From visas and Emirates ID to Tasheel, attestation, translation and business setup — our
-            multilingual team handles your paperwork accurately and follows up until it's done. Tap any
-            service for what's included, the documents to bring and the simple steps.
-          </p>
-        </div>
-      </section>
+      <Reveal as="section" className="mx-auto max-w-[860px] px-5 pb-14 pt-20 text-center sm:px-7">
+        <Eyebrow className="mb-5">OUR SERVICES</Eyebrow>
+        <h1 className="mb-5 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
+          Everything your paperwork needs.
+        </h1>
+        <p className="mx-auto max-w-[600px] font-body text-[19px] text-soft">
+          Ten service areas covering every government, immigration and business formality in the UAE —
+          handled accurately, the first time.
+        </p>
+      </Reveal>
 
-      {/* Grid */}
-      <section aria-label="All services" className="px-5 py-16 sm:px-8 sm:py-20">
-        <div className="mx-auto grid max-w-content grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((s, i) => (
-            <Reveal key={s.slug} delay={Math.min(i, 5) * 50} className="h-full">
-              <ServiceCard service={s} />
-            </Reveal>
-          ))}
-        </div>
-      </section>
+      {/* Service blocks */}
+      <Reveal as="section" className="mx-auto max-w-[1000px] border-t border-line px-5 sm:px-7">
+        {SERVICES.map((s) => (
+          <div
+            key={s.n}
+            className="grid grid-cols-1 gap-4 border-b border-line px-2 py-11 sm:grid-cols-[72px_1fr] sm:gap-8"
+          >
+            <div className="font-display text-[34px] italic text-sand">{s.n}</div>
+            <div>
+              <h2 className="mb-3 text-[26px] font-medium sm:text-[30px]">{s.titleLong}</h2>
+              <p className="mb-[18px] max-w-[640px] font-body text-base text-soft">{s.desc}</p>
+              <div className="flex flex-wrap gap-2">
+                {s.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-tag-bg px-[13px] py-[7px] font-body text-[13px] font-semibold text-tag-ink"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </Reveal>
 
       {/* CTA */}
-      <section className="px-5 pb-20 sm:px-8">
-        <div className="mx-auto flex max-w-content flex-col items-center gap-5 rounded-3xl bg-navy px-6 py-12 text-center">
-          <h2 className="max-w-xl font-display text-2xl font-semibold text-offwhite sm:text-3xl">
-            Not sure which service you need?
-          </h2>
-          <p className="max-w-lg font-body text-sm leading-relaxed text-offwhite/70">
-            Message us on WhatsApp and we'll point you to the right one and tell you exactly what to bring.
-          </p>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Button as="a" href={waLink()} target="_blank" rel="noopener noreferrer" variant="primary" size="lg" icon="whatsapp">
-              WhatsApp Us
-            </Button>
-            <Button as="a" href={telLink(CONTACT.phones[0].e164)} variant="white" size="lg" icon="phone">
-              Call {CONTACT.phones[0].display}
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CtaBlock
+        heading="Not sure which service you need?"
+        body="Tell us your situation and we'll point you to the right one — free of charge."
+        primaryLabel="WhatsApp us"
+        secondary={
+          <LinkButton to="/contact" variant="onDarkOutline">
+            Contact page
+          </LinkButton>
+        }
+        className="my-16"
+      />
     </>
   )
 }

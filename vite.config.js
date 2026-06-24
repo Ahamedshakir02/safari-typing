@@ -7,9 +7,12 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        // Keep the router in its own cached chunk so the home bundle stays lean.
-        manualChunks: {
-          router: ['react-router-dom'],
+        // Keep the router + React in their own cached chunk so the home bundle
+        // stays lean. (Function form — required by Vite 8 / rolldown.)
+        manualChunks(id) {
+          if (id.includes('node_modules/react-router') || id.includes('node_modules/react-router-dom')) {
+            return 'router'
+          }
         },
       },
     },

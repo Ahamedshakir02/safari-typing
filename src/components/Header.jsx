@@ -1,87 +1,99 @@
 import { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import Logo from './Logo.jsx'
-import Arabic from './Arabic.jsx'
-import SmartLink from './SmartLink.jsx'
-import ServiceIcon from './ServiceIcon.jsx'
-import MobileMenu from './MobileMenu.jsx'
-import TopBar from './TopBar.jsx'
+import { NavLink, useLocation } from 'react-router-dom'
+import Brand from './Brand.jsx'
+import Icon from './Icon.jsx'
 import { NAV_LINKS, CONTACT } from '../data/site.js'
-import { waLink, telLink } from '../lib/wa.js'
+import { telLink, waLink } from '../lib/wa.js'
+
+const primaryPhone = CONTACT.phones[0]
+
+const linkClass = ({ isActive }) =>
+  `font-body text-[15px] font-medium transition-colors ${
+    isActive ? 'text-ink' : 'text-soft hover:text-sage'
+  }`
 
 export default function Header() {
   const [open, setOpen] = useState(false)
   const location = useLocation()
 
-  // Close the mobile menu whenever the route changes.
+  // Close the mobile menu on any route change.
   useEffect(() => {
     setOpen(false)
-  }, [location.pathname, location.hash])
-
-  const isActive = (to) => to === '/' ? location.pathname === '/' : location.pathname.startsWith(to)
+  }, [location.pathname])
 
   return (
-    <>
-      <header className="sticky top-0 z-[110] border-b border-navy/10 bg-white/95 shadow-sm backdrop-blur-md">
-        <TopBar />
-        <div className="mx-auto flex max-w-content items-center justify-between gap-4 px-5 py-3 sm:px-8">
-          {/* Brand lockup */}
-          <Link to="/" aria-label="Safari Typing Services — home" className="flex items-center gap-3">
-            <Logo size={44} eager className="shrink-0" />
-            <span className="leading-tight">
-              <span className="block font-display text-base font-semibold tracking-tight text-navy sm:text-lg">
-                Safari Typing Services
-              </span>
-              <Arabic className="block text-xs text-muted sm:text-sm">سفاري لخدمات الطباعة</Arabic>
-            </span>
-          </Link>
+    <header className="sticky top-0 z-50 border-b border-line bg-cream/85 backdrop-blur-md">
+      <nav className="mx-auto flex max-w-content items-center gap-6 px-5 py-[18px] sm:px-7">
+        <Brand markSize={40} eager />
 
-          {/* Desktop nav */}
-          <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+        {/* Desktop nav */}
+        <div className="ml-auto hidden items-center gap-8 lg:flex">
+          {NAV_LINKS.map((link) => (
+            <NavLink key={link.to} to={link.to} end={link.to === '/'} className={linkClass}>
+              {link.label}
+            </NavLink>
+          ))}
+        </div>
+
+        {/* Call CTA */}
+        <a
+          href={telLink(primaryPhone.e164)}
+          aria-label={`Call ${primaryPhone.display}`}
+          className="ml-auto hidden items-center gap-2 rounded-full bg-sage px-[22px] py-[11px] font-body text-sm font-semibold text-paper transition-colors hover:bg-sage-dark sm:flex lg:ml-0"
+        >
+          <Icon name="phone" size={15} strokeWidth={1.9} />
+          Call now
+        </a>
+
+        {/* Mobile menu toggle */}
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          className="tap ml-auto rounded-full text-ink sm:ml-0 lg:hidden"
+        >
+          <Icon name={open ? 'close' : 'menu'} size={26} />
+        </button>
+      </nav>
+
+      {/* Mobile dropdown */}
+      {open && (
+        <div className="border-t border-line bg-cream/95 backdrop-blur-md lg:hidden">
+          <div className="mx-auto flex max-w-content flex-col gap-1 px-5 py-4 sm:px-7">
             {NAV_LINKS.map((link) => (
-              <SmartLink
+              <NavLink
                 key={link.to}
                 to={link.to}
-                aria-current={isActive(link.to) ? 'page' : undefined}
-                className={`font-body text-sm font-medium transition-colors hover:text-red ${
-                  isActive(link.to) ? 'text-red' : 'text-navy/80'
-                }`}
+                end={link.to === '/'}
+                className={({ isActive }) =>
+                  `rounded-xl px-3 py-3 font-body text-base font-medium transition-colors ${
+                    isActive ? 'bg-cream-100 text-ink' : 'text-soft hover:bg-cream-50 hover:text-sage'
+                  }`
+                }
               >
                 {link.label}
-              </SmartLink>
+              </NavLink>
             ))}
-          </nav>
-
-          {/* Actions */}
-          <div className="flex items-center gap-2">
-            <a
-              href={telLink(CONTACT.phones[0].e164)}
-              aria-label={`Call ${CONTACT.phones[0].display}`}
-              className="tap hidden gap-2 rounded-full px-4 py-2 font-body text-sm font-semibold text-navy ring-1 ring-inset ring-navy/20 transition-colors hover:ring-navy/50 sm:inline-flex"
-            >
-              <ServiceIcon name="phone" size={16} /> Call
-            </a>
-            <a
-              href={waLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="tap hidden gap-2 rounded-full bg-red px-4 py-2 font-body text-sm font-semibold text-white transition-colors hover:bg-red-600 sm:inline-flex"
-            >
-              <ServiceIcon name="whatsapp" size={16} /> WhatsApp
-            </a>
-            <button
-              onClick={() => setOpen(true)}
-              aria-label="Open menu"
-              aria-expanded={open}
-              className="tap rounded-full text-navy lg:hidden"
-            >
-              <ServiceIcon name="menu" size={26} />
-            </button>
+            <div className="mt-2 flex gap-3">
+              <a
+                href={telLink(primaryPhone.e164)}
+                className="flex flex-1 items-center justify-center gap-2 rounded-full bg-sage px-5 py-3 font-body text-sm font-semibold text-paper"
+              >
+                <Icon name="phone" size={16} /> Call now
+              </a>
+              <a
+                href={waLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-1 items-center justify-center gap-2 rounded-full border border-line px-5 py-3 font-body text-sm font-semibold text-ink"
+              >
+                <Icon name="whatsapp" size={16} /> WhatsApp
+              </a>
+            </div>
           </div>
         </div>
-      </header>
-
-      <MobileMenu open={open} onClose={() => setOpen(false)} />
-    </>
+      )}
+    </header>
   )
 }
