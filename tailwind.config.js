@@ -19,9 +19,9 @@ export default {
           soft: '#b9c0cc', // muted text on dark surfaces
           dim: '#9aa3b2',
         },
-        body: '#4a463c', // default body text
-        soft: '#6a6354', // secondary text
-        gold: '#86715a', // eyebrow labels / muted brown
+        body: '#46423a', // default body text (slightly deepened for contrast)
+        soft: '#645d4e', // secondary text (deepened for readability on cream)
+        gold: '#7c6749', // eyebrow labels / muted brown (deepened for contrast)
         sand: '#b6a888', // serif numerals
         sage: {
           DEFAULT: '#5e7257', // primary action
@@ -30,8 +30,17 @@ export default {
         },
         tag: {
           bg: '#e6ecdd',
-          ink: '#4a5c44',
+          ink: '#46583f', // deepened for contrast on tag bg
           line: '#d3ddc4',
+        },
+        // UAE national accents — woven in sparingly (flag, dividers, select
+        // highlights). Sage stays the primary action colour; red is used mainly
+        // for the flag and tiny details so the calm, premium feel holds.
+        uae: {
+          green: '#007a3d',
+          red: '#ce1126',
+          white: '#ffffff',
+          black: '#1a1a1a',
         },
       },
       fontFamily: {
@@ -46,6 +55,7 @@ export default {
       },
       boxShadow: {
         soft: '0 1px 2px rgba(29,40,57,0.04), 0 12px 32px rgba(29,40,57,0.06)',
+        lift: '0 2px 6px rgba(29,40,57,0.08), 0 16px 40px rgba(29,40,57,0.14)',
       },
       keyframes: {
         rise: {
