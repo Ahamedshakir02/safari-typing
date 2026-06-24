@@ -2,7 +2,7 @@
 // Site-wide content & configuration.
 // Plain ES module — zero imports, tree-shaken into the bundle. No backend.
 // Items marked [CONFIRM] are placeholders the client must verify before launch
-// (see CONTENT-NOTES.md).
+// (see the README "Content to confirm" checklist).
 // ---------------------------------------------------------------------------
 
 export const SITE_URL = 'https://www.safaritypingservices.ae' // [CONFIRM] final domain
@@ -30,17 +30,17 @@ export const CONTACT = {
     { label: 'Mobile', display: '+971 56 632 2299', e164: '+971566322299' },
   ],
 
-  // wa.me requires the number WITHOUT the leading '+'.
-  whatsapp: { display: '+971 56 632 2299', number: '971566322299' },
+  // wa.me requires the number WITHOUT the leading '+'.  [CONFIRM] WhatsApp line.
+  whatsapp: { display: '+971 50 405 7575', number: '971504057575' },
 
   email: 'safaritypingservices@gmail.com',
 
-  // [CONFIRM] actual opening days/times. UAE federal weekend = Sat–Sun (since
-  // Jan 2022) but private Sharjah typing centres commonly open daily.
+  // [CONFIRM] actual opening days/times.
   hours: [
-    { days: 'Saturday – Thursday', time: '9:00 AM – 9:00 PM' },
-    { days: 'Friday', time: '3:00 PM – 9:00 PM' },
+    { days: 'Saturday – Thursday', time: '8:00 AM – 9:00 PM' },
+    { days: 'Friday', time: '2:00 PM – 9:00 PM' },
   ],
+  hoursShort: 'Sat–Thu 8AM–9PM · Fri 2PM–9PM',
 
   // Google Maps embed query (no API key needed via &output=embed).
   mapsQuery: 'Nazir Plaza Building, Sharjah, UAE',
@@ -54,17 +54,17 @@ export const CONTACT = {
   ],
 }
 
-// Primary navigation. `to` is hash-aware: "/#services" smooth-scrolls on the
-// home route (handled by SmartLink + ScrollManager), "/contact" is a real route.
+// Primary navigation — real multi-page routes.
 export const NAV_LINKS = [
-  { label: 'Services', to: '/#services' },
-  { label: 'Why Us', to: '/#why-us' },
-  { label: 'How It Works', to: '/#how-it-works' },
-  { label: 'Reviews', to: '/#reviews' },
+  { label: 'Home', to: '/' },
+  { label: 'Services', to: '/services' },
+  { label: 'About', to: '/about' },
+  { label: 'Pricing', to: '/pricing' },
+  { label: 'FAQ', to: '/faq' },
   { label: 'Contact', to: '/contact' },
 ]
 
-// Languages the centre serves in (exact list from the brief).
+// Languages the centre serves in.
 export const LANGUAGES = [
   { label: 'English', dir: 'ltr' },
   { label: 'العربية', dir: 'rtl' },
@@ -74,7 +74,7 @@ export const LANGUAGES = [
 ]
 
 // Trust strip badges — accurate, defensible claims (no unqualified
-// "Government Authorised"; see CONTENT-NOTES.md).
+// "Government Authorised").
 export const TRUST_BADGES = [
   'ICP e-Channel Submissions',
   'Tasheel (MOHRE) Services',
@@ -209,7 +209,7 @@ export const LOCAL_BUSINESS_JSONLD = {
   '@type': 'LocalBusiness',
   '@id': `${SITE_URL}/#business`,
   name: CONTACT.brand,
-  image: `${SITE_URL}/og-image.png`,
+  image: `${SITE_URL}/safari-banner.jpeg`,
   url: SITE_URL,
   email: CONTACT.email,
   telephone: CONTACT.phones[0].e164,

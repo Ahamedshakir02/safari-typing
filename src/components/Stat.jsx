@@ -1,49 +1,17 @@
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useGsap } from '../lib/useGsap.js'
-
-const fmt = (v, suffix = '') => Math.round(v).toLocaleString('en-US') + suffix
-
-/**
- * Animated count-up stat. Fires once when scrolled into view. Under reduced
- * motion the final value is written synchronously (no animation).
- */
-export default function Stat({ value, suffix = '', label, className = '' }) {
-  const ref = useGsap(() => {
-    const el = ref.current.querySelector('.stat-num')
-    const mm = gsap.matchMedia()
-    mm.add(
-      { motion: '(prefers-reduced-motion: no-preference)', reduce: '(prefers-reduced-motion: reduce)' },
-      (ctx) => {
-        if (ctx.conditions.reduce) {
-          el.textContent = fmt(value, suffix)
-          return
-        }
-        const obj = { v: 0 }
-        ScrollTrigger.create({
-          trigger: ref.current,
-          start: 'top 85%',
-          once: true,
-          onEnter: () =>
-            gsap.to(obj, {
-              v: value,
-              duration: 1.6,
-              ease: 'power2.out',
-              onUpdate: () => {
-                el.textContent = fmt(obj.v, suffix)
-              },
-            }),
-        })
-      }
-    )
-  })
-
+// A single statistic: large serif numeral + label. The numeral carries
+// `data-count` so the Home page's count-up animation finds and animates it.
+// `value` should be a display string (e.g. "14+", "5,000+", "Same day"); the
+// count-up parses any leading number and leaves non-numeric values be.
+export default function Stat({ value, label, accent = false, className = '' }) {
   return (
-    <div ref={ref} className={className}>
-      <div className="stat-num font-display text-4xl font-semibold tracking-tight text-navy sm:text-5xl">
-        {fmt(0, suffix)}
+    <div className={className}>
+      <div
+        data-count
+        className={`font-display text-[44px] leading-none sm:text-[52px] ${accent ? 'text-sage' : 'text-ink'}`}
+      >
+        {value}
       </div>
-      <div className="mt-1 font-body text-sm text-muted">{label}</div>
+      <div className="mt-2 font-body text-[12.5px] uppercase tracking-[0.08em] text-gold">{label}</div>
     </div>
   )
 }

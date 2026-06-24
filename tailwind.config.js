@@ -3,48 +3,78 @@ export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
-      // Brand tokens — TWO brand colours only (navy + red). Everything else
-      // is a neutral. Change these to reskin the whole site.
+      // "Quiet editorial" palette — sampled from the approved designs.
+      // Warm sand page, sage-green action colour, deep ink for headings/CTA.
       colors: {
-        navy: {
-          DEFAULT: '#0B1F3A', // anchor / structure / trust
-          700: '#143257',
-          800: '#0E2747',
-          900: '#061230',
-          50: '#EAF0F8',
+        cream: {
+          DEFAULT: '#f1eadd', // page background
+          50: '#faf6ee', // raised cards / panels
+          100: '#ece3d3', // sunken section bands
         },
-        red: {
-          DEFAULT: '#D7261E', // CTA / accent / highlight
-          600: '#C01F18',
-          50: '#FCEAE9',
+        paper: '#f6f3ea', // text/icons on dark (ink) surfaces
+        line: '#e2d9c8', // hairline borders
+        ink: {
+          DEFAULT: '#1d2839', // headings, dark CTA blocks
+          line: '#41506a', // borders on dark surfaces
+          soft: '#b9c0cc', // muted text on dark surfaces
+          dim: '#9aa3b2',
         },
-        // neutrals (not brand colours)
-        offwhite: '#F6F7F9',
-        mist: '#ECEFF4',
-        ink: '#0E141B', // body text (near-black)
-        muted: '#5A6473',
+        body: '#46423a', // default body text (slightly deepened for contrast)
+        soft: '#645d4e', // secondary text (deepened for readability on cream)
+        gold: '#7c6749', // eyebrow labels / muted brown (deepened for contrast)
+        sand: '#b6a888', // serif numerals
+        sage: {
+          DEFAULT: '#5e7257', // primary action
+          dark: '#4d6047', // hover on light
+          light: '#6f8568', // hover on dark
+        },
+        tag: {
+          bg: '#e6ecdd',
+          ink: '#46583f', // deepened for contrast on tag bg
+          line: '#d3ddc4',
+        },
+        // UAE national accents — woven in sparingly (flag, dividers, select
+        // highlights). Sage stays the primary action colour; red is used mainly
+        // for the flag and tiny details so the calm, premium feel holds.
+        uae: {
+          green: '#007a3d',
+          red: '#ce1126',
+          white: '#ffffff',
+          black: '#1a1a1a',
+        },
       },
       fontFamily: {
-        display: ['"Space Grotesk Variable"', '"Space Grotesk"', 'system-ui', 'sans-serif'],
-        body: ['"Inter Variable"', 'Inter', 'system-ui', 'sans-serif'],
-        arabic: ['"IBM Plex Sans Arabic"', 'Tahoma', 'sans-serif'],
+        display: ['"EB Garamond"', 'Georgia', 'serif'],
+        body: ['Figtree', 'system-ui', '-apple-system', 'sans-serif'],
       },
       maxWidth: {
-        content: '1200px',
+        content: '1180px',
+      },
+      borderRadius: {
+        arch: '280px 280px 28px 28px',
       },
       boxShadow: {
-        card: '0 1px 2px rgba(11,31,58,0.04), 0 8px 24px rgba(11,31,58,0.06)',
-        cardHover: '0 2px 4px rgba(11,31,58,0.06), 0 16px 40px rgba(11,31,58,0.10)',
-        float: '0 8px 24px rgba(11,31,58,0.18)',
+        soft: '0 1px 2px rgba(29,40,57,0.04), 0 12px 32px rgba(29,40,57,0.06)',
+        lift: '0 2px 6px rgba(29,40,57,0.08), 0 16px 40px rgba(29,40,57,0.14)',
       },
       keyframes: {
-        bob: {
+        rise: {
+          from: { opacity: '0', transform: 'translateY(20px)' },
+          to: { opacity: '1', transform: 'none' },
+        },
+        bar: {
+          '0%': { transform: 'translateX(-120%)' },
+          '100%': { transform: 'translateX(360%)' },
+        },
+        float: {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(6px)' },
+          '50%': { transform: 'translateY(-7px)' },
         },
       },
       animation: {
-        bob: 'bob 1.8s ease-in-out infinite',
+        rise: 'rise 0.8s cubic-bezier(.16,.84,.44,1) both',
+        bar: 'bar 1.2s ease-in-out infinite',
+        float: 'float 2.6s ease-in-out infinite',
       },
     },
   },

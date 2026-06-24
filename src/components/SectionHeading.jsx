@@ -1,35 +1,29 @@
-import Arabic from './Arabic.jsx'
+import Eyebrow from './Eyebrow.jsx'
+import AccentLine from './AccentLine.jsx'
 
 /**
- * Consistent eyebrow + heading block. `id` is referenced by the section's
- * aria-labelledby. The heading carries `.reveal-heading` so sections can target
- * it for the word-reveal animation.
+ * Consistent section opening: eyebrow label + heading + optional intro, with an
+ * optional UAE tricolour accent line under the heading. Pass `align="center"`
+ * for centred headings; extra props (e.g. `data-reveal`) are forwarded to the
+ * wrapper so it can be animated.
  */
 export default function SectionHeading({
-  id,
   eyebrow,
   title,
-  titleAr,
   intro,
+  accent = false,
   align = 'left',
   className = '',
+  headingClassName = '',
+  ...rest
 }) {
-  const alignment = align === 'center' ? 'items-center text-center mx-auto' : 'items-start text-left'
+  const center = align === 'center'
   return (
-    <div className={`flex max-w-2xl flex-col ${alignment} ${className}`}>
-      {eyebrow && (
-        <span className="mb-3 inline-flex items-center gap-2 font-body text-xs font-semibold uppercase tracking-[0.2em] text-red">
-          <span className="h-px w-6 bg-red" aria-hidden="true" />
-          {eyebrow}
-        </span>
-      )}
-      <h2 id={id} className="reveal-heading text-3xl text-navy sm:text-4xl md:text-5xl">
-        {title}
-      </h2>
-      {titleAr && (
-        <Arabic className="mt-2 text-xl text-muted sm:text-2xl">{titleAr}</Arabic>
-      )}
-      {intro && <p className="mt-4 max-w-xl font-body text-base leading-relaxed text-muted">{intro}</p>}
+    <div className={`${center ? 'mx-auto max-w-[640px] text-center' : 'max-w-[640px]'} ${className}`} {...rest}>
+      {eyebrow && <Eyebrow className="mb-4">{eyebrow}</Eyebrow>}
+      <h2 className={`text-[34px] font-medium leading-[1.08] sm:text-[46px] ${headingClassName}`}>{title}</h2>
+      {accent && <AccentLine className={`mt-5 ${center ? 'mx-auto' : ''}`} />}
+      {intro && <p className="mt-4 font-body text-lg leading-[1.55] text-soft">{intro}</p>}
     </div>
   )
 }

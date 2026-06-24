@@ -7,11 +7,16 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        // Split the motion + router libs into their own cached chunks so the
-        // home bundle stays lean. Fonts are emitted as CSS/woff2 assets.
-        manualChunks: {
-          gsap: ['gsap', 'gsap/ScrollTrigger'],
-          router: ['react-router-dom'],
+        // Keep the router + React and the motion libs in their own cached
+        // chunks so the home bundle stays lean. (Function form — required by
+        // Vite 8 / rolldown.)
+        manualChunks(id) {
+          if (id.includes('node_modules/react-router') || id.includes('node_modules/react-router-dom')) {
+            return 'router'
+          }
+          if (id.includes('node_modules/gsap') || id.includes('node_modules/lenis')) {
+            return 'motion'
+          }
         },
       },
     },
