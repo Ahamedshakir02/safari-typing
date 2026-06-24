@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import { SITE_URL } from '../data/site.js'
 
+const DEFAULT_OG_IMAGE = `${SITE_URL}/safari-banner.jpeg`
+
 const upsertMeta = (selector, attrs) => {
   let el = document.head.querySelector(selector)
   if (!el) {
@@ -13,19 +15,33 @@ const upsertMeta = (selector, attrs) => {
 
 /**
  * Per-route document head management without react-helmet.
- * Sets title, description, canonical, Open Graph, optional robots noindex, and
- * injects an optional JSON-LD block (removed on unmount so it doesn't stack).
+ * Sets title, description, canonical, Open Graph + Twitter cards, optional
+ * robots noindex, and injects an optional JSON-LD block (removed on unmount so
+ * it doesn't stack). `image` overrides the social preview image (relative paths
+ * are resolved against SITE_URL).
  */
-export function useDocumentMeta({ title, description = '', path = '', jsonLd, noindex = false } = {}) {
+export function useDocumentMeta({ title, description = '', path = '', image, jsonLd, noindex = false } = {}) {
   useEffect(() => {
     const full = title ? `${title} | Safari Typing Services` : 'Safari Typing Services — Sharjah'
     const url = SITE_URL + path
+    const ogImage = image ? (/^https?:\/\//.test(image) ? image : SITE_URL + image) : DEFAULT_OG_IMAGE
 
     document.title = full
     upsertMeta('meta[name="description"]', { name: 'description', content: description })
+
+    // Open Graph
+    upsertMeta('meta[property="og:type"]', { property: 'og:type', content: 'website' })
+    upsertMeta('meta[property="og:site_name"]', { property: 'og:site_name', content: 'Safari Typing Services' })
     upsertMeta('meta[property="og:title"]', { property: 'og:title', content: full })
     upsertMeta('meta[property="og:description"]', { property: 'og:description', content: description })
     upsertMeta('meta[property="og:url"]', { property: 'og:url', content: url })
+    upsertMeta('meta[property="og:image"]', { property: 'og:image', content: ogImage })
+
+    // Twitter
+    upsertMeta('meta[name="twitter:card"]', { name: 'twitter:card', content: 'summary_large_image' })
+    upsertMeta('meta[name="twitter:title"]', { name: 'twitter:title', content: full })
+    upsertMeta('meta[name="twitter:description"]', { name: 'twitter:description', content: description })
+    upsertMeta('meta[name="twitter:image"]', { name: 'twitter:image', content: ogImage })
 
     const robots = upsertMeta('meta[name="robots"]', {
       name: 'robots',
@@ -52,5 +68,5 @@ export function useDocumentMeta({ title, description = '', path = '', jsonLd, no
       if (script) script.remove()
       robots.setAttribute('content', 'index, follow')
     }
-  }, [title, description, path, jsonLd, noindex])
+  }, [title, description, path, image, jsonLd, noindex])
 }

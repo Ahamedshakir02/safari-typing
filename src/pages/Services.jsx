@@ -1,13 +1,20 @@
 import Seo from '../components/Seo.jsx'
-import Reveal from '../components/Reveal.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
+import Icon from '../components/Icon.jsx'
+import AccentLine from '../components/AccentLine.jsx'
+import Badge from '../components/Badge.jsx'
+import ImagePlaceholder from '../components/ImagePlaceholder.jsx'
+import Section from '../components/Section.jsx'
 import CtaBlock from '../components/CtaBlock.jsx'
 import LinkButton from '../components/LinkButton.jsx'
-import { SERVICES } from '../data/content.js'
+import { SERVICES, SERVICE_ICONS, CREDENTIALS } from '../data/content.js'
+import { usePageMotion } from '../lib/usePageMotion.js'
 
 export default function Services() {
+  const root = usePageMotion()
+
   return (
-    <>
+    <div ref={root}>
       <Seo
         title="Services"
         description="Ten service areas covering every government, immigration and business formality in the UAE — Tasheel, Amer, Emirates ID, attestation, business setup, PRO, medical, vehicle and passport services."
@@ -15,29 +22,60 @@ export default function Services() {
       />
 
       {/* Header */}
-      <Reveal as="section" className="mx-auto max-w-[860px] px-5 pb-14 pt-20 text-center sm:px-7">
-        <Eyebrow className="mb-5">OUR SERVICES</Eyebrow>
-        <h1 className="mb-5 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
-          Everything your paperwork needs.
-        </h1>
-        <p className="mx-auto max-w-[600px] font-body text-[19px] text-soft">
-          Ten service areas covering every government, immigration and business formality in the UAE —
-          handled accurately, the first time.
-        </p>
-      </Reveal>
+      <section className="mx-auto max-w-[860px] px-5 pb-12 pt-20 text-center sm:px-7">
+        <div data-hero>
+          <Eyebrow className="mb-5">OUR SERVICES</Eyebrow>
+          <h1 className="mb-5 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
+            Everything your paperwork needs.
+          </h1>
+          <AccentLine className="mx-auto mb-6" />
+          <p className="mx-auto max-w-[600px] font-body text-[19px] text-soft">
+            Ten service areas covering every government, immigration and business formality in the
+            UAE — handled accurately, the first time.
+          </p>
+        </div>
+      </section>
+
+      {/* Signature image band */}
+      <section data-reveal className="mx-auto max-w-content px-5 pb-2 sm:px-7">
+        <ImagePlaceholder
+          arch
+          label="Our service counter at Nazir Plaza"
+          aspect="aspect-[16/9] sm:aspect-[16/7]"
+          data-hero-img
+          className="scale-110 will-change-transform"
+        />
+      </section>
+
+      {/* Credentials */}
+      <section className="mx-auto max-w-content px-5 py-10 sm:px-7">
+        <div data-reveal className="flex flex-wrap items-center justify-center gap-2.5 text-center">
+          {CREDENTIALS.map((c) => (
+            <Badge key={c.label} icon={c.icon}>
+              {c.label}
+            </Badge>
+          ))}
+        </div>
+      </section>
 
       {/* Service blocks */}
-      <Reveal as="section" className="mx-auto max-w-[1000px] border-t border-line px-5 sm:px-7">
-        {SERVICES.map((s) => (
-          <div
-            key={s.n}
-            className="grid grid-cols-1 gap-4 border-b border-line px-2 py-11 sm:grid-cols-[72px_1fr] sm:gap-8"
-          >
-            <div className="font-display text-[34px] italic text-sand">{s.n}</div>
-            <div>
-              <h2 className="mb-3 text-[26px] font-medium sm:text-[30px]">{s.titleLong}</h2>
-              <p className="mb-[18px] max-w-[640px] font-body text-base text-soft">{s.desc}</p>
-              <div className="flex flex-wrap gap-2">
+      <Section containerClassName="pb-6 pt-2 sm:pb-10">
+        <div data-services className="grid gap-5 sm:grid-cols-2">
+          {SERVICES.map((s) => (
+            <div
+              key={s.n}
+              data-service-row
+              className="group flex flex-col rounded-[22px] border border-line bg-cream-50 p-7 shadow-soft transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift sm:p-8"
+            >
+              <div className="mb-5 flex items-center justify-between">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-tag-bg text-sage transition-colors duration-300 group-hover:bg-sage group-hover:text-paper">
+                  <Icon name={SERVICE_ICONS[s.n]} size={22} strokeWidth={1.7} />
+                </span>
+                <span className="font-display text-[30px] italic text-sand">{s.n}</span>
+              </div>
+              <h2 className="mb-3 text-[24px] font-medium sm:text-[27px]">{s.titleLong}</h2>
+              <p className="mb-5 font-body text-[15.5px] leading-[1.6] text-soft">{s.desc}</p>
+              <div className="mt-auto flex flex-wrap gap-2">
                 {s.tags.map((tag) => (
                   <span
                     key={tag}
@@ -48,9 +86,9 @@ export default function Services() {
                 ))}
               </div>
             </div>
-          </div>
-        ))}
-      </Reveal>
+          ))}
+        </div>
+      </Section>
 
       {/* CTA */}
       <CtaBlock
@@ -64,6 +102,6 @@ export default function Services() {
         }
         className="my-16"
       />
-    </>
+    </div>
   )
 }

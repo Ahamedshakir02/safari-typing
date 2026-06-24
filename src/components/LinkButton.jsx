@@ -23,7 +23,7 @@ export default function LinkButton({
   children,
   ...rest
 }) {
-  const cls = `inline-flex items-center justify-center gap-2.5 rounded-full font-body font-semibold transition-colors ${SIZES[size]} ${VARIANTS[variant]} ${className}`
+  const cls = `inline-flex items-center justify-center gap-2.5 rounded-full font-body font-semibold shadow-soft transition-[transform,background-color,border-color,box-shadow,color] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lift active:translate-y-0 active:shadow-soft ${SIZES[size]} ${VARIANTS[variant]} ${className}`
 
   if (to) {
     return (

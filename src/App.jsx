@@ -1,8 +1,10 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import ScrollToTop from './lib/ScrollToTop.jsx'
+import SmoothScroll from './components/SmoothScroll.jsx'
 import SkipLink from './components/SkipLink.jsx'
 import SiteLoader from './components/SiteLoader.jsx'
+import WhatsAppButton from './components/WhatsAppButton.jsx'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import Logo from './components/Logo.jsx'
@@ -29,6 +31,8 @@ export default function App() {
   return (
     <>
       <SiteLoader />
+      <SmoothScroll />
+      <div className="grain" aria-hidden="true" />
       <SkipLink />
       <ScrollToTop />
       <Header />
@@ -46,6 +50,7 @@ export default function App() {
         </Suspense>
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }

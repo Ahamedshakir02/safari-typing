@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { scrollToId } from './scrollToId.js'
+import { getLenis } from './lenis.js'
 
 /**
  * On route change: jump to the top of a new page, or — if the URL carries a
@@ -21,6 +22,10 @@ export default function ScrollToTop() {
       requestAnimationFrame(tick)
       return
     }
+    // Jump to the top instantly on a new page. Lenis needs to be told to reset
+    // too, or it keeps its own (now stale) scroll position.
+    const lenis = getLenis()
+    if (lenis) lenis.scrollTo(0, { immediate: true })
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
   }, [pathname, hash])
 

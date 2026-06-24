@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import Seo from '../components/Seo.jsx'
-import Reveal from '../components/Reveal.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
 import Icon from '../components/Icon.jsx'
+import AccentLine from '../components/AccentLine.jsx'
 import { ENQUIRY_SERVICES } from '../data/content.js'
 import { CONTACT } from '../data/site.js'
 import { waLink, telLink, mailLink, buildWhatsAppLink } from '../lib/wa.js'
+import { usePageMotion } from '../lib/usePageMotion.js'
 
 const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(CONTACT.mapsQuery)}&output=embed`
 const inputClass =
@@ -13,6 +14,7 @@ const inputClass =
 const labelClass = 'mb-2 block font-body text-[13px] font-semibold text-[#5a5446]'
 
 export default function ContactPage() {
+  const root = usePageMotion()
   const [form, setForm] = useState({
     name: '',
     phone: '',
@@ -37,7 +39,7 @@ export default function ContactPage() {
   }
 
   return (
-    <>
+    <div ref={root}>
       <Seo
         title="Contact"
         description="Call, WhatsApp, email or step into Shop 4 at Nazir Plaza. Send an enquiry and we'll reply by WhatsApp or email, usually within the hour."
@@ -45,25 +47,31 @@ export default function ContactPage() {
       />
 
       {/* Header */}
-      <Reveal as="section" className="mx-auto max-w-[820px] px-5 pb-11 pt-20 text-center sm:px-7">
-        <Eyebrow className="mb-5">CONTACT</Eyebrow>
-        <h1 className="mb-5 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
-          Let's get your paperwork moving.
-        </h1>
-        <p className="mx-auto max-w-[540px] font-body text-[19px] text-soft">
-          Call, WhatsApp, email or step into Shop 4 — whatever's easiest for you.
-        </p>
-      </Reveal>
+      <section className="mx-auto max-w-[820px] px-5 pb-11 pt-20 text-center sm:px-7">
+        <div data-hero>
+          <Eyebrow className="mb-5">CONTACT</Eyebrow>
+          <h1 className="mb-5 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
+            Let's get your paperwork moving.
+          </h1>
+          <AccentLine className="mx-auto mb-6" />
+          <p className="mx-auto max-w-[540px] font-body text-[19px] text-soft">
+            Call, WhatsApp, email or step into Shop 4 — whatever's easiest for you.
+          </p>
+        </div>
+      </section>
 
       {/* Grid */}
-      <Reveal as="section" className="mx-auto grid max-w-[1120px] items-start gap-12 px-5 pb-6 pt-12 sm:px-7 lg:grid-cols-[1fr_1.1fr]">
+      <section
+        data-reveal
+        className="mx-auto grid max-w-[1120px] items-start gap-12 px-5 pb-6 pt-12 sm:px-7 lg:grid-cols-[1fr_1.1fr]"
+      >
         {/* Methods */}
         <div className="flex flex-col gap-4">
           <a
             href={waLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 rounded-[20px] border border-tag-line bg-tag-bg p-6 transition-colors hover:border-sage"
+            className="flex items-center gap-4 rounded-[20px] border border-tag-line bg-tag-bg p-6 shadow-soft transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:border-sage hover:shadow-lift"
           >
             <div className="flex h-[46px] w-[46px] flex-none items-center justify-center rounded-full bg-sage text-paper">
               <Icon name="whatsapp" size={24} />
@@ -76,7 +84,7 @@ export default function ContactPage() {
             </div>
           </a>
 
-          <div className="flex flex-col gap-[18px] rounded-[20px] border border-line bg-cream-50 p-7">
+          <div className="flex flex-col gap-[18px] rounded-[20px] border border-line bg-cream-50 p-7 shadow-soft">
             <ContactRow icon="phone" label="CALL US">
               {[CONTACT.phones[0], CONTACT.phones[2]].map((p) => (
                 <a
@@ -107,7 +115,7 @@ export default function ContactPage() {
             </ContactRow>
           </div>
 
-          <div className="overflow-hidden rounded-[20px] border border-line">
+          <div className="overflow-hidden rounded-[20px] border border-line shadow-soft">
             <iframe
               title="Map to Safari Typing Services, Nazir Plaza"
               src={mapSrc}
@@ -119,7 +127,7 @@ export default function ContactPage() {
         </div>
 
         {/* Form */}
-        <div className="rounded-[24px] border border-line bg-cream-50 p-7 sm:p-[38px]">
+        <div className="rounded-[24px] border border-line bg-cream-50 p-7 shadow-soft sm:p-[38px]">
           <h2 className="mb-1.5 text-[32px] font-medium">Send an enquiry</h2>
           <p className="mb-7 font-body text-[15px] text-soft">
             Fill this in and we'll reply by WhatsApp or email, usually within the hour.
@@ -189,7 +197,7 @@ export default function ContactPage() {
               </div>
               <button
                 type="submit"
-                className="rounded-full bg-sage py-4 font-body text-base font-semibold text-paper transition-colors hover:bg-sage-dark"
+                className="rounded-full bg-sage py-4 font-body text-base font-semibold text-paper shadow-soft transition-[transform,background-color,box-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:bg-sage-dark hover:shadow-lift"
               >
                 Send enquiry
               </button>
@@ -199,10 +207,10 @@ export default function ContactPage() {
             </form>
           )}
         </div>
-      </Reveal>
+      </section>
 
       <div className="h-16" />
-    </>
+    </div>
   )
 }
 

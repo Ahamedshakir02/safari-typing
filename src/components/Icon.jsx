@@ -35,6 +35,74 @@ const PATHS = {
   arrow: <path d="M5 12h14M13 6l6 6-6 6" />,
   menu: <path d="M4 7h16M4 12h16M4 17h16" />,
   close: <path d="M6 6l12 12M18 6 6 18" />,
+  check: <path d="M5 12.5l4.5 4.5L19 6.5" />,
+  star: (
+    <path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.4 9.6l5.8-.8L12 3.5Z" />
+  ),
+  shield: (
+    <>
+      <path d="M12 3 5 6v5.2c0 4.3 2.9 7.4 7 9.3 4.1-1.9 7-5 7-9.3V6l-7-3Z" />
+      <path d="M9 12l2 2 4-4" />
+    </>
+  ),
+  globe: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18" />
+      <path d="M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18" />
+    </>
+  ),
+  layers: (
+    <>
+      <path d="M12 3 3 7.5 12 12l9-4.5L12 3Z" />
+      <path d="M3 12l9 4.5L21 12" />
+      <path d="M3 16.5 12 21l9-4.5" />
+    </>
+  ),
+  chat: (
+    <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z" />
+  ),
+  wallet: (
+    <>
+      <rect x="3" y="6" width="18" height="13" rx="2" />
+      <path d="M3 10h18" />
+      <circle cx="16.5" cy="14.5" r="1.1" />
+    </>
+  ),
+  doc: (
+    <>
+      <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z" />
+      <path d="M14 3v5h5M9 13h6M9 17h5" />
+    </>
+  ),
+  building: (
+    <>
+      <path d="M4 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16" />
+      <path d="M14 9h4a2 2 0 0 1 2 2v10" />
+      <path d="M8 7h2M8 11h2M8 15h2M2 21h20" />
+    </>
+  ),
+  car: (
+    <>
+      <path d="M5 11.5 6.6 7A2 2 0 0 1 8.5 5.7h7A2 2 0 0 1 17.4 7L19 11.5" />
+      <path d="M4 11.5h16v5H4v-5Z" />
+      <path d="M7 16.5v1.5M17 16.5v1.5M7.5 14h.5M16 14h.5" />
+    </>
+  ),
+  passport: (
+    <>
+      <rect x="5" y="3" width="14" height="18" rx="2" />
+      <circle cx="12" cy="10" r="2.6" />
+      <path d="M9.5 16.5h5" />
+    </>
+  ),
+  image: (
+    <>
+      <rect x="3" y="4" width="18" height="16" rx="2" />
+      <circle cx="8.5" cy="9.5" r="1.5" />
+      <path d="m3 17 5-4 4 3 3-2 6 5" />
+    </>
+  ),
 }
 
 export default function Icon({ name, size = 18, className = '', ...rest }) {

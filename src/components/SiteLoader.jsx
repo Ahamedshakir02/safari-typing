@@ -12,7 +12,14 @@ export default function SiteLoader() {
   // Trigger the fade-out after load (or a fallback timeout).
   useEffect(() => {
     let fallback
-    const finish = () => setDone(true)
+    const finish = () => {
+      setDone(true)
+      // Let the hero (and any other entrance animation) start as the loader
+      // fades. A flag covers the case where the loader finished before the
+      // listener was attached.
+      window.__safariLoaderDone = true
+      window.dispatchEvent(new Event('safari:loader-done'))
+    }
     if (document.readyState === 'complete') {
       fallback = setTimeout(finish, 550)
     } else {

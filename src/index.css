@@ -102,6 +102,41 @@
 }
 
 /* ---------------------------------------------------------------------------
+   Lenis smooth scroll. These rules apply only while Lenis is active (it adds
+   the `.lenis` classes to <html>); native scrolling is otherwise untouched.
+--------------------------------------------------------------------------- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Faint paper grain — a purely decorative, static texture that adds warmth and
+   depth (an "uncoated paper" feel). Sits above the page, never blocks clicks.
+--------------------------------------------------------------------------- */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+/* ---------------------------------------------------------------------------
    First-load brand loader. Fades out once the app + window have loaded.
 --------------------------------------------------------------------------- */
 .site-loader {
@@ -149,5 +184,15 @@
   .site-loader .loader-logo,
   .site-loader .loader-bar {
     animation: none !important;
+  }
+  /* Neutralise the hover/scroll micro-interactions (button lift, service-row
+     accents, etc.) so motion-sensitive users get an essentially still page. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import UaeFlag from './UaeFlag.jsx'
 import { NAV_LINKS, CONTACT } from '../data/site.js'
 import { telLink, mailLink } from '../lib/wa.js'
 
@@ -66,7 +67,10 @@ export default function Footer() {
 
       <div className="mx-auto flex max-w-content flex-wrap justify-between gap-2.5 border-t border-line px-5 py-[22px] font-body text-[13px] text-gold sm:px-7">
         <span>© {year} Safari Typing Services. All rights reserved.</span>
-        <span>Nazir Plaza Building, Shop 4 · United Arab Emirates</span>
+        <span className="inline-flex items-center gap-2">
+          <UaeFlag className="w-4 shrink-0" />
+          Nazir Plaza Building, Shop 4 · United Arab Emirates
+        </span>
       </div>
     </footer>
   )

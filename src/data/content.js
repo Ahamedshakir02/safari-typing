@@ -138,12 +138,81 @@ export const SERVICES = [
   },
 ]
 
-// Home — trust strip.
+// Home — trust strip. [CONFIRM] every figure before launch — no invented numbers.
 export const HOME_STATS = [
   { value: '12+', label: 'Years of service' },
   { value: '15,000+', label: 'Applications handled' },
+  { value: '5', label: 'Languages spoken' },
   { value: 'Same day', label: 'On most documents' },
 ]
+
+// Icon name (see Icon.jsx) for each service area, keyed by its number. Keeps the
+// SERVICES data above presentation-free while letting the home/services grids
+// show a glyph per area.
+export const SERVICE_ICONS = {
+  '01': 'building',
+  '02': 'shield',
+  '03': 'doc',
+  '04': 'globe',
+  '05': 'layers',
+  '06': 'wallet',
+  '07': 'image',
+  '08': 'check',
+  '09': 'car',
+  '10': 'passport',
+}
+
+// Home — "official channels" credentials strip. Defensible (these are the
+// systems we submit through), not unqualified "government authorised" claims.
+export const CREDENTIALS = [
+  { label: 'ICP e-Channel', icon: 'globe' },
+  { label: 'Tasheel · MOHRE', icon: 'doc' },
+  { label: 'Amer immigration', icon: 'shield' },
+  { label: 'MOFA attestation', icon: 'check' },
+]
+
+// Home — section copy, rewritten for a more confident, premium voice. Keep
+// claims accurate; [CONFIRM] anything not yet verified by the client.
+export const HOME = {
+  hero: {
+    eyebrow: 'NAZIR PLAZA · SHARJAH, UNITED ARAB EMIRATES',
+    subline:
+      'Visas, Emirates ID, attestation, business licences and PRO services — typed correctly, submitted through the right channel and followed up until they’re done. So you never have to think about the queue again.',
+    trustLine: 'Serving Sharjah’s residents & businesses in five languages', // [CONFIRM] scale wording
+  },
+  credentialsLabel: 'We work through the official government channels',
+  services: {
+    eyebrow: 'WHAT WE DO',
+    title: 'Every formality, under one calm roof.',
+    intro:
+      'From a first residence visa to a full trade licence — we manage the forms, the fees and the follow-ups on your behalf.',
+    allLabel: 'View all services',
+  },
+  why: {
+    eyebrow: 'WHY SAFARI',
+    title: 'Quiet competence, every single time.',
+    intro: 'The reasons residents and businesses keep coming back to Shop 4.',
+  },
+  process: {
+    eyebrow: 'THE PROCESS',
+    title: 'Three unhurried steps.',
+    intro: 'No appointment, no jargon. Tell us what you need and we take it from there.',
+  },
+  languages: {
+    eyebrow: 'SPOKEN HERE',
+    title: 'We’ll explain it in your language.',
+    intro: 'Deal with the same friendly team in whichever of these you’re most comfortable speaking.',
+  },
+  testimonials: {
+    eyebrow: 'IN THEIR WORDS',
+    title: 'Trusted across the community.',
+  },
+  faq: {
+    eyebrow: 'GOOD TO KNOW',
+    title: 'A few things people ask.',
+    allLabel: 'See all FAQs',
+  },
+}
 
 // Home — three-step process (roman numerals).
 export const PROCESS = [
