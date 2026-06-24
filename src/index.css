@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    /* Sticky-header height — used for in-page anchor offset (scrollToId) and
+       CSS scroll-padding so anchored sections never hide under the header. */
+    --header-offset: 104px;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    background-color: theme('colors.offwhite');
+    scroll-padding-top: var(--header-offset);
+  }
+
+  body {
+    margin: 0;
+    color: theme('colors.ink');
+    background-color: theme('colors.offwhite');
+    font-family: theme('fontFamily.body');
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: theme('fontFamily.display');
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+
+  ::selection {
+    background: theme('colors.navy.DEFAULT');
+    color: theme('colors.offwhite');
+  }
+
+  :focus-visible {
+    outline: 3px solid theme('colors.red.DEFAULT');
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .font-arabic {
+    font-family: theme('fontFamily.arabic');
+  }
+
+  /* Minimum 44x44 tap target — critical for the older mobile audience. */
+  .tap {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Standard visually-hidden helper that becomes visible on focus (skip link). */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Lightweight scroll-reveal (IntersectionObserver toggles `.is-visible`).
+   Content is only offset while still hidden; reduced-motion users get the
+   visible state immediately (the Reveal component skips observing).
+--------------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  /* Disable the marquee + bob for motion-sensitive users. */
+  .animate-marquee,
+  .animate-bob {
+    animation: none !important;
+  }
+}
+
+/* Faint procedural grain — ties the flat sections together. Very subtle. */
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
