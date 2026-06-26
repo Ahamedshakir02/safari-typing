@@ -7,18 +7,14 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        // Keep the router + React, the motion libs and three.js in their own
-        // cached chunks so the home bundle stays lean. (three is also imported
-        // dynamically in FlowingFlag, so it loads off the critical path.)
+        // Keep the router + React and the motion libs in their own cached chunks
+        // so the home bundle stays lean.
         manualChunks(id) {
           if (id.includes('node_modules/react-router') || id.includes('node_modules/react-router-dom')) {
             return 'router'
           }
           if (id.includes('node_modules/gsap') || id.includes('node_modules/lenis')) {
             return 'motion'
-          }
-          if (id.includes('node_modules/three')) {
-            return 'three'
           }
         },
       },
