@@ -110,7 +110,7 @@ export default function Home() {
       <Section containerClassName="py-16 sm:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div data-reveal>
-            <Eyebrow className="mb-4">INSIDE SHOP 4</Eyebrow>
+            <Eyebrow className="mb-4">Inside Shop 4</Eyebrow>
             <AccentLine className="mb-6" />
             <h2 className="mb-5 text-[32px] font-medium sm:text-[42px]">
               A calm counter for complicated paperwork.
@@ -275,7 +275,7 @@ export default function Home() {
 
       {/* 10 — Brand pull quote */}
       <section className="mx-auto max-w-[920px] px-5 py-24 text-center sm:px-7">
-        <Eyebrow data-reveal className="mb-6">OUR PROMISE</Eyebrow>
+        <Eyebrow data-reveal className="mb-6">Our Promise</Eyebrow>
         <p
           data-quote
           className="font-display text-[28px] font-medium leading-[1.32] text-ink sm:text-[40px]"
