@@ -13,7 +13,7 @@ import TestimonialCard from '../components/TestimonialCard.jsx'
 import ImagePlaceholder from '../components/ImagePlaceholder.jsx'
 import UaeFlag from '../components/UaeFlag.jsx'
 import AccentLine from '../components/AccentLine.jsx'
-import { SERVICES, HOME_STATS, PROCESS, SERVICE_ICONS, CREDENTIALS, HOME, FAQS } from '../data/content.js'
+import { SERVICES, HOME_STATS, PROCESS, CREDENTIALS, HOME, FAQS } from '../data/content.js'
 import { CONTACT, LOCAL_BUSINESS_JSONLD, WHY_US, REVIEWS, LANGUAGES } from '../data/site.js'
 import { waLink, telLink } from '../lib/wa.js'
 import { usePageMotion } from '../lib/usePageMotion.js'
@@ -156,16 +156,16 @@ export default function Home() {
         </div>
 
         <div data-services className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.slice(0, 6).map((s) => (
+          {SERVICES.map((s) => (
             <Link
               key={s.n}
-              to="/services"
+              to={`/services/${s.slug}`}
               data-service-row
               className="group relative flex flex-col rounded-[20px] border border-line bg-cream-50 p-7 shadow-soft transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift"
             >
               <div className="mb-5 flex items-center justify-between">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-tag-bg text-sage transition-colors duration-300 group-hover:bg-sage group-hover:text-paper">
-                  <Icon name={SERVICE_ICONS[s.n]} size={22} strokeWidth={1.7} />
+                  <Icon name={s.icon} size={22} strokeWidth={1.7} />
                 </span>
                 <span className="font-display text-[26px] italic text-sand">{s.n}</span>
               </div>
