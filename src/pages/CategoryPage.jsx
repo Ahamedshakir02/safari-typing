@@ -1,6 +1,7 @@
 import { useParams, Navigate, Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
+import UaeRibbon from '../components/UaeRibbon.jsx'
 import Icon from '../components/Icon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import Badge from '../components/Badge.jsx'
@@ -52,6 +53,7 @@ export default function CategoryPage() {
       {/* Hero */}
       <section className="mx-auto max-w-[860px] px-5 pb-10 pt-16 text-center sm:px-7 sm:pt-20">
         <div data-hero>
+          <UaeRibbon className="mb-6" />
           <nav className="mb-6 font-body text-[13px] font-semibold text-sand" aria-label="Breadcrumb">
             <Link to="/services" className="transition-colors hover:text-sage">
               Services
@@ -184,7 +186,7 @@ export default function CategoryPage() {
 
       {/* CTA */}
       <CtaBlock
-        heading={`Need help with ${service.title.toLowerCase()}?`}
+        heading={`Need help with ${service.title}?`}
         body="Tell us your situation on WhatsApp and we'll confirm the documents and exact fees before we start."
         primaryLabel="WhatsApp us"
         secondary={
