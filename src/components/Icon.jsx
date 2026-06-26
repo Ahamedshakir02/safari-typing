@@ -103,6 +103,53 @@ const PATHS = {
       <path d="m3 17 5-4 4 3 3-2 6 5" />
     </>
   ),
+  idcard: (
+    <>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <circle cx="8.5" cy="11" r="2" />
+      <path d="M5.5 16c.4-1.3 1.5-2 3-2s2.6.7 3 2M14 9.5h4M14 13h4M14 16h2.5" />
+    </>
+  ),
+  briefcase: (
+    <>
+      <rect x="3" y="7" width="18" height="13" rx="2" />
+      <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18" />
+    </>
+  ),
+  health: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 8v8M8 12h8" />
+    </>
+  ),
+  stamp: (
+    <>
+      <circle cx="12" cy="8.5" r="4.5" />
+      <path d="M9.7 8.5 11.3 10 14.3 7M5 20h14M6 20l1-3h10l1 3" />
+    </>
+  ),
+  scale: (
+    <>
+      <path d="M12 4v16M8 20h8M5 7h14" />
+      <path d="M5 7 2.5 13h5L5 7Z" />
+      <path d="M19 7l-2.5 6h5L19 7Z" />
+    </>
+  ),
+  bolt: <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" />,
+  umbrella: (
+    <>
+      <path d="M12 3a9 9 0 0 1 9 9H3a9 9 0 0 1 9-9Z" />
+      <path d="M12 12v6a2.5 2.5 0 0 0 5 0" />
+    </>
+  ),
+  plane: <path d="M21 3 3 10.5l6 2.5 2.5 6L21 3Zm0 0-12 10" />,
+  printer: (
+    <>
+      <path d="M6 9V3h12v6" />
+      <path d="M6 18H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1" />
+      <rect x="7" y="14" width="10" height="7" rx="1" />
+    </>
+  ),
 }
 
 export default function Icon({ name, size = 18, className = '', ...rest }) {
