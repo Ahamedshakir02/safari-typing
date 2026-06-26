@@ -5,7 +5,7 @@ import UaeRibbon from '../components/UaeRibbon.jsx'
 import Icon from '../components/Icon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import Badge from '../components/Badge.jsx'
-import ImagePlaceholder from '../components/ImagePlaceholder.jsx'
+import DocumentsScene from '../components/illustrations/DocumentsScene.jsx'
 import Section from '../components/Section.jsx'
 import CtaBlock from '../components/CtaBlock.jsx'
 import LinkButton from '../components/LinkButton.jsx'
@@ -39,17 +39,11 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Signature image band */}
+      {/* Signature illustration band */}
       <section data-reveal className="mx-auto max-w-content px-5 pb-2 sm:px-7">
-        <ImagePlaceholder
-          arch
-          src="/photos/storefront.jpg"
-          alt="Safari Typing Services storefront at Nazir Plaza, Shop 4, Ajman"
-          label="Our service counter at Nazir Plaza"
-          aspect="aspect-[16/9] sm:aspect-[16/7]"
-          data-hero-img
-          className="scale-110 will-change-transform"
-        />
+        <div className="aspect-[16/9] overflow-hidden rounded-[28px] border border-line sm:aspect-[16/7] sm:rounded-[280px_280px_28px_28px]">
+          <DocumentsScene />
+        </div>
       </section>
 
       {/* Credentials */}
