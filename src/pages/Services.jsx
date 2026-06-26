@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
 import Icon from '../components/Icon.jsx'
@@ -7,7 +8,7 @@ import ImagePlaceholder from '../components/ImagePlaceholder.jsx'
 import Section from '../components/Section.jsx'
 import CtaBlock from '../components/CtaBlock.jsx'
 import LinkButton from '../components/LinkButton.jsx'
-import { SERVICES, SERVICE_ICONS, CREDENTIALS } from '../data/content.js'
+import { SERVICE_GROUPS, getServiceBySlug, CREDENTIALS } from '../data/content.js'
 import { usePageMotion } from '../lib/usePageMotion.js'
 
 export default function Services() {
@@ -17,7 +18,7 @@ export default function Services() {
     <div ref={root}>
       <Seo
         title="Services — Typing Centre in Ajman"
-        description="Ten service areas covering every government, immigration and business formality in Ajman — Tasheel, Amer, Emirates ID, attestation, business setup, PRO, medical, vehicle and passport services."
+        description="Thirteen service areas covering every government, immigration and business formality in Ajman — visas, Emirates ID, Tasheel, attestation, business setup & PRO, medical, vehicle, passport, FEWA and more."
         path="/services"
       />
 
@@ -30,7 +31,7 @@ export default function Services() {
           </h1>
           <AccentLine className="mx-auto mb-6" />
           <p className="mx-auto max-w-[600px] font-body text-[19px] text-soft">
-            Ten service areas covering every government, immigration and business formality in
+            Thirteen service areas covering every government, immigration and business formality in
             Ajman — handled accurately, the first time.
           </p>
         </div>
@@ -60,35 +61,47 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Service blocks */}
+      {/* Service groups */}
       <Section containerClassName="pb-6 pt-2 sm:pb-10">
-        <div data-services className="grid gap-5 sm:grid-cols-2">
-          {SERVICES.map((s) => (
-            <div
-              key={s.n}
-              data-service-row
-              className="group flex flex-col rounded-[22px] border border-line bg-cream-50 p-7 shadow-soft transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift sm:p-8"
-            >
-              <div className="mb-5 flex items-center justify-between">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-tag-bg text-sage transition-colors duration-300 group-hover:bg-sage group-hover:text-paper">
-                  <Icon name={SERVICE_ICONS[s.n]} size={22} strokeWidth={1.7} />
-                </span>
-                <span className="font-display text-[30px] italic text-sand">{s.n}</span>
-              </div>
-              <h2 className="mb-3 text-[24px] font-medium sm:text-[27px]">{s.titleLong}</h2>
-              <p className="mb-5 font-body text-[15.5px] leading-[1.6] text-soft">{s.desc}</p>
-              <div className="mt-auto flex flex-wrap gap-2">
-                {s.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-tag-bg px-[13px] py-[7px] font-body text-[13px] font-semibold text-tag-ink"
-                  >
-                    {tag}
+        <div data-services className="flex flex-col gap-14">
+          {SERVICE_GROUPS.map((group) => {
+            const services = group.slugs.map(getServiceBySlug).filter(Boolean)
+            return (
+              <div key={group.label}>
+                <div data-reveal className="mb-6 flex items-center gap-4">
+                  <h2 className="font-display text-[26px] font-medium sm:text-[30px]">{group.label}</h2>
+                  <span className="h-px flex-1 bg-line" aria-hidden="true" />
+                  <span className="font-body text-[13px] font-semibold text-sand">
+                    {services.length} {services.length === 1 ? 'area' : 'areas'}
                   </span>
-                ))}
+                </div>
+
+                <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                  {services.map((s) => (
+                    <Link
+                      key={s.slug}
+                      to={`/services/${s.slug}`}
+                      data-service-row
+                      className="group flex flex-col rounded-[20px] border border-line bg-cream-50 p-7 shadow-soft transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift"
+                    >
+                      <div className="mb-5 flex items-center justify-between">
+                        <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-tag-bg text-sage transition-colors duration-300 group-hover:bg-sage group-hover:text-paper">
+                          <Icon name={s.icon} size={22} strokeWidth={1.7} />
+                        </span>
+                        <span className="font-display text-[26px] italic text-sand">{s.n}</span>
+                      </div>
+                      <h3 className="mb-2 text-[21px] font-medium">{s.title}</h3>
+                      <p className="font-body text-[15px] leading-[1.6] text-soft">{s.blurb}</p>
+                      <span className="mt-5 inline-flex items-center gap-1.5 font-body text-[14px] font-semibold text-sage">
+                        Explore
+                        <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                      </span>
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </Section>
 
