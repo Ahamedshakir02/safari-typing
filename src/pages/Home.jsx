@@ -12,7 +12,7 @@ import ServiceCard from '../components/ServiceCard.jsx'
 import Credentials from '../components/Credentials.jsx'
 import TestimonialCard from '../components/TestimonialCard.jsx'
 import UaeFlag from '../components/UaeFlag.jsx'
-import UaeRibbon from '../components/UaeRibbon.jsx'
+import HeroStatus from '../components/HeroStatus.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import CounterScene from '../components/illustrations/CounterScene.jsx'
 import ProcessSpot from '../components/illustrations/ProcessSpot.jsx'
@@ -48,11 +48,7 @@ export default function Home() {
           className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[460px] bg-[radial-gradient(60%_60%_at_50%_-5%,rgba(31,84,166,0.12),transparent_70%)]"
         />
         <div data-hero>
-          <UaeRibbon className="mb-7" />
-          <Eyebrow className="mb-[26px] inline-flex items-center gap-2.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-sage" />
-            {HOME.hero.eyebrow}
-          </Eyebrow>
+          <HeroStatus className="mb-8" />
           <h1 className="mb-[24px] text-[44px] font-medium leading-[1.05] sm:text-[60px] md:text-[78px]">
             Government paperwork,
             <br />
