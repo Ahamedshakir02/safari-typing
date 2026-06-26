@@ -13,6 +13,8 @@ import TestimonialCard from '../components/TestimonialCard.jsx'
 import UaeFlag from '../components/UaeFlag.jsx'
 import UaeRibbon from '../components/UaeRibbon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
+import CounterScene from '../components/illustrations/CounterScene.jsx'
+import ProcessSpot from '../components/illustrations/ProcessSpot.jsx'
 import { SERVICES, HOME_STATS, PROCESS, CREDENTIALS, HOME, FAQS } from '../data/content.js'
 import { CONTACT, LOCAL_BUSINESS_JSONLD, WHY_US, REVIEWS, LANGUAGES } from '../data/site.js'
 import { waLink, telLink } from '../lib/wa.js'
@@ -20,8 +22,8 @@ import { usePageMotion } from '../lib/usePageMotion.js'
 
 const primaryPhone = CONTACT.phones[0]
 
-// Real shop photography for the three-step band (Ajman, Shop 4).
-const STEP_PHOTOS = ['/photos/storefront.jpg', '/photos/reception.jpg', '/photos/desk.jpg']
+// Flat-illustration spot for each of the three "How it works" steps.
+const STEP_SPOTS = ['chat', 'share', 'collect']
 
 export default function Home() {
   const root = usePageMotion()
@@ -124,15 +126,9 @@ export default function Home() {
             </p>
           </div>
           <div data-reveal>
-            <ImagePlaceholder
-              arch
-              src="/photos/counter.jpg"
-              alt="Inside Safari Typing Services, Shop 4 — the service counter and team in Ajman"
-              label="Inside Shop 4 — counter & team"
-              aspect="aspect-[4/3]"
-              data-hero-img
-              className="scale-110 will-change-transform"
-            />
+            <div className="aspect-[4/3] overflow-hidden rounded-[28px] border border-line sm:rounded-[280px_280px_28px_28px]">
+              <CounterScene />
+            </div>
           </div>
         </div>
       </Section>
@@ -213,13 +209,9 @@ export default function Home() {
         <div data-reveal-group className="grid gap-8 sm:grid-cols-3">
           {PROCESS.map((step, i) => (
             <div key={step.numeral}>
-              <ImagePlaceholder
-                src={STEP_PHOTOS[i]}
-                alt={`Safari Typing Services, Ajman — ${step.title}`}
-                label="Step photo"
-                aspect="aspect-[16/10]"
-                frameClassName="mb-6"
-              />
+              <div className="mb-6 aspect-[16/10] overflow-hidden rounded-[24px] border border-line">
+                <ProcessSpot name={STEP_SPOTS[i]} />
+              </div>
               <div className="flex items-baseline gap-3">
                 <span className="font-display text-[34px] italic leading-none text-sage">{step.numeral}</span>
                 <h3 className="text-2xl font-medium">{step.title}</h3>
