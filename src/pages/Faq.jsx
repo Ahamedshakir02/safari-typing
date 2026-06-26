@@ -48,7 +48,7 @@ export default function Faq() {
 
       {/* Accordion */}
       <section data-reveal className="mx-auto max-w-[820px] px-5 pb-6 sm:px-7">
-        <div className="rounded-[24px] border border-line bg-cream-50 px-6 shadow-soft sm:px-8">
+        <div className="rounded-[24px] border border-line bg-cream-50 px-6 sm:px-8">
           {FAQS.map((item, i) => {
             const isOpen = i === open
             return (
@@ -85,7 +85,7 @@ export default function Faq() {
 
       {/* CTA */}
       <section data-reveal className="mx-auto mb-[88px] mt-[50px] max-w-[820px] px-5 sm:px-7">
-        <div className="rounded-[28px] border border-line bg-cream-100 px-6 py-12 text-center shadow-soft sm:p-[52px]">
+        <div className="rounded-[28px] border border-line bg-cream-100 px-6 py-12 text-center sm:p-[52px]">
           <h2 className="mb-3 text-[30px] font-medium sm:text-[36px]">Still have a question?</h2>
           <p className="mb-7 font-body text-[16.5px] text-soft">
             Reach us any day of the week — we usually reply within minutes.
