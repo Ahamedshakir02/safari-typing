@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
+import UaeRibbon from '../components/UaeRibbon.jsx'
 import Icon from '../components/Icon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import Badge from '../components/Badge.jsx'
@@ -25,7 +26,8 @@ export default function Services() {
       {/* Header */}
       <section className="mx-auto max-w-[860px] px-5 pb-12 pt-20 text-center sm:px-7">
         <div data-hero>
-          <Eyebrow className="mb-5">OUR SERVICES</Eyebrow>
+          <UaeRibbon className="mb-6" />
+          <Eyebrow className="mb-5">Our Services</Eyebrow>
           <h1 className="mb-5 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
             Everything your paperwork needs.
           </h1>
