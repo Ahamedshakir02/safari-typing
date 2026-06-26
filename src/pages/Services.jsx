@@ -7,7 +7,7 @@ import ServiceCard from '../components/ServiceCard.jsx'
 import Section from '../components/Section.jsx'
 import CtaBlock from '../components/CtaBlock.jsx'
 import LinkButton from '../components/LinkButton.jsx'
-import { SERVICE_GROUPS, getServiceBySlug, PLACEHOLDER_IMAGES } from '../data/content.js'
+import { SERVICE_GROUPS, getServiceBySlug, PHOTOS } from '../data/content.js'
 import { usePageMotion } from '../lib/usePageMotion.js'
 
 export default function Services() {
@@ -41,8 +41,8 @@ export default function Services() {
       <section data-reveal className="mx-auto max-w-content px-5 pb-2 sm:px-7">
         <div className="aspect-[16/9] overflow-hidden rounded-[28px] border border-line sm:aspect-[16/7] sm:rounded-[280px_280px_28px_28px]">
           <img
-            src={PLACEHOLDER_IMAGES.documents}
-            alt="Government documents and paperwork prepared at the counter"
+            src={PHOTOS.servicesBand}
+            alt="Visa and passport documents prepared at the counter"
             className="h-full w-full object-cover"
             loading="lazy"
             decoding="async"
