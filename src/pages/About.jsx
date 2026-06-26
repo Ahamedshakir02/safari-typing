@@ -83,7 +83,7 @@ export default function About() {
           data-reveal
           align="center"
           accent
-          eyebrow="HOW WE WORK"
+          eyebrow="How We Work"
           title="The values behind every file."
           className="mb-14"
         />
@@ -98,7 +98,7 @@ export default function About() {
       <Section tone="sunken" containerClassName="py-20">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div data-reveal>
-            <Eyebrow className="mb-4">FIND US</Eyebrow>
+            <Eyebrow className="mb-4">Find Us</Eyebrow>
             <AccentLine className="mb-6" />
             <h2 className="mb-5 text-[34px] font-medium sm:text-[42px]">Right at Nazir Plaza, Shop 4.</h2>
             <p className="mb-[26px] font-body text-[16.5px] text-soft">
