@@ -55,12 +55,12 @@ export const CONTACT = {
   ],
 }
 
-// Primary navigation — real multi-page routes.
+// Primary navigation — real multi-page routes. (Services opens a mega-menu in
+// the header; see SERVICE_GROUPS in content.js.)
 export const NAV_LINKS = [
   { label: 'Home', to: '/' },
   { label: 'Services', to: '/services' },
   { label: 'About', to: '/about' },
-  { label: 'Pricing', to: '/pricing' },
   { label: 'FAQ', to: '/faq' },
   { label: 'Contact', to: '/contact' },
 ]
