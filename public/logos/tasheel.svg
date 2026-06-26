@@ -1,6 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 176 44" role="img" aria-label="Tasheel (MOHRE)">
-  <rect x="2" y="6" width="32" height="32" rx="9" fill="#0E9B7C"/>
-  <path d="M11 23l6 6 10-13" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="44" y="27" font-family="Verdana, Geneva, sans-serif" font-size="20" font-weight="700" fill="#0E9B7C" letter-spacing="-0.3">tasheel</text>
-  <text x="45" y="39" font-family="Verdana, Geneva, sans-serif" font-size="9" font-weight="600" fill="#7c8a86" letter-spacing="1.5">MOHRE SERVICES</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 188 66" role="img" aria-label="Tasheel (MOHRE)">
+  <!-- signature dot cluster (rising swoosh) -->
+  <circle cx="24" cy="44" r="6.5" fill="#e2231a"/>
+  <circle cx="40" cy="33" r="7" fill="#f7941d"/>
+  <circle cx="57" cy="24" r="6.5" fill="#00a651"/>
+  <circle cx="74" cy="18" r="6" fill="#1b75bb"/>
+  <circle cx="90" cy="15" r="5.2" fill="#1a1a1a"/>
+  <!-- Arabic wordmark -->
+  <text x="182" y="36" text-anchor="end" direction="rtl" font-family="Tahoma, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="700" fill="#1a1a1a">تسهيل</text>
+  <!-- Latin wordmark -->
+  <text x="182" y="58" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="#1a1a1a">TAS-HEEL</text>
 </svg>
