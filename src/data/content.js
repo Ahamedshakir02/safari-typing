@@ -798,7 +798,7 @@ export const SERVICE_GROUPS = [
 
 // Home — trust strip. [CONFIRM] every figure before launch — no invented numbers.
 export const HOME_STATS = [
-  { value: '12+', label: 'Years of service' }, // [CONFIRM]
+  { value: '18+', label: 'Years of service' },
   { value: '15,000+', label: 'Applications handled' }, // [CONFIRM]
   { value: '5', label: 'Languages spoken' },
   { value: 'Same day', label: 'On most documents' },
@@ -808,8 +808,8 @@ export const HOME_STATS = [
 // systems we submit through), not unqualified "government authorised" claims.
 export const CREDENTIALS = [
   { label: 'ICP e-Channel', icon: 'globe', logo: '/logos/icp.png' },
-  { label: 'Tasheel · MOHRE', icon: 'doc', logo: '/logos/tasheel.svg' },
-  { label: 'Amer Immigration', icon: 'shield', logo: '/logos/amer.svg' },
+  { label: 'Tasheel · MOHRE', icon: 'doc', logo: '/logos/tasheel.jpg' },
+  { label: 'Amer Immigration', icon: 'shield', logo: '/logos/amer.jpg' },
   { label: 'MOFA Attestation', icon: 'check', logo: '/logos/mofa.png' },
 ]
 
@@ -876,7 +876,7 @@ export const PROCESS = [
 
 // About — stats band + values.
 export const ABOUT_STATS = [
-  { value: '12+', label: 'Years in service' }, // [CONFIRM]
+  { value: '18+', label: 'Years in service' },
   { value: '15k+', label: 'Applications' }, // [CONFIRM]
   { value: '13', label: 'Service areas' },
   { value: '100%', label: 'Confidential', accent: true },

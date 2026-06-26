@@ -25,7 +25,7 @@ export default function About() {
     <div ref={root}>
       <Seo
         title="About — Typing Centre in Ajman"
-        description="For over a decade, Safari Typing Services has been the neighbourhood document-services centre at Nazir Plaza, Ajman — trusted by thousands of residents and businesses."
+        description="For over 18 years, Safari Typing Services has been the neighbourhood document-services centre at Nazir Plaza, Ajman — trusted by thousands of residents and businesses."
         path="/about"
       />
 
@@ -39,7 +39,7 @@ export default function About() {
           </h1>
           <AccentLine className="mx-auto mb-6" />
           <p className="mx-auto max-w-[640px] font-body text-[19px] text-soft">
-            For over a decade, Safari Typing Services has been the neighbourhood go-to at Nazir Plaza
+            For over 18 years, Safari Typing Services has been the neighbourhood go-to at Nazir Plaza
             — a small typing desk grown into a full document-services centre trusted by thousands of
             residents and businesses.
           </p>
