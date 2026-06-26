@@ -13,7 +13,7 @@ import Credentials from '../components/Credentials.jsx'
 import TestimonialCard from '../components/TestimonialCard.jsx'
 import UaeFlag from '../components/UaeFlag.jsx'
 import AccentLine from '../components/AccentLine.jsx'
-import { SERVICES, HOME_STATS, PROCESS, HOME, FAQS, PLACEHOLDER_IMAGES } from '../data/content.js'
+import { SERVICES, HOME_STATS, PROCESS, HOME, FAQS, PHOTOS } from '../data/content.js'
 import { CONTACT, LOCAL_BUSINESS_JSONLD, WHY_US, REVIEWS, LANGUAGES } from '../data/site.js'
 import { waLink, telLink } from '../lib/wa.js'
 import { usePageMotion } from '../lib/usePageMotion.js'
@@ -22,9 +22,9 @@ const primaryPhone = CONTACT.phones[0]
 
 // Photo for each of the three "How it works" steps (placeholders — see content.js).
 const STEP_IMAGES = [
-  { src: PLACEHOLDER_IMAGES.stepChat, alt: 'Telling us what you need by phone or WhatsApp' },
-  { src: PLACEHOLDER_IMAGES.stepShare, alt: 'Sharing your documents at the counter' },
-  { src: PLACEHOLDER_IMAGES.stepCollect, alt: 'Collecting your completed paperwork' },
+  { src: PHOTOS.step1, alt: 'Telling us what you need by phone or WhatsApp' },
+  { src: PHOTOS.step2, alt: 'Sharing your documents at the counter' },
+  { src: PHOTOS.step3, alt: 'Collecting your completed paperwork' },
 ]
 
 export default function Home() {
@@ -121,11 +121,11 @@ export default function Home() {
             </p>
           </div>
           <div data-reveal>
-            <div className="aspect-[4/3] overflow-hidden rounded-[28px] border border-line sm:rounded-[280px_280px_28px_28px]">
+            <div className="photo-panel aspect-[4/3] overflow-hidden rounded-[28px] border border-line sm:rounded-[280px_280px_28px_28px]">
               <img
-                src={PLACEHOLDER_IMAGES.office}
-                alt="Inside the Safari Typing Services office at Nazir Plaza"
-                className="h-full w-full object-cover"
+                src={PHOTOS.homeBand}
+                alt="Safari Typing Services staff helping a client at the counter"
+                className="h-full w-full object-contain"
                 loading="lazy"
                 decoding="async"
               />
@@ -194,11 +194,11 @@ export default function Home() {
         <div data-reveal-group className="grid gap-8 sm:grid-cols-3">
           {PROCESS.map((step, i) => (
             <div key={step.numeral}>
-              <div className="mb-6 aspect-[16/10] overflow-hidden rounded-[24px] border border-line">
+              <div className="photo-panel mb-6 aspect-[16/10] overflow-hidden rounded-[24px] border border-line">
                 <img
                   src={STEP_IMAGES[i].src}
                   alt={STEP_IMAGES[i].alt}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain"
                   loading="lazy"
                   decoding="async"
                 />
