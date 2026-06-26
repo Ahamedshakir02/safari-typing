@@ -20,7 +20,7 @@ export default function Credentials({ className = '', ...rest }) {
           <img
             src={c.logo}
             alt={c.label}
-            className="max-h-10 max-w-full object-contain mix-blend-multiply"
+            className="max-h-10 max-w-full object-contain"
             loading="lazy"
             decoding="async"
           />

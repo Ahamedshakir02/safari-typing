@@ -808,8 +808,8 @@ export const HOME_STATS = [
 // systems we submit through), not unqualified "government authorised" claims.
 export const CREDENTIALS = [
   { label: 'ICP e-Channel', icon: 'globe', logo: '/logos/icp.png' },
-  { label: 'Tasheel · MOHRE', icon: 'doc', logo: '/logos/tasheel.jpg' },
-  { label: 'Amer Immigration', icon: 'shield', logo: '/logos/amer.jpg' },
+  { label: 'Tasheel · MOHRE', icon: 'doc', logo: '/logos/tasheel.png' },
+  { label: 'Amer Immigration', icon: 'shield', logo: '/logos/amer.png' },
   { label: 'MOFA Attestation', icon: 'check', logo: '/logos/mofa.png' },
 ]
 
