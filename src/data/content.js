@@ -797,19 +797,21 @@ export const SERVICE_GROUPS = [
 ]
 
 // ---------------------------------------------------------------------------
-// TEMPORARY placeholder photos. These are free Unsplash stock images standing
-// in for the client's own photography — REPLACE each URL with a real photo
-// (ideally a local file dropped in /public, e.g. '/photos/counter.jpg') once
-// available. They fill the home / about / services image bands and the three
-// "how it works" step cards.
+// Brand photos (client-supplied, in /public/photos). To update the imagery,
+// just drop a replacement file at the same path. Two kinds:
+//   • "*-dark" scenes have their own background  → rendered object-cover (full bleed)
+//   • cut-out figures on transparent backgrounds → rendered object-contain on a
+//     soft blue `.photo-panel` (defined in index.css) so they read as intentional
 // ---------------------------------------------------------------------------
-export const PLACEHOLDER_IMAGES = {
-  office: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1280&q=80',
-  team: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1280&q=80',
-  documents: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1280&q=80',
-  stepChat: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80',
-  stepShare: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80',
-  stepCollect: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80',
+export const PHOTOS = {
+  // Full-bleed scenes (own background)
+  aboutBand: '/photos/team-three-dark.png',
+  servicesBand: '/photos/visa-services-dark.png',
+  // Cut-out figures (transparent) shown on the soft blue panel
+  homeBand: '/photos/consultation-desk.png',
+  step1: '/photos/staff-documents.png',
+  step2: '/photos/team-duo.png',
+  step3: '/photos/team-three.png',
 }
 
 // Home — trust strip. [CONFIRM] every figure before launch — no invented numbers.
