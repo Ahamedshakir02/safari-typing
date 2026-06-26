@@ -796,10 +796,26 @@ export const SERVICE_GROUPS = [
   },
 ]
 
+// ---------------------------------------------------------------------------
+// TEMPORARY placeholder photos. These are free Unsplash stock images standing
+// in for the client's own photography — REPLACE each URL with a real photo
+// (ideally a local file dropped in /public, e.g. '/photos/counter.jpg') once
+// available. They fill the home / about / services image bands and the three
+// "how it works" step cards.
+// ---------------------------------------------------------------------------
+export const PLACEHOLDER_IMAGES = {
+  office: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1280&q=80',
+  team: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1280&q=80',
+  documents: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1280&q=80',
+  stepChat: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80',
+  stepShare: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80',
+  stepCollect: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80',
+}
+
 // Home — trust strip. [CONFIRM] every figure before launch — no invented numbers.
 export const HOME_STATS = [
   { value: '18+', label: 'Years of service' },
-  { value: '15,000+', label: 'Applications handled' }, // [CONFIRM]
+  { value: '15,000+', label: 'Applications handled' }, // owner-confirmed 2026-06-27
   { value: '5', label: 'Languages spoken' },
   { value: 'Same day', label: 'On most documents' },
 ]
@@ -816,7 +832,7 @@ export const CREDENTIALS = [
 // Home — section copy. Keep claims accurate; [CONFIRM] anything not yet verified.
 export const HOME = {
   hero: {
-    eyebrow: 'Nazir Plaza · Ajman, United Arab Emirates',
+    eyebrow: 'Nazir Plaza · Ajman',
     subline:
       'Visas, Emirates ID, attestation, business licences and PRO services — typed correctly, submitted through the right channel and followed up until they’re done. So you never have to think about the queue again.',
     trustLine: 'Serving Ajman’s residents & businesses in five languages', // [CONFIRM] scale wording
@@ -877,7 +893,7 @@ export const PROCESS = [
 // About — stats band + values.
 export const ABOUT_STATS = [
   { value: '18+', label: 'Years in service' },
-  { value: '15k+', label: 'Applications' }, // [CONFIRM]
+  { value: '15k+', label: 'Applications' }, // owner-confirmed 2026-06-27
   { value: '13', label: 'Service areas' },
   { value: '100%', label: 'Confidential', accent: true },
 ]

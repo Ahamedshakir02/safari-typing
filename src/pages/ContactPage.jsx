@@ -12,8 +12,8 @@ import { usePageMotion } from '../lib/usePageMotion.js'
 
 const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(CONTACT.mapsQuery)}&output=embed`
 const inputClass =
-  'w-full rounded-xl border border-[#ddd2bd] bg-[#fffdf8] px-[15px] py-[13px] font-body text-[15px] text-ink'
-const labelClass = 'mb-2 block font-body text-[13px] font-semibold text-[#5a5446]'
+  'w-full rounded-xl border border-line bg-cream-50 px-[15px] py-[13px] font-body text-[15px] text-ink'
+const labelClass = 'mb-2 block font-body text-[13px] font-semibold text-soft'
 
 export default function ContactPage() {
   const root = usePageMotion()
@@ -145,7 +145,7 @@ export default function ContactPage() {
           {sent ? (
             <div className="rounded-[18px] border border-tag-line bg-tag-bg p-9 text-center">
               <div className="mb-2 font-display text-[40px] italic text-sage">Thank you</div>
-              <p className="font-body text-[15px] text-[#5a5446]">
+              <p className="font-body text-[15px] text-soft">
                 Your enquiry is ready in WhatsApp — just press send. Or message us directly any time for
                 an instant reply.
               </p>

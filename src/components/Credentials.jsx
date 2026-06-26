@@ -15,12 +15,12 @@ export default function Credentials({ className = '', ...rest }) {
       {CREDENTIALS.map((c) => (
         <div
           key={c.label}
-          className="flex h-[64px] w-[172px] items-center justify-center rounded-2xl border border-line bg-white px-4 transition-shadow duration-300 ease-out hover:shadow-lift"
+          className="flex h-[77px] w-[206px] items-center justify-center rounded-2xl border border-line bg-white px-5 transition-shadow duration-300 ease-out hover:shadow-lift"
         >
           <img
             src={c.logo}
             alt={c.label}
-            className="max-h-10 max-w-full object-contain"
+            className="max-h-12 max-w-full object-contain"
             loading="lazy"
             decoding="async"
           />

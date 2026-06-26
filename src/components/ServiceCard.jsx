@@ -13,7 +13,7 @@ export default function ServiceCard({ service, cta = 'Learn more' }) {
     <Link
       to={`/services/${s.slug}`}
       data-service-row
-      className="group flex flex-col overflow-hidden rounded-[20px] border border-line bg-cream-50 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift"
+      className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-line bg-cream-50 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift"
     >
       <div className="relative aspect-[16/10] overflow-hidden border-b border-line">
         <ServiceArt
