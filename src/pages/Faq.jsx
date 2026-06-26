@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
+import UaeRibbon from '../components/UaeRibbon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import LinkButton from '../components/LinkButton.jsx'
 import { FAQS } from '../data/content.js'
@@ -35,7 +36,8 @@ export default function Faq() {
       {/* Header */}
       <section className="mx-auto max-w-[820px] px-5 pb-11 pt-20 text-center sm:px-7">
         <div data-hero>
-          <Eyebrow className="mb-5">FREQUENTLY ASKED</Eyebrow>
+          <UaeRibbon className="mb-6" />
+          <Eyebrow className="mb-5">Frequently Asked</Eyebrow>
           <h1 className="mb-5 text-[40px] font-medium sm:text-[52px] md:text-[62px]">Questions, answered.</h1>
           <AccentLine className="mx-auto mb-6" />
           <p className="mx-auto max-w-[540px] font-body text-[19px] text-soft">
@@ -46,7 +48,7 @@ export default function Faq() {
 
       {/* Accordion */}
       <section data-reveal className="mx-auto max-w-[820px] px-5 pb-6 sm:px-7">
-        <div className="rounded-[24px] border border-line bg-cream-50 px-6 shadow-soft sm:px-8">
+        <div className="rounded-[24px] border border-line bg-cream-50 px-6 sm:px-8">
           {FAQS.map((item, i) => {
             const isOpen = i === open
             return (
@@ -83,7 +85,7 @@ export default function Faq() {
 
       {/* CTA */}
       <section data-reveal className="mx-auto mb-[88px] mt-[50px] max-w-[820px] px-5 sm:px-7">
-        <div className="rounded-[28px] border border-line bg-cream-100 px-6 py-12 text-center shadow-soft sm:p-[52px]">
+        <div className="rounded-[28px] border border-line bg-cream-100 px-6 py-12 text-center sm:p-[52px]">
           <h2 className="mb-3 text-[30px] font-medium sm:text-[36px]">Still have a question?</h2>
           <p className="mb-7 font-body text-[16.5px] text-soft">
             Reach us any day of the week — we usually reply within minutes.

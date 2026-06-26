@@ -1,5 +1,6 @@
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
+import UaeRibbon from '../components/UaeRibbon.jsx'
 import Icon from '../components/Icon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import Stat from '../components/Stat.jsx'
@@ -31,9 +32,10 @@ export default function About() {
       {/* Intro */}
       <section className="mx-auto max-w-[880px] px-5 pb-6 pt-[84px] text-center sm:px-7">
         <div data-hero>
-          <Eyebrow className="mb-5">ABOUT US</Eyebrow>
+          <UaeRibbon className="mb-6" />
+          <Eyebrow className="mb-5">About Us</Eyebrow>
           <h1 className="mb-6 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
-            Paperwork is our <em className="italic text-sage">profession.</em>
+            Paperwork is our <em className="italic text-sage">Profession.</em>
           </h1>
           <AccentLine className="mx-auto mb-6" />
           <p className="mx-auto max-w-[640px] font-body text-[19px] text-soft">
@@ -81,7 +83,7 @@ export default function About() {
           data-reveal
           align="center"
           accent
-          eyebrow="HOW WE WORK"
+          eyebrow="How We Work"
           title="The values behind every file."
           className="mb-14"
         />
@@ -96,7 +98,7 @@ export default function About() {
       <Section tone="sunken" containerClassName="py-20">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div data-reveal>
-            <Eyebrow className="mb-4">FIND US</Eyebrow>
+            <Eyebrow className="mb-4">Find Us</Eyebrow>
             <AccentLine className="mb-6" />
             <h2 className="mb-5 text-[34px] font-medium sm:text-[42px]">Right at Nazir Plaza, Shop 4.</h2>
             <p className="mb-[26px] font-body text-[16.5px] text-soft">

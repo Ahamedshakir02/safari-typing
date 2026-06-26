@@ -1,6 +1,7 @@
 import { useParams, Navigate, Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
+import UaeRibbon from '../components/UaeRibbon.jsx'
 import Icon from '../components/Icon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import Badge from '../components/Badge.jsx'
@@ -52,6 +53,7 @@ export default function CategoryPage() {
       {/* Hero */}
       <section className="mx-auto max-w-[860px] px-5 pb-10 pt-16 text-center sm:px-7 sm:pt-20">
         <div data-hero>
+          <UaeRibbon className="mb-6" />
           <nav className="mb-6 font-body text-[13px] font-semibold text-sand" aria-label="Breadcrumb">
             <Link to="/services" className="transition-colors hover:text-sage">
               Services
@@ -121,7 +123,7 @@ export default function CategoryPage() {
               key={sub.id}
               id={sub.id}
               data-service-row
-              className="group flex scroll-mt-28 flex-col rounded-[22px] border border-line bg-cream-50 p-7 shadow-soft transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift sm:p-8"
+              className="group flex scroll-mt-28 flex-col rounded-[22px] border border-line bg-cream-50 p-7 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift sm:p-8"
             >
               <h2 className="mb-1.5 text-[22px] font-medium sm:text-[24px]">{sub.title}</h2>
               <p dir="rtl" lang="ar" className="mb-3 font-body text-[15px] text-sand">
@@ -184,7 +186,7 @@ export default function CategoryPage() {
 
       {/* CTA */}
       <CtaBlock
-        heading={`Need help with ${service.title.toLowerCase()}?`}
+        heading={`Need help with ${service.title}?`}
         body="Tell us your situation on WhatsApp and we'll confirm the documents and exact fees before we start."
         primaryLabel="WhatsApp us"
         secondary={

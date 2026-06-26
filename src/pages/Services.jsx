@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
+import UaeRibbon from '../components/UaeRibbon.jsx'
 import Icon from '../components/Icon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import Badge from '../components/Badge.jsx'
@@ -25,7 +26,8 @@ export default function Services() {
       {/* Header */}
       <section className="mx-auto max-w-[860px] px-5 pb-12 pt-20 text-center sm:px-7">
         <div data-hero>
-          <Eyebrow className="mb-5">OUR SERVICES</Eyebrow>
+          <UaeRibbon className="mb-6" />
+          <Eyebrow className="mb-5">Our Services</Eyebrow>
           <h1 className="mb-5 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
             Everything your paperwork needs.
           </h1>
@@ -82,7 +84,7 @@ export default function Services() {
                       key={s.slug}
                       to={`/services/${s.slug}`}
                       data-service-row
-                      className="group flex flex-col rounded-[20px] border border-line bg-cream-50 p-7 shadow-soft transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift"
+                      className="group flex flex-col rounded-[20px] border border-line bg-cream-50 p-7 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift"
                     >
                       <div className="mb-5 flex items-center justify-between">
                         <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-tag-bg text-sage transition-colors duration-300 group-hover:bg-sage group-hover:text-paper">

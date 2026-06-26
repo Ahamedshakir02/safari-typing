@@ -23,15 +23,18 @@ export default {
         soft: '#645d4e', // secondary text (deepened for readability on cream)
         gold: '#7c6749', // eyebrow labels / muted brown (deepened for contrast)
         sand: '#b6a888', // serif numerals
+        // NOTE: the `sage` token name is kept (used ~100× site-wide) but now holds
+        // the brand BLUE sampled from the logo mark (rgb(31,84,166)), so the whole
+        // site flips from green to the logo's blue from this one definition.
         sage: {
-          DEFAULT: '#5e7257', // primary action
-          dark: '#4d6047', // hover on light
-          light: '#6f8568', // hover on dark
+          DEFAULT: '#1f54a6', // brand blue (logo) — primary action
+          dark: '#18437f', // hover on light
+          light: '#3a6cbf', // hover on dark
         },
         tag: {
-          bg: '#e6ecdd',
-          ink: '#46583f', // deepened for contrast on tag bg
-          line: '#d3ddc4',
+          bg: '#e3eaf6', // blue-tinted chip background
+          ink: '#2c4a7a', // text/icon on tag bg
+          line: '#cfdcef',
         },
         // UAE national accents — woven in sparingly (flag, dividers, select
         // highlights). Sage stays the primary action colour; red is used mainly

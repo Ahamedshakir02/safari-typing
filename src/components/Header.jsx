@@ -86,7 +86,7 @@ export default function Header() {
         <a
           href={telLink(primaryPhone.e164)}
           aria-label={`Call ${primaryPhone.display}`}
-          className="ml-auto hidden items-center gap-2 rounded-full bg-sage px-[22px] py-[11px] font-body text-sm font-semibold text-paper shadow-soft transition-[transform,background-color,box-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:bg-sage-dark hover:shadow-lift sm:flex lg:ml-0"
+          className="ml-auto hidden items-center gap-2 rounded-full bg-sage px-[22px] py-[11px] font-body text-sm font-semibold text-paper transition-[transform,background-color,box-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:bg-sage-dark hover:shadow-lift sm:flex lg:ml-0"
         >
           <Icon name="phone" size={15} strokeWidth={1.9} />
           Call now
@@ -229,7 +229,7 @@ export default function Header() {
             <div className="mt-2 flex gap-3">
               <a
                 href={telLink(primaryPhone.e164)}
-                className="flex flex-1 items-center justify-center gap-2 rounded-full bg-sage px-5 py-3 font-body text-sm font-semibold text-paper shadow-soft"
+                className="flex flex-1 items-center justify-center gap-2 rounded-full bg-sage px-5 py-3 font-body text-sm font-semibold text-paper transition-shadow duration-300 ease-out hover:shadow-lift"
               >
                 <Icon name="phone" size={16} /> Call now
               </a>
@@ -237,7 +237,7 @@ export default function Header() {
                 href={waLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-1 items-center justify-center gap-2 rounded-full border border-line bg-cream-50 px-5 py-3 font-body text-sm font-semibold text-ink shadow-soft"
+                className="flex flex-1 items-center justify-center gap-2 rounded-full border border-line bg-cream-50 px-5 py-3 font-body text-sm font-semibold text-ink transition-shadow duration-300 ease-out hover:shadow-lift"
               >
                 <Icon name="whatsapp" size={16} /> WhatsApp
               </a>

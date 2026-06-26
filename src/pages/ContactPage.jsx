@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
+import UaeRibbon from '../components/UaeRibbon.jsx'
 import Icon from '../components/Icon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import { ENQUIRY_SERVICES } from '../data/content.js'
@@ -56,7 +57,8 @@ export default function ContactPage() {
       {/* Header */}
       <section className="mx-auto max-w-[820px] px-5 pb-11 pt-20 text-center sm:px-7">
         <div data-hero>
-          <Eyebrow className="mb-5">CONTACT</Eyebrow>
+          <UaeRibbon className="mb-6" />
+          <Eyebrow className="mb-5">Contact</Eyebrow>
           <h1 className="mb-5 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
             Let's get your paperwork moving.
           </h1>
@@ -78,7 +80,7 @@ export default function ContactPage() {
             href={waLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 rounded-[20px] border border-tag-line bg-tag-bg p-6 shadow-soft transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:border-sage hover:shadow-lift"
+            className="flex items-center gap-4 rounded-[20px] border border-tag-line bg-tag-bg p-6 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:border-sage hover:shadow-lift"
           >
             <div className="flex h-[46px] w-[46px] flex-none items-center justify-center rounded-full bg-sage text-paper">
               <Icon name="whatsapp" size={24} />
@@ -91,7 +93,7 @@ export default function ContactPage() {
             </div>
           </a>
 
-          <div className="flex flex-col gap-[18px] rounded-[20px] border border-line bg-cream-50 p-7 shadow-soft">
+          <div className="flex flex-col gap-[18px] rounded-[20px] border border-line bg-cream-50 p-7">
             <ContactRow icon="phone" label="CALL US">
               {[CONTACT.phones[0], CONTACT.phones[2]].map((p) => (
                 <a
@@ -122,7 +124,7 @@ export default function ContactPage() {
             </ContactRow>
           </div>
 
-          <div className="overflow-hidden rounded-[20px] border border-line shadow-soft">
+          <div className="overflow-hidden rounded-[20px] border border-line">
             <iframe
               title="Map to Safari Typing Services, Nazir Plaza"
               src={mapSrc}
@@ -134,7 +136,7 @@ export default function ContactPage() {
         </div>
 
         {/* Form */}
-        <div className="rounded-[24px] border border-line bg-cream-50 p-7 shadow-soft sm:p-[38px]">
+        <div className="rounded-[24px] border border-line bg-cream-50 p-7 sm:p-[38px]">
           <h2 className="mb-1.5 text-[32px] font-medium">Send an enquiry</h2>
           <p className="mb-7 font-body text-[15px] text-soft">
             Fill this in and we'll reply by WhatsApp or email, usually within the hour.
@@ -209,7 +211,7 @@ export default function ContactPage() {
               </div>
               <button
                 type="submit"
-                className="rounded-full bg-sage py-4 font-body text-base font-semibold text-paper shadow-soft transition-[transform,background-color,box-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:bg-sage-dark hover:shadow-lift"
+                className="rounded-full bg-sage py-4 font-body text-base font-semibold text-paper transition-[transform,background-color,box-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:bg-sage-dark hover:shadow-lift"
               >
                 Send enquiry
               </button>
