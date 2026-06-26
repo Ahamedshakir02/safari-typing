@@ -150,7 +150,7 @@ html.lenis body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 22px;
   opacity: 1;
   transition: opacity 0.7s ease;
 }
@@ -158,23 +158,56 @@ html.lenis body {
   opacity: 0;
   pointer-events: none;
 }
+.site-loader .loader-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  animation: rise 0.8s cubic-bezier(.16, .84, .44, 1) both;
+}
 .site-loader .loader-logo {
-  height: clamp(120px, 30vw, 158px);
+  height: clamp(64px, 16vw, 84px);
   width: auto;
-  animation: float 2.6s ease-in-out infinite, rise 0.8s cubic-bezier(.16, .84, .44, 1) both;
+  animation: float 2.6s ease-in-out infinite;
+}
+.site-loader .loader-wordmark {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  text-align: left;
+}
+.site-loader .loader-name {
+  font-family: theme('fontFamily.display');
+  font-size: 30px;
+  font-weight: 600;
+  color: theme('colors.ink.DEFAULT');
+}
+.site-loader .loader-sub {
+  font-family: theme('fontFamily.body');
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  color: theme('colors.sage.DEFAULT');
 }
 .site-loader .loader-track {
-  width: 118px;
-  height: 2px;
+  width: clamp(180px, 52vw, 220px);
+  height: 3px;
   background: theme('colors.line');
-  border-radius: 2px;
+  border-radius: 3px;
   overflow: hidden;
 }
 .site-loader .loader-bar {
-  width: 38%;
+  width: 0;
   height: 100%;
   background: theme('colors.sage.DEFAULT');
-  animation: bar 1.2s ease-in-out infinite;
+  border-radius: 3px;
+  transition: width 0.35s cubic-bezier(.16, .84, .44, 1);
+}
+.site-loader .loader-pct {
+  font-family: theme('fontFamily.body');
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: theme('colors.gold');
 }
 
 @media (prefers-reduced-motion: reduce) {
