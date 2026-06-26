@@ -16,7 +16,7 @@ export default function Privacy() {
       <Seo
         title="Privacy Policy"
         description="How Safari Typing Services in Ajman collects, uses and protects the personal information you share with us."
-        path="/privacy"
+        path="/privacy-policy"
       />
 
       <section className="mx-auto max-w-[760px] px-5 pb-6 pt-20 text-center sm:px-7">
