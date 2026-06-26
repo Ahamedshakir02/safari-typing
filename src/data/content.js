@@ -816,40 +816,40 @@ export const CREDENTIALS = [
 // Home — section copy. Keep claims accurate; [CONFIRM] anything not yet verified.
 export const HOME = {
   hero: {
-    eyebrow: 'NAZIR PLAZA · AJMAN, UNITED ARAB EMIRATES',
+    eyebrow: 'Nazir Plaza · Ajman, United Arab Emirates',
     subline:
       'Visas, Emirates ID, attestation, business licences and PRO services — typed correctly, submitted through the right channel and followed up until they’re done. So you never have to think about the queue again.',
     trustLine: 'Serving Ajman’s residents & businesses in five languages', // [CONFIRM] scale wording
   },
   credentialsLabel: 'We work through the official government channels',
   services: {
-    eyebrow: 'WHAT WE DO',
+    eyebrow: 'What We Do',
     title: 'Every formality, under one calm roof.',
     intro:
       'Thirteen service areas — from a first residence visa to a full trade licence. We manage the forms, the fees and the follow-ups on your behalf.',
     allLabel: 'View all services',
   },
   why: {
-    eyebrow: 'WHY SAFARI',
+    eyebrow: 'Why Safari',
     title: 'Quiet competence, every single time.',
     intro: 'The reasons residents and businesses keep coming back to Shop 4.',
   },
   process: {
-    eyebrow: 'THE PROCESS',
+    eyebrow: 'The Process',
     title: 'Three unhurried steps.',
     intro: 'No appointment, no jargon. Tell us what you need and we take it from there.',
   },
   languages: {
-    eyebrow: 'SPOKEN HERE',
+    eyebrow: 'Spoken Here',
     title: 'We’ll explain it in your language.',
     intro: 'Deal with the same friendly team in whichever of these you’re most comfortable speaking.',
   },
   testimonials: {
-    eyebrow: 'IN THEIR WORDS',
+    eyebrow: 'In Their Words',
     title: 'Trusted across the community.',
   },
   faq: {
-    eyebrow: 'GOOD TO KNOW',
+    eyebrow: 'Good to Know',
     title: 'A few things people ask.',
     allLabel: 'See all FAQs',
   },
