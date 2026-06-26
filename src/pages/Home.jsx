@@ -10,8 +10,8 @@ import FeatureCard from '../components/FeatureCard.jsx'
 import Stat from '../components/Stat.jsx'
 import Badge from '../components/Badge.jsx'
 import TestimonialCard from '../components/TestimonialCard.jsx'
-import ImagePlaceholder from '../components/ImagePlaceholder.jsx'
 import UaeFlag from '../components/UaeFlag.jsx'
+import UaeRibbon from '../components/UaeRibbon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import { SERVICES, HOME_STATS, PROCESS, CREDENTIALS, HOME, FAQS } from '../data/content.js'
 import { CONTACT, LOCAL_BUSINESS_JSONLD, WHY_US, REVIEWS, LANGUAGES } from '../data/site.js'
@@ -42,9 +42,10 @@ export default function Home() {
       <section className="relative mx-auto max-w-[1040px] px-5 pb-14 pt-[84px] text-center sm:px-7">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[460px] bg-[radial-gradient(60%_60%_at_50%_-5%,rgba(94,114,87,0.12),transparent_70%)]"
+          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[460px] bg-[radial-gradient(60%_60%_at_50%_-5%,rgba(31,84,166,0.12),transparent_70%)]"
         />
         <div data-hero>
+          <UaeRibbon className="mb-7" />
           <Eyebrow className="mb-[26px] inline-flex items-center gap-2.5">
             <span className="h-1.5 w-1.5 rounded-full bg-sage" />
             {HOME.hero.eyebrow}
@@ -52,7 +53,7 @@ export default function Home() {
           <h1 className="mb-[24px] text-[44px] font-medium leading-[1.05] sm:text-[60px] md:text-[78px]">
             Government paperwork,
             <br />
-            handled with <em className="italic text-sage">quiet care.</em>
+            Handled with <em className="italic text-sage">quiet care.</em>
           </h1>
           <p className="mx-auto mb-9 max-w-[620px] font-body text-lg leading-[1.55] text-soft sm:text-[21px]">
             {HOME.hero.subline}
