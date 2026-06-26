@@ -4,11 +4,11 @@ import Eyebrow from '../components/Eyebrow.jsx'
 import UaeRibbon from '../components/UaeRibbon.jsx'
 import Icon from '../components/Icon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
-import Badge from '../components/Badge.jsx'
+import Credentials from '../components/Credentials.jsx'
 import Section from '../components/Section.jsx'
 import LinkButton from '../components/LinkButton.jsx'
 import CtaBlock from '../components/CtaBlock.jsx'
-import { getServiceBySlug, SERVICES, CREDENTIALS } from '../data/content.js'
+import { getServiceBySlug, SERVICES } from '../data/content.js'
 import { SITE_URL, CONTACT } from '../data/site.js'
 import { waLink, telLink } from '../lib/wa.js'
 import { usePageMotion } from '../lib/usePageMotion.js'
@@ -91,13 +91,7 @@ export default function CategoryPage() {
 
       {/* Credentials */}
       <section className="mx-auto max-w-content px-5 py-6 sm:px-7">
-        <div data-reveal className="flex flex-wrap items-center justify-center gap-2.5 text-center">
-          {CREDENTIALS.map((c) => (
-            <Badge key={c.label} icon={c.icon}>
-              {c.label}
-            </Badge>
-          ))}
-        </div>
+        <Credentials data-reveal />
       </section>
 
       {/* In-page anchor nav */}

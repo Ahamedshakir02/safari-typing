@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 44" role="img" aria-label="Amer (GDRFA)">
+  <path d="M18 3l15 6v10c0 9-6 15-15 19C9 34 3 28 3 19V9z" fill="#1b3a6b"/>
+  <path d="M18 11c3 4 3 10 0 16-3-6-3-12 0-16z" fill="#c79a3a"/>
+  <path d="M18 13l8 4-8 3-8-3z" fill="#c79a3a" opacity=".9"/>
+  <text x="42" y="27" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" fill="#1b3a6b">Amer</text>
+  <text x="43" y="39" font-family="Verdana, Geneva, sans-serif" font-size="9" font-weight="600" fill="#c79a3a" letter-spacing="2.5">GDRFA</text>
+</svg>

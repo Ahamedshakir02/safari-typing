@@ -47,11 +47,10 @@ export const CONTACT = {
   mapsQuery: 'Safari Typing Services, Nazir Plaza, Ajman, UAE',
   mapsLink: 'https://www.google.com/maps/search/?api=1&query=Safari+Typing+Services+Nazir+Plaza+Ajman+UAE',
 
-  // Social placeholders — drop in real handles or remove.
+  // Real social profiles.
   socials: [
-    { label: 'Instagram', href: '#', icon: 'instagram' },
-    { label: 'Facebook', href: '#', icon: 'facebook' },
-    { label: 'TikTok', href: '#', icon: 'tiktok' },
+    { label: 'Instagram', href: 'https://www.instagram.com/safariajman/', icon: 'instagram' },
+    { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61586441787823', icon: 'facebook' },
   ],
 }
 
@@ -193,5 +192,8 @@ export const LOCAL_BUSINESS_JSONLD = {
     },
   ],
   areaServed: { '@type': 'City', name: 'Ajman' },
-  sameAs: [], // [CONFIRM] real Instagram / Facebook / TikTok profile URLs
+  sameAs: [
+    'https://www.instagram.com/safariajman/',
+    'https://www.facebook.com/profile.php?id=61586441787823',
+  ],
 }
