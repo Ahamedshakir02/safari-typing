@@ -8,14 +8,14 @@ import Section from '../components/Section.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import FeatureCard from '../components/FeatureCard.jsx'
 import Stat from '../components/Stat.jsx'
-import Badge from '../components/Badge.jsx'
+import Credentials from '../components/Credentials.jsx'
 import TestimonialCard from '../components/TestimonialCard.jsx'
 import UaeFlag from '../components/UaeFlag.jsx'
 import UaeRibbon from '../components/UaeRibbon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import CounterScene from '../components/illustrations/CounterScene.jsx'
 import ProcessSpot from '../components/illustrations/ProcessSpot.jsx'
-import { SERVICES, HOME_STATS, PROCESS, CREDENTIALS, HOME, FAQS } from '../data/content.js'
+import { SERVICES, HOME_STATS, PROCESS, HOME, FAQS } from '../data/content.js'
 import { CONTACT, LOCAL_BUSINESS_JSONLD, WHY_US, REVIEWS, LANGUAGES } from '../data/site.js'
 import { waLink, telLink } from '../lib/wa.js'
 import { usePageMotion } from '../lib/usePageMotion.js'
@@ -77,17 +77,11 @@ export default function Home() {
 
       {/* 2 — Credentials strip */}
       <section className="mx-auto max-w-content px-5 sm:px-7">
-        <div data-reveal className="flex flex-col items-center gap-4 border-y border-line py-7 text-center">
-          <span className="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-gold">
+        <div data-reveal className="flex flex-col items-center gap-5 border-y border-line py-7 text-center">
+          <span className="font-body text-[13px] font-semibold tracking-[0.04em] text-gold">
             {HOME.credentialsLabel}
           </span>
-          <div className="flex flex-wrap items-center justify-center gap-2.5">
-            {CREDENTIALS.map((c) => (
-              <Badge key={c.label} icon={c.icon}>
-                {c.label}
-              </Badge>
-            ))}
-          </div>
+          <Credentials />
         </div>
       </section>
 
