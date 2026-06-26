@@ -8,6 +8,7 @@ import Section from '../components/Section.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import FeatureCard from '../components/FeatureCard.jsx'
 import Stat from '../components/Stat.jsx'
+import ServiceCard from '../components/ServiceCard.jsx'
 import Credentials from '../components/Credentials.jsx'
 import TestimonialCard from '../components/TestimonialCard.jsx'
 import UaeFlag from '../components/UaeFlag.jsx'
@@ -148,25 +149,7 @@ export default function Home() {
 
         <div data-services className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s) => (
-            <Link
-              key={s.n}
-              to={`/services/${s.slug}`}
-              data-service-row
-              className="group relative flex flex-col rounded-[20px] border border-line bg-cream-50 p-7 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift"
-            >
-              <div className="mb-5 flex items-center justify-between">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-tag-bg text-sage transition-colors duration-300 group-hover:bg-sage group-hover:text-paper">
-                  <Icon name={s.icon} size={22} strokeWidth={1.7} />
-                </span>
-                <span className="font-display text-[26px] italic text-sand">{s.n}</span>
-              </div>
-              <h3 className="mb-2 text-[21px] font-medium">{s.title}</h3>
-              <p className="font-body text-[15px] leading-[1.6] text-soft">{s.blurb}</p>
-              <span className="mt-5 inline-flex items-center gap-1.5 font-body text-[14px] font-semibold text-sage">
-                Learn more
-                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-              </span>
-            </Link>
+            <ServiceCard key={s.n} service={s} />
           ))}
         </div>
       </Section>

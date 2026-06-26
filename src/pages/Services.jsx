@@ -1,10 +1,9 @@
-import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
 import UaeRibbon from '../components/UaeRibbon.jsx'
-import Icon from '../components/Icon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import Credentials from '../components/Credentials.jsx'
+import ServiceCard from '../components/ServiceCard.jsx'
 import DocumentsScene from '../components/illustrations/DocumentsScene.jsx'
 import Section from '../components/Section.jsx'
 import CtaBlock from '../components/CtaBlock.jsx'
@@ -68,25 +67,7 @@ export default function Services() {
 
                 <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                   {services.map((s) => (
-                    <Link
-                      key={s.slug}
-                      to={`/services/${s.slug}`}
-                      data-service-row
-                      className="group flex flex-col rounded-[20px] border border-line bg-cream-50 p-7 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift"
-                    >
-                      <div className="mb-5 flex items-center justify-between">
-                        <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-tag-bg text-sage transition-colors duration-300 group-hover:bg-sage group-hover:text-paper">
-                          <Icon name={s.icon} size={22} strokeWidth={1.7} />
-                        </span>
-                        <span className="font-display text-[26px] italic text-sand">{s.n}</span>
-                      </div>
-                      <h3 className="mb-2 text-[21px] font-medium">{s.title}</h3>
-                      <p className="font-body text-[15px] leading-[1.6] text-soft">{s.blurb}</p>
-                      <span className="mt-5 inline-flex items-center gap-1.5 font-body text-[14px] font-semibold text-sage">
-                        Explore
-                        <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                      </span>
-                    </Link>
+                    <ServiceCard key={s.slug} service={s} cta="Explore" />
                   ))}
                 </div>
               </div>
