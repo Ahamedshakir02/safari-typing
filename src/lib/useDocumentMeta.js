@@ -22,7 +22,9 @@ const upsertMeta = (selector, attrs) => {
  */
 export function useDocumentMeta({ title, description = '', path = '', image, jsonLd, noindex = false } = {}) {
   useEffect(() => {
-    const full = title ? `${title} | Safari Typing Services` : 'Safari Typing Services — Sharjah'
+    const full = title
+      ? `${title} | Safari Typing Services`
+      : 'Safari Typing Services — Typing Centre in Ajman'
     const url = SITE_URL + path
     const ogImage = image ? (/^https?:\/\//.test(image) ? image : SITE_URL + image) : DEFAULT_OG_IMAGE
 

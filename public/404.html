@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Safari Typing Services</title>
+    <!--
+      GitHub Pages SPA fallback. GitHub serves this file for unknown paths; it
+      rewrites /some/route into /?/some/route and bounces to the app, which the
+      restore snippet in index.html turns back into the real path. Harmless on
+      hosts that already rewrite to index.html (Netlify/Vercel).
+      pathSegmentsToKeep = 0 for a custom domain or user/org site at the root.
+      Set it to 1 if deployed under a project sub-path (username.github.io/repo/).
+    -->
+    <script>
+      var pathSegmentsToKeep = 0
+      var l = window.location
+      l.replace(
+        l.protocol +
+          '//' +
+          l.hostname +
+          (l.port ? ':' + l.port : '') +
+          l.pathname
+            .split('/')
+            .slice(0, 1 + pathSegmentsToKeep)
+            .join('/') +
+          '/?/' +
+          l.pathname
+            .slice(1)
+            .split('/')
+            .slice(pathSegmentsToKeep)
+            .join('/')
+            .replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash,
+      )
+    </script>
+  </head>
+  <body></body>
+</html>

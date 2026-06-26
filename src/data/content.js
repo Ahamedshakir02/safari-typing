@@ -93,8 +93,8 @@ export const SERVICES = [
     tags: [
       'Ejari registration',
       'Tenancy contracts',
-      'DEWA / FEWA connection',
-      'Sewerage registration',
+      'FEWA connection',
+      'Ajman Sewerage registration',
       'Civil Defence',
       'Dedicated PRO support',
     ],
@@ -175,10 +175,10 @@ export const CREDENTIALS = [
 // claims accurate; [CONFIRM] anything not yet verified by the client.
 export const HOME = {
   hero: {
-    eyebrow: 'NAZIR PLAZA · SHARJAH, UNITED ARAB EMIRATES',
+    eyebrow: 'NAZIR PLAZA · AJMAN, UNITED ARAB EMIRATES',
     subline:
       'Visas, Emirates ID, attestation, business licences and PRO services — typed correctly, submitted through the right channel and followed up until they’re done. So you never have to think about the queue again.',
-    trustLine: 'Serving Sharjah’s residents & businesses in five languages', // [CONFIRM] scale wording
+    trustLine: 'Serving Ajman’s residents & businesses in five languages', // [CONFIRM] scale wording
   },
   credentialsLabel: 'We work through the official government channels',
   services: {
@@ -235,9 +235,9 @@ export const PROCESS = [
 
 // About — stats band + values.
 export const ABOUT_STATS = [
-  { value: '12+', label: 'Years in service' },
-  { value: '15k+', label: 'Applications' },
-  { value: '7', label: 'Service areas' },
+  { value: '12+', label: 'Years in service' }, // [CONFIRM]
+  { value: '15k+', label: 'Applications' }, // [CONFIRM]
+  { value: '10', label: 'Service areas' },
   { value: '100%', label: 'Confidential', accent: true },
 ]
 

@@ -15,13 +15,14 @@ export const CONTACT = {
 
   address: {
     line1: 'Nazir Plaza Building, Shop 4',
-    city: 'Sharjah',
+    city: 'Ajman',
+    region: 'Ajman',
     country: 'United Arab Emirates',
-    full: 'Nazir Plaza Building, Shop 4, Sharjah, UAE',
+    full: 'Nazir Plaza Building, Shop 4, Ajman, UAE',
   },
 
-  // [CONFIRM] exact pin — Sharjah city placeholder coordinates.
-  geo: { lat: 25.3463, lng: 55.4209 },
+  // [CONFIRM] exact pin — Ajman placeholder coordinates near Nazir Plaza.
+  geo: { lat: 25.4052, lng: 55.4525 },
 
   // Phones in display + E.164 (tel:) form. First entry = primary "Call".
   phones: [
@@ -43,8 +44,8 @@ export const CONTACT = {
   hoursShort: 'Sat–Thu 8AM–9PM · Fri 2PM–9PM',
 
   // Google Maps embed query (no API key needed via &output=embed).
-  mapsQuery: 'Nazir Plaza Building, Sharjah, UAE',
-  mapsLink: 'https://www.google.com/maps/search/?api=1&query=Nazir+Plaza+Building+Sharjah+UAE',
+  mapsQuery: 'Safari Typing Services, Nazir Plaza, Ajman, UAE',
+  mapsLink: 'https://www.google.com/maps/search/?api=1&query=Safari+Typing+Services+Nazir+Plaza+Ajman+UAE',
 
   // Social placeholders — drop in real handles or remove.
   socials: [
@@ -71,23 +72,6 @@ export const LANGUAGES = [
   { label: 'हिन्दी', dir: 'ltr' },
   { label: 'മലയാളം', dir: 'ltr' },
   { label: 'اردو', dir: 'rtl' },
-]
-
-// Trust strip badges — accurate, defensible claims (no unqualified
-// "Government Authorised").
-export const TRUST_BADGES = [
-  'ICP e-Channel Submissions',
-  'Tasheel (MOHRE) Services',
-  'Attestation & Translation',
-  'Years of Experience',
-]
-
-// Count-up stats. [CONFIRM] all values — no awards invented.
-export const STATS = [
-  { value: 14, suffix: '+', label: 'Government services' },
-  { value: 5, suffix: '', label: 'Languages spoken' },
-  { value: 10, suffix: '+', label: 'Years serving Sharjah' },
-  { value: 5000, suffix: '+', label: 'Happy customers' },
 ]
 
 export const WHY_US = [
@@ -118,26 +102,8 @@ export const WHY_US = [
   },
   {
     icon: 'wallet',
-    title: 'Affordable Sharjah rates',
-    body: 'Clear, honest pricing that suits Sharjah families and businesses.',
-  },
-]
-
-export const HOW_IT_WORKS = [
-  {
-    step: 1,
-    title: 'Send or Visit',
-    body: 'Message your documents on WhatsApp or visit our Sharjah office.',
-  },
-  {
-    step: 2,
-    title: 'We Process',
-    body: 'We type and submit through the right channel — ICP e-Channel or Tasheel (MOHRE) — and follow up.',
-  },
-  {
-    step: 3,
-    title: 'Done',
-    body: 'Collect your completed visa, Emirates ID or attested document — or we send it to you.',
+    title: 'Affordable Ajman rates',
+    body: 'Clear, honest pricing that suits Ajman families and businesses.',
   },
 ]
 
@@ -168,7 +134,7 @@ export const REVIEWS = [
     name: 'Anjali',
     lang: 'en',
     stars: 4,
-    text: 'Helpful team for tenancy attestation and SEWA registration. Friendly and patient with all my questions.',
+    text: 'Helpful team for tenancy attestation and Ajman Sewerage registration. Friendly and patient with all my questions.',
     placeholder: true,
   },
   {
@@ -179,29 +145,6 @@ export const REVIEWS = [
     placeholder: true,
   },
 ]
-
-// Homepage hero + positioning copy.
-export const HERO = {
-  headline: 'All your government paperwork. One trusted centre in Sharjah.',
-  sublineAr: 'كل معاملاتك الحكومية في مكان واحد',
-  sublineEn: 'Visas, Emirates ID, Tasheel, attestation and more — handled for you.',
-}
-
-export const ABOUT = {
-  heading: 'One centre for almost everything.',
-  headingAr: 'مركز واحد لكل خدماتك',
-  lines: [
-    'Safari Typing Services brings nearly every government and document service under one roof in Sharjah — from visas and Emirates ID to attestation, Tasheel and translation.',
-    'Sharjah residents trust us because we know the federal ICP e-Channel and MOHRE processes inside out, type every form correctly the first time, and follow up until the job is done.',
-    'Whether you visit us or message us on WhatsApp, you deal with the same friendly, multilingual team every time.',
-  ],
-}
-
-export const CONTACT_CTA = {
-  heading: 'Get your paperwork done today.',
-  headingAr: 'أنجز معاملاتك اليوم',
-  body: "Message us on WhatsApp and we'll tell you exactly what to bring. No appointment needed.",
-}
 
 // LocalBusiness structured data for local SEO / trust (embedded on Home).
 export const LOCAL_BUSINESS_JSONLD = {
@@ -217,14 +160,30 @@ export const LOCAL_BUSINESS_JSONLD = {
   address: {
     '@type': 'PostalAddress',
     streetAddress: CONTACT.address.line1,
-    addressLocality: 'Sharjah',
+    addressLocality: 'Ajman',
+    addressRegion: 'Ajman',
     addressCountry: 'AE',
+    // postalCode: '', // [CONFIRM] add the shop's P.O. Box / postal code
   },
   geo: {
     '@type': 'GeoCoordinates',
     latitude: CONTACT.geo.lat,
     longitude: CONTACT.geo.lng,
   },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+      opens: '08:00',
+      closes: '21:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Friday',
+      opens: '14:00',
+      closes: '21:00',
+    },
+  ],
   contactPoint: [
     {
       '@type': 'ContactPoint',
@@ -233,6 +192,6 @@ export const LOCAL_BUSINESS_JSONLD = {
       availableLanguage: ['English', 'Arabic', 'Urdu', 'Hindi', 'Malayalam'],
     },
   ],
-  areaServed: { '@type': 'City', name: 'Sharjah' },
-  sameAs: [],
+  areaServed: { '@type': 'City', name: 'Ajman' },
+  sameAs: [], // [CONFIRM] real Instagram / Facebook / TikTok profile URLs
 }

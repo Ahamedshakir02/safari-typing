@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import ScrollToTop from './lib/ScrollToTop.jsx'
 import SmoothScroll from './components/SmoothScroll.jsx'
+import FlowingFlag from './components/FlowingFlag.jsx'
 import SkipLink from './components/SkipLink.jsx'
 import SiteLoader from './components/SiteLoader.jsx'
 import WhatsAppButton from './components/WhatsAppButton.jsx'
@@ -16,6 +17,7 @@ const About = lazy(() => import('./pages/About.jsx'))
 const Pricing = lazy(() => import('./pages/Pricing.jsx'))
 const Faq = lazy(() => import('./pages/Faq.jsx'))
 const ContactPage = lazy(() => import('./pages/ContactPage.jsx'))
+const Privacy = lazy(() => import('./pages/Privacy.jsx'))
 const NotFound = lazy(() => import('./pages/NotFound.jsx'))
 
 // Branded fallback (not a white flash) while a lazy route loads.
@@ -32,6 +34,9 @@ export default function App() {
     <>
       <SiteLoader />
       <SmoothScroll />
+      <FlowingFlag />
+      {/* Soft cream veil over the flag so it reads as a calm, premium backdrop. */}
+      <div className="pointer-events-none fixed inset-0 -z-[5] bg-cream/15" aria-hidden="true" />
       <div className="grain" aria-hidden="true" />
       <SkipLink />
       <ScrollToTop />
@@ -45,6 +50,7 @@ export default function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

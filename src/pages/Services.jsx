@@ -16,8 +16,8 @@ export default function Services() {
   return (
     <div ref={root}>
       <Seo
-        title="Services"
-        description="Ten service areas covering every government, immigration and business formality in the UAE — Tasheel, Amer, Emirates ID, attestation, business setup, PRO, medical, vehicle and passport services."
+        title="Services — Typing Centre in Ajman"
+        description="Ten service areas covering every government, immigration and business formality in Ajman — Tasheel, Amer, Emirates ID, attestation, business setup, PRO, medical, vehicle and passport services."
         path="/services"
       />
 
@@ -30,8 +30,8 @@ export default function Services() {
           </h1>
           <AccentLine className="mx-auto mb-6" />
           <p className="mx-auto max-w-[600px] font-body text-[19px] text-soft">
-            Ten service areas covering every government, immigration and business formality in the
-            UAE — handled accurately, the first time.
+            Ten service areas covering every government, immigration and business formality in
+            Ajman — handled accurately, the first time.
           </p>
         </div>
       </section>
@@ -40,6 +40,8 @@ export default function Services() {
       <section data-reveal className="mx-auto max-w-content px-5 pb-2 sm:px-7">
         <ImagePlaceholder
           arch
+          src="/photos/storefront.jpg"
+          alt="Safari Typing Services storefront at Nazir Plaza, Shop 4, Ajman"
           label="Our service counter at Nazir Plaza"
           aspect="aspect-[16/9] sm:aspect-[16/7]"
           data-hero-img

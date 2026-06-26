@@ -3,19 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- SPA deep-link restore (GitHub Pages 404.html redirect technique). Harmless
+         on hosts that already rewrite to index.html (Netlify/Vercel). -->
+    <script>
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) { return s.replace(/~and~/g, '&') })
+            .join('?')
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash)
+        }
+      })(window.location)
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
     <meta name="theme-color" content="#f1eadd" />
 
-    <title>Safari Typing Services — Government Typing & Documents, UAE</title>
+    <title>Safari Typing Services — Typing Centre in Ajman, UAE</title>
     <meta
       name="description"
-      content="Government paperwork handled with quiet care — visas, Emirates ID, Tasheel, Amer, attestation, business licences and PRO services. Nazir Plaza, Shop 4, United Arab Emirates."
+      content="Government paperwork handled with quiet care in Ajman — visas, Emirates ID, Tasheel, Amer, attestation, business licences and PRO services. Nazir Plaza, Shop 4, Ajman, UAE."
     />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Safari Typing Services" />
-    <meta property="og:title" content="Safari Typing Services — United Arab Emirates" />
+    <meta property="og:title" content="Safari Typing Services — Typing Centre in Ajman" />
     <meta
       property="og:description"
       content="Government paperwork, handled with quiet care. Visas, Emirates ID, attestation, business licences and PRO services."
@@ -31,6 +48,10 @@
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Figtree:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Analytics (privacy-friendly, cookieless). [CONFIRM] create the Plausible
+         site for this domain, then uncomment. Swap in GA4 instead if preferred. -->
+    <!-- <script defer data-domain="safaritypingservices.ae" src="https://plausible.io/js/script.js"></script> -->
   </head>
   <body>
     <div id="root"></div>

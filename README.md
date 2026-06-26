@@ -1,7 +1,7 @@
 # Safari Typing Services — Website
 
 Marketing website for **Safari Typing Services** (سفاري لخدمات الطباعة), a government
-typing & document-services centre in **Sharjah, UAE** (Nazir Plaza Building, Shop 4).
+typing & document-services centre in **Ajman, UAE** (Nazir Plaza Building, Shop 4).
 
 Built with **React + Vite + Tailwind CSS + React Router**. Multi-page, mobile-first,
 English-primary with bilingual (Arabic) brand accents. No backend — the contact form
@@ -66,18 +66,18 @@ The **UAE flag** is shown in the top utility bar and the hero, per the client re
 
 All placeholders live in **`src/data/site.js`** (search for `[CONFIRM]`).
 
-- [ ] **City / address** — assumed **Sharjah** (corroborated by the `+971 6` Sharjah
-      landline). Confirm the full address & emirate.
+- [x] **City / address** — confirmed **Ajman** (Nazir Plaza Building, Shop 4) by the
+      owner and on-site photos; `+971 6` landline is consistent with Ajman.
 - [ ] **Opening hours** — currently a placeholder (Sat–Thu 9:00 AM–9:00 PM, Fri 3:00–9:00 PM).
 - [ ] **WhatsApp number** — set to **+971 56 632 2299**. Confirm which line is WhatsApp.
-- [ ] **Map pin** — uses a name search ("Nazir Plaza Building, Sharjah"). Replace
-      `CONTACT.mapsQuery` / `geo` with the exact location once verified.
+- [ ] **Map pin** — uses a name search ("Safari Typing Services, Nazir Plaza, Ajman").
+      Confirm the exact `CONTACT.geo` lat/lng for the shop.
 - [ ] **Reviews** — `REVIEWS` are placeholders; replace with real Google reviews.
 - [ ] **Stats** — `STATS` (years, customers) are placeholders; set real figures.
 - [ ] **Social links** — `CONTACT.socials` point to `#`; add real handles or remove.
 - [ ] **Domain** — `SITE_URL` (used for canonical/OG/JSON-LD) is a placeholder.
-- [ ] **Services** — the 14 services use Sharjah-accurate terminology; trim/adjust to
-      exactly what the centre offers.
+- [ ] **Services** — the services use Ajman-accurate terminology (FEWA + Ajman Sewerage,
+      not SEWA); trim/adjust to exactly what the centre offers.
 - [ ] **og-image / favicon** — currently the banner JPEG and a generated SVG mark;
       swap for a purpose-made share image / `.ico` if desired.
 

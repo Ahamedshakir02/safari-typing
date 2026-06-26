@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
 import Icon from '../components/Icon.jsx'
@@ -34,15 +35,21 @@ export default function ContactPage() {
       number: form.phone,
       message: form.message,
     })
-    window.open(url, '_blank', 'noopener,noreferrer')
+    const win = window.open(url, '_blank', 'noopener,noreferrer')
+    // If the pop-up was blocked, navigate this tab to WhatsApp instead of showing a
+    // misleading "Thank you" for a message that never opened.
+    if (!win) {
+      window.location.href = url
+      return
+    }
     setSent(true)
   }
 
   return (
     <div ref={root}>
       <Seo
-        title="Contact"
-        description="Call, WhatsApp, email or step into Shop 4 at Nazir Plaza. Send an enquiry and we'll reply by WhatsApp or email, usually within the hour."
+        title="Contact — Typing Centre in Ajman"
+        description="Call, WhatsApp, email or step into Shop 4 at Nazir Plaza, Ajman. Send an enquiry and we'll reply by WhatsApp or email, usually within the hour."
         path="/contact"
       />
 
@@ -155,6 +162,8 @@ export default function ContactPage() {
                     onChange={set('name')}
                     placeholder="Your name"
                     autoComplete="name"
+                    required
+                    minLength={2}
                   />
                 </div>
                 <div>
@@ -169,6 +178,9 @@ export default function ContactPage() {
                     placeholder="+971 5_ ___ ____"
                     inputMode="tel"
                     autoComplete="tel"
+                    required
+                    pattern="[0-9+()\-\s]{7,}"
+                    title="Enter a valid phone number (at least 7 digits)"
                   />
                 </div>
               </div>
@@ -202,7 +214,11 @@ export default function ContactPage() {
                 Send enquiry
               </button>
               <p className="text-center font-body text-[12.5px] text-gold">
-                By sending you agree to be contacted about your request.
+                By sending you agree to be contacted about your request. See our{' '}
+                <Link to="/privacy" className="underline underline-offset-2 transition-colors hover:text-sage">
+                  privacy policy
+                </Link>
+                .
               </p>
             </form>
           )}

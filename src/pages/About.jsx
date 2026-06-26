@@ -23,8 +23,8 @@ export default function About() {
   return (
     <div ref={root}>
       <Seo
-        title="About"
-        description="For over a decade, Safari Typing Services has been the neighbourhood document-services centre at Nazir Plaza — trusted by thousands of residents and businesses across the UAE."
+        title="About — Typing Centre in Ajman"
+        description="For over a decade, Safari Typing Services has been the neighbourhood document-services centre at Nazir Plaza, Ajman — trusted by thousands of residents and businesses."
         path="/about"
       />
 
@@ -48,6 +48,8 @@ export default function About() {
       <section data-reveal className="mx-auto max-w-content px-5 pt-12 sm:px-7">
         <ImagePlaceholder
           arch
+          src="/photos/reception.jpg"
+          alt="Safari Typing Services reception at Nazir Plaza, Shop 4, Ajman"
           label="Our office & team at Nazir Plaza"
           aspect="aspect-[16/9] sm:aspect-[16/7]"
           data-hero-img

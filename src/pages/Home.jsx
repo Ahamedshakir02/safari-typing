@@ -20,14 +20,20 @@ import { usePageMotion } from '../lib/usePageMotion.js'
 
 const primaryPhone = CONTACT.phones[0]
 
+// Real shop photography for the three-step band (Ajman, Shop 4).
+const STEP_PHOTOS = ['/photos/storefront.jpg', '/photos/reception.jpg', '/photos/desk.jpg']
+
 export default function Home() {
   const root = usePageMotion()
+  // Only show the testimonials section once real (non-placeholder) reviews exist,
+  // so we never publish invented reviews. Swap `placeholder: true` off in site.js.
+  const realReviews = REVIEWS.filter((r) => !r.placeholder)
 
   return (
     <div ref={root}>
       <Seo
-        title="Government paperwork, handled with quiet care"
-        description="Visas, Emirates ID, attestation, business licences and PRO services — managed calmly and correctly at Nazir Plaza, Shop 4, United Arab Emirates."
+        title="Typing Centre in Ajman — Visas, Emirates ID, Tasheel & Attestation"
+        description="Government typing services in Ajman (Nazir Plaza, Shop 4): visas, Emirates ID, Tasheel, Amer, attestation, business licences and PRO services — handled calmly and correctly."
         path="/"
         jsonLd={LOCAL_BUSINESS_JSONLD}
       />
@@ -119,6 +125,8 @@ export default function Home() {
           <div data-reveal>
             <ImagePlaceholder
               arch
+              src="/photos/counter.jpg"
+              alt="Inside Safari Typing Services, Shop 4 — the service counter and team in Ajman"
               label="Inside Shop 4 — counter & team"
               aspect="aspect-[4/3]"
               data-hero-img
@@ -202,9 +210,15 @@ export default function Home() {
           className="mb-14"
         />
         <div data-reveal-group className="grid gap-8 sm:grid-cols-3">
-          {PROCESS.map((step) => (
+          {PROCESS.map((step, i) => (
             <div key={step.numeral}>
-              <ImagePlaceholder label="Step photo" aspect="aspect-[16/10]" className="mb-6" />
+              <ImagePlaceholder
+                src={STEP_PHOTOS[i]}
+                alt={`Safari Typing Services, Ajman — ${step.title}`}
+                label="Step photo"
+                aspect="aspect-[16/10]"
+                frameClassName="mb-6"
+              />
               <div className="flex items-baseline gap-3">
                 <span className="font-display text-[34px] italic leading-none text-sage">{step.numeral}</span>
                 <h3 className="text-2xl font-medium">{step.title}</h3>
@@ -239,22 +253,24 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 9 — Testimonials */}
-      <Section tone="sunken" containerClassName="py-20 sm:py-24">
-        <SectionHeading
-          data-reveal
-          align="center"
-          accent
-          eyebrow={HOME.testimonials.eyebrow}
-          title={HOME.testimonials.title}
-          className="mb-12"
-        />
-        <div data-reveal-group className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {REVIEWS.slice(0, 3).map((r) => (
-            <TestimonialCard key={r.name} stars={r.stars} text={r.text} name={r.name} lang={r.lang} />
-          ))}
-        </div>
-      </Section>
+      {/* 9 — Testimonials (only rendered once real reviews exist) */}
+      {realReviews.length > 0 && (
+        <Section tone="sunken" containerClassName="py-20 sm:py-24">
+          <SectionHeading
+            data-reveal
+            align="center"
+            accent
+            eyebrow={HOME.testimonials.eyebrow}
+            title={HOME.testimonials.title}
+            className="mb-12"
+          />
+          <div data-reveal-group className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {realReviews.slice(0, 3).map((r) => (
+              <TestimonialCard key={r.name} stars={r.stars} text={r.text} name={r.name} lang={r.lang} />
+            ))}
+          </div>
+        </Section>
+      )}
 
       {/* 10 — Brand pull quote */}
       <section className="mx-auto max-w-[920px] px-5 py-24 text-center sm:px-7">

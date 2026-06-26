@@ -66,10 +66,15 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto flex max-w-content flex-wrap justify-between gap-2.5 border-t border-line px-5 py-[22px] font-body text-[13px] text-gold sm:px-7">
-        <span>© {year} Safari Typing Services. All rights reserved.</span>
+        <span className="inline-flex items-center gap-3">
+          © {year} Safari Typing Services.
+          <Link to="/privacy" className="underline-offset-2 transition-colors hover:text-sage hover:underline">
+            Privacy
+          </Link>
+        </span>
         <span className="inline-flex items-center gap-2">
           <UaeFlag className="w-4 shrink-0" />
-          Nazir Plaza Building, Shop 4 · United Arab Emirates
+          Nazir Plaza Building, Shop 4 · Ajman, UAE
         </span>
       </div>
     </footer>

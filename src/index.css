@@ -19,7 +19,9 @@
   body {
     margin: 0;
     color: theme('colors.body');
-    background-color: theme('colors.cream.DEFAULT');
+    /* Transparent so the fixed flowing-flag canvas (`-z-10`) shows through; the
+       cream base lives on <html> as the fallback when WebGL is unavailable. */
+    background-color: transparent;
     font-family: theme('fontFamily.body');
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
