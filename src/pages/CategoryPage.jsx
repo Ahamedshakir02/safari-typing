@@ -123,7 +123,7 @@ export default function CategoryPage() {
               key={sub.id}
               id={sub.id}
               data-service-row
-              className="group flex scroll-mt-28 flex-col rounded-[22px] border border-line bg-cream-50 p-7 shadow-soft transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift sm:p-8"
+              className="group flex scroll-mt-28 flex-col rounded-[22px] border border-line bg-cream-50 p-7 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift sm:p-8"
             >
               <h2 className="mb-1.5 text-[22px] font-medium sm:text-[24px]">{sub.title}</h2>
               <p dir="rtl" lang="ar" className="mb-3 font-body text-[15px] text-sand">
