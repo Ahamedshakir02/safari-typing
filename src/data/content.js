@@ -807,10 +807,10 @@ export const HOME_STATS = [
 // Home — "official channels" credentials strip. Defensible (these are the
 // systems we submit through), not unqualified "government authorised" claims.
 export const CREDENTIALS = [
-  { label: 'ICP e-Channel', icon: 'globe', logo: '/logos/icp.svg' },
+  { label: 'ICP e-Channel', icon: 'globe', logo: '/logos/icp.png' },
   { label: 'Tasheel · MOHRE', icon: 'doc', logo: '/logos/tasheel.svg' },
   { label: 'Amer Immigration', icon: 'shield', logo: '/logos/amer.svg' },
-  { label: 'MOFA Attestation', icon: 'check', logo: '/logos/mofa.svg' },
+  { label: 'MOFA Attestation', icon: 'check', logo: '/logos/mofa.png' },
 ]
 
 // Home — section copy. Keep claims accurate; [CONFIRM] anything not yet verified.
