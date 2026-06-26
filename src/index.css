@@ -45,7 +45,7 @@
   input:focus, textarea:focus, select:focus {
     outline: none;
     border-color: theme('colors.sage.DEFAULT');
-    box-shadow: 0 0 0 3px rgba(94, 114, 87, 0.15);
+    box-shadow: 0 0 0 3px rgba(31, 84, 166, 0.15);
   }
 
   :focus-visible {
