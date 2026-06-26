@@ -84,7 +84,7 @@ export default function Services() {
                       key={s.slug}
                       to={`/services/${s.slug}`}
                       data-service-row
-                      className="group flex flex-col rounded-[20px] border border-line bg-cream-50 p-7 shadow-soft transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift"
+                      className="group flex flex-col rounded-[20px] border border-line bg-cream-50 p-7 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift"
                     >
                       <div className="mb-5 flex items-center justify-between">
                         <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-tag-bg text-sage transition-colors duration-300 group-hover:bg-sage group-hover:text-paper">
