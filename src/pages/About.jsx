@@ -7,7 +7,7 @@ import Stat from '../components/Stat.jsx'
 import FeatureCard from '../components/FeatureCard.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Section from '../components/Section.jsx'
-import ImagePlaceholder from '../components/ImagePlaceholder.jsx'
+import CounterScene from '../components/illustrations/CounterScene.jsx'
 import { ABOUT_STATS, VALUES } from '../data/content.js'
 import { CONTACT } from '../data/site.js'
 import { telLink } from '../lib/wa.js'
@@ -46,17 +46,11 @@ export default function About() {
         </div>
       </section>
 
-      {/* Image */}
+      {/* Illustration */}
       <section data-reveal className="mx-auto max-w-content px-5 pt-12 sm:px-7">
-        <ImagePlaceholder
-          arch
-          src="/photos/reception.jpg"
-          alt="Safari Typing Services reception at Nazir Plaza, Shop 4, Ajman"
-          label="Our office & team at Nazir Plaza"
-          aspect="aspect-[16/9] sm:aspect-[16/7]"
-          data-hero-img
-          className="scale-110 will-change-transform"
-        />
+        <div className="aspect-[16/9] overflow-hidden rounded-[28px] border border-line sm:aspect-[16/7] sm:rounded-[280px_280px_28px_28px]">
+          <CounterScene />
+        </div>
       </section>
 
       {/* Stats */}
