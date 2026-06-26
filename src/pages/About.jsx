@@ -1,5 +1,6 @@
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
+import UaeRibbon from '../components/UaeRibbon.jsx'
 import Icon from '../components/Icon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import Stat from '../components/Stat.jsx'
@@ -31,9 +32,10 @@ export default function About() {
       {/* Intro */}
       <section className="mx-auto max-w-[880px] px-5 pb-6 pt-[84px] text-center sm:px-7">
         <div data-hero>
-          <Eyebrow className="mb-5">ABOUT US</Eyebrow>
+          <UaeRibbon className="mb-6" />
+          <Eyebrow className="mb-5">About Us</Eyebrow>
           <h1 className="mb-6 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
-            Paperwork is our <em className="italic text-sage">profession.</em>
+            Paperwork is our <em className="italic text-sage">Profession.</em>
           </h1>
           <AccentLine className="mx-auto mb-6" />
           <p className="mx-auto max-w-[640px] font-body text-[19px] text-soft">
