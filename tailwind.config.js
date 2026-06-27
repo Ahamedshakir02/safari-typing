@@ -3,26 +3,28 @@ export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
-      // "Quiet editorial" palette — sampled from the approved designs.
-      // Warm sand page, sage-green action colour, deep ink for headings/CTA.
+      // "Official blue" palette — clean cool-white page, soft blue-tinted bands,
+      // deep navy ink for headings/CTA, with the logo blue (held in `sage`) as
+      // the action colour. Token *names* are kept (cream/gold/sand are now cool
+      // blues) so the whole site re-skins from these definitions alone.
       colors: {
         cream: {
-          DEFAULT: '#f1eadd', // page background
-          50: '#faf6ee', // raised cards / panels
-          100: '#ece3d3', // sunken section bands
+          DEFAULT: '#eef3f9', // page background — soft cool white
+          50: '#ffffff', // raised cards / panels — pure white
+          100: '#e3ebf5', // sunken section bands — light blue tint
         },
-        paper: '#f6f3ea', // text/icons on dark (ink) surfaces
-        line: '#e2d9c8', // hairline borders
+        paper: '#f4f8fc', // text/icons on dark (ink) surfaces
+        line: '#d9e2ef', // hairline borders — cool blue-grey
         ink: {
-          DEFAULT: '#1d2839', // headings, dark CTA blocks
-          line: '#41506a', // borders on dark surfaces
-          soft: '#b9c0cc', // muted text on dark surfaces
-          dim: '#9aa3b2',
+          DEFAULT: '#15243d', // headings, dark CTA blocks — deep navy
+          line: '#34466a', // borders on dark surfaces
+          soft: '#aeb9cc', // muted text on dark surfaces
+          dim: '#909cb1',
         },
-        body: '#46423a', // default body text (slightly deepened for contrast)
-        soft: '#645d4e', // secondary text (deepened for readability on cream)
-        gold: '#7c6749', // eyebrow labels / muted brown (deepened for contrast)
-        sand: '#b6a888', // serif numerals
+        body: '#3b4557', // default body text — cool slate
+        soft: '#5b6678', // secondary text — muted slate
+        gold: '#48618c', // eyebrow labels — muted steel-blue (was warm brown)
+        sand: '#aebfd9', // serif numerals — soft periwinkle-grey
         // NOTE: the `sage` token name is kept (used ~100× site-wide) but now holds
         // the brand BLUE sampled from the logo mark (rgb(31,84,166)), so the whole
         // site flips from green to the logo's blue from this one definition.

@@ -4,11 +4,10 @@ import UaeRibbon from '../components/UaeRibbon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import Credentials from '../components/Credentials.jsx'
 import ServiceCard from '../components/ServiceCard.jsx'
-import DocumentsScene from '../components/illustrations/DocumentsScene.jsx'
 import Section from '../components/Section.jsx'
 import CtaBlock from '../components/CtaBlock.jsx'
 import LinkButton from '../components/LinkButton.jsx'
-import { SERVICE_GROUPS, getServiceBySlug } from '../data/content.js'
+import { SERVICE_GROUPS, getServiceBySlug, PHOTOS } from '../data/content.js'
 import { usePageMotion } from '../lib/usePageMotion.js'
 
 export default function Services() {
@@ -18,7 +17,7 @@ export default function Services() {
     <div ref={root}>
       <Seo
         title="Services — Typing Centre in Ajman"
-        description="Thirteen service areas covering every government, immigration and business formality in Ajman — visas, Emirates ID, Tasheel, attestation, business setup & PRO, medical, vehicle, passport, FEWA and more."
+        description="Fifteen service areas covering every government, immigration and business formality in Ajman — visas, Emirates ID, Tasheel, attestation, business setup & PRO, VAT & tax, medical, vehicle, passport, FEWA, website design and more."
         path="/services"
       />
 
@@ -32,7 +31,7 @@ export default function Services() {
           </h1>
           <AccentLine className="mx-auto mb-6" />
           <p className="mx-auto max-w-[600px] font-body text-[19px] text-soft">
-            Thirteen service areas covering every government, immigration and business formality in
+            Fifteen service areas covering every government, immigration and business formality in
             Ajman — handled accurately, the first time.
           </p>
         </div>
@@ -40,8 +39,14 @@ export default function Services() {
 
       {/* Signature illustration band */}
       <section data-reveal className="mx-auto max-w-content px-5 pb-2 sm:px-7">
-        <div className="aspect-[16/9] overflow-hidden rounded-[28px] border border-line sm:aspect-[16/7] sm:rounded-[280px_280px_28px_28px]">
-          <DocumentsScene />
+        <div className="photo-panel aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/8] sm:rounded-[280px_280px_28px_28px]">
+          <img
+            src={PHOTOS.servicesBand}
+            alt="Visa and passport documents prepared at the counter"
+            className="h-full w-full object-contain"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </section>
 
@@ -65,9 +70,11 @@ export default function Services() {
                   </span>
                 </div>
 
-                <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="flex flex-wrap justify-center gap-5">
                   {services.map((s) => (
-                    <ServiceCard key={s.slug} service={s} cta="Explore" />
+                    <div key={s.slug} className="w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]">
+                      <ServiceCard service={s} cta="Explore" />
+                    </div>
                   ))}
                 </div>
               </div>

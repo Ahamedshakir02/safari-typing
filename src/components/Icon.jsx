@@ -150,6 +150,19 @@ const PATHS = {
       <rect x="7" y="14" width="10" height="7" rx="1" />
     </>
   ),
+  calculator: (
+    <>
+      <rect x="5" y="3" width="14" height="18" rx="2" />
+      <path d="M8 7h8" />
+      <path d="M8.5 11h0M12 11h0M15.5 11h0M8.5 14h0M12 14h0M15.5 14h0M8.5 17.5h0M12 17.5h0M15.5 17.5h0" />
+    </>
+  ),
+  monitor: (
+    <>
+      <rect x="3" y="4" width="18" height="13" rx="2" />
+      <path d="M8 21h8M12 17v4" />
+    </>
+  ),
 }
 
 export default function Icon({ name, size = 18, className = '', ...rest }) {

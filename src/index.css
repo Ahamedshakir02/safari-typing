@@ -56,6 +56,12 @@
 }
 
 @layer utilities {
+  /* Soft brand-blue backdrop for transparent cut-out photos, so the figures
+     read as an intentional graphic rather than floating on bare card. */
+  .photo-panel {
+    background: radial-gradient(circle at 50% 28%, #e7eefb 0%, #eef3f9 72%);
+  }
+
   /* Minimum 44x44 tap target. */
   .tap {
     min-height: 44px;

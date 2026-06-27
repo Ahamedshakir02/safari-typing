@@ -7,8 +7,7 @@ import Stat from '../components/Stat.jsx'
 import FeatureCard from '../components/FeatureCard.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Section from '../components/Section.jsx'
-import CounterScene from '../components/illustrations/CounterScene.jsx'
-import { ABOUT_STATS, VALUES } from '../data/content.js'
+import { ABOUT_STATS, VALUES, PHOTOS } from '../data/content.js'
 import { CONTACT } from '../data/site.js'
 import { telLink } from '../lib/wa.js'
 import { usePageMotion } from '../lib/usePageMotion.js'
@@ -48,8 +47,14 @@ export default function About() {
 
       {/* Illustration */}
       <section data-reveal className="mx-auto max-w-content px-5 pt-12 sm:px-7">
-        <div className="aspect-[16/9] overflow-hidden rounded-[28px] border border-line sm:aspect-[16/7] sm:rounded-[280px_280px_28px_28px]">
-          <CounterScene />
+        <div className="photo-panel aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/8] sm:rounded-[280px_280px_28px_28px]">
+          <img
+            src={PHOTOS.aboutBand}
+            alt="The Safari Typing Services team"
+            className="h-full w-full object-contain"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </section>
 

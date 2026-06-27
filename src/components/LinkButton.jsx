@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 // for `href` (external/tel/wa), or a <button> otherwise.
 const VARIANTS = {
   solid: 'bg-sage text-paper hover:bg-sage-dark',
-  outline: 'border border-[#c9bda6] text-ink hover:border-sage hover:text-sage',
+  outline: 'border border-line text-ink hover:border-sage hover:text-sage',
   onDarkSolid: 'bg-sage text-paper hover:bg-sage-light',
   onDarkOutline: 'border border-ink-line text-paper hover:bg-white/[0.06]',
 }

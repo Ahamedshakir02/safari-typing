@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------
 // Page content for Safari Typing Services (Ajman). Plain ES module — no imports,
-// tree-shaken into the bundle. Single source of truth for the 13 service
+// tree-shaken into the bundle. Single source of truth for the 15 service
 // categories, the home/menu grids, About, FAQ and the contact form.
 //
 // Arabic fields (titleAr / introAr / whatToBringAr + per-subservice titleAr /
@@ -9,7 +9,7 @@
 // recommended by a native speaker before launch.
 // ---------------------------------------------------------------------------
 
-// The 13 service categories. Each is self-describing enough to render its own
+// The 15 service categories. Each is self-describing enough to render its own
 // page (`/services/<slug>`), a home tile, a mega-menu column and a footer link.
 //   slug        → route param + sitemap entry + anchor base
 //   icon        → glyph name in Icon.jsx
@@ -114,6 +114,14 @@ export const SERVICES = [
         desc: 'Employee residence visas from entry permit to stamping, including employee insurance and cancellation.',
         tags: ['Employee visa', 'Employee insurance', 'Entry permit', 'Cancellation'],
         tagsAr: ['تأشيرة موظف', 'تأمين الموظف', 'تصريح دخول', 'إلغاء'],
+      },
+      {
+        id: 'golden-visa',
+        title: 'Golden Visa assistance',
+        titleAr: 'المساعدة في الإقامة الذهبية',
+        desc: 'Eligibility check and full application support for the UAE 5- and 10-year Golden Visa.',
+        tags: ['Golden Visa', 'Eligibility', '5 & 10 year'],
+        tagsAr: ['الإقامة الذهبية', 'الأهلية', '5 و10 سنوات'],
       },
       {
         id: 'amer-services',
@@ -696,9 +704,9 @@ export const SERVICES = [
         id: 'tour-packages',
         title: 'Tour packages',
         titleAr: 'باقات سياحية',
-        desc: 'Holiday and tour packages for popular destinations.',
-        tags: ['Holiday packages', 'Destinations'],
-        tagsAr: ['باقات عطلات', 'وجهات'],
+        desc: 'Holiday and tour packages for popular destinations, with hotel reservations arranged.',
+        tags: ['Holiday packages', 'Hotel booking', 'Destinations'],
+        tagsAr: ['باقات عطلات', 'حجز الفنادق', 'وجهات'],
       },
       {
         id: 'desert-safari',
@@ -708,6 +716,14 @@ export const SERVICES = [
         tags: ['Desert safari', 'Experiences'],
         tagsAr: ['سفاري صحراوي', 'تجارب'],
       },
+      {
+        id: 'travel-insurance',
+        title: 'Travel insurance',
+        titleAr: 'تأمين السفر',
+        desc: 'Travel and Schengen-compliant insurance for visa applications and trips abroad.',
+        tags: ['Travel cover', 'Schengen', 'Trips'],
+        tagsAr: ['تأمين السفر', 'شنغن', 'الرحلات'],
+      },
     ],
     whatToBring:
       'Passport copy of each traveller, a photo for visit-visa applicants, and the sponsor’s Emirates ID and visa where required.',
@@ -716,6 +732,132 @@ export const SERVICES = [
   },
   {
     n: '13',
+    slug: 'tax-accounting',
+    icon: 'calculator',
+    title: 'Tax & Accounting',
+    titleAr: 'الضرائب والمحاسبة',
+    keyword: 'VAT & corporate tax registration Ajman',
+    blurb: 'VAT, corporate tax, filing & bookkeeping.',
+    intro:
+      'Stay compliant with the Federal Tax Authority — VAT and corporate-tax registration, return filing and day-to-day bookkeeping, handled by people who do it every week.',
+    introAr:
+      'حافظ على امتثالك لدى الهيئة الاتحادية للضرائب — تسجيل ضريبة القيمة المضافة وضريبة الشركات وتقديم الإقرارات ومسك الدفاتر اليومي، على يد فريق متمرّس.',
+    subservices: [
+      {
+        id: 'vat-registration',
+        title: 'VAT registration',
+        titleAr: 'تسجيل ضريبة القيمة المضافة',
+        desc: 'VAT registration with the Federal Tax Authority and issuance of your Tax Registration Number (TRN).',
+        tags: ['VAT registration', 'TRN', 'FTA portal'],
+        tagsAr: ['تسجيل القيمة المضافة', 'الرقم الضريبي', 'بوابة الهيئة'],
+      },
+      {
+        id: 'vat-deregistration',
+        title: 'VAT deregistration',
+        titleAr: 'إلغاء تسجيل القيمة المضافة',
+        desc: 'De-registration from VAT when your business no longer meets the registration threshold.',
+        tags: ['Deregistration', 'Threshold review'],
+        tagsAr: ['إلغاء التسجيل', 'مراجعة الحد'],
+      },
+      {
+        id: 'vat-returns',
+        title: 'VAT return filing',
+        titleAr: 'تقديم الإقرارات الضريبية',
+        desc: 'Periodic VAT-return preparation and filing — reconciled and submitted on time.',
+        tags: ['Return filing', 'Reconciliation', 'On time'],
+        tagsAr: ['تقديم الإقرار', 'المطابقة', 'في الموعد'],
+      },
+      {
+        id: 'corporate-tax',
+        title: 'Corporate tax registration',
+        titleAr: 'تسجيل ضريبة الشركات',
+        desc: 'Corporate-tax registration with guidance on the UAE corporate-tax rules and your obligations.',
+        tags: ['Corporate tax', 'Registration', 'Compliance'],
+        tagsAr: ['ضريبة الشركات', 'التسجيل', 'الامتثال'],
+      },
+      {
+        id: 'accounting-bookkeeping',
+        title: 'Accounting & bookkeeping',
+        titleAr: 'المحاسبة ومسك الدفاتر',
+        desc: 'Monthly bookkeeping, ledgers and financial statements to keep small businesses tidy and audit-ready.',
+        tags: ['Bookkeeping', 'Ledgers', 'Statements'],
+        tagsAr: ['مسك الدفاتر', 'السجلات', 'القوائم المالية'],
+      },
+    ],
+    whatToBring:
+      'Your trade licence, the owner’s Emirates ID and passport, any existing TRN, and recent invoices or bank statements for bookkeeping.',
+    whatToBringAr:
+      'الرخصة التجارية، وهوية المالك وجواز سفره، والرقم الضريبي إن وُجد، وأحدث الفواتير أو كشوف الحساب لمسك الدفاتر.',
+  },
+  {
+    n: '14',
+    slug: 'digital-marketing-it',
+    icon: 'monitor',
+    title: 'Digital Marketing & IT',
+    titleAr: 'التسويق الرقمي وتقنية المعلومات',
+    keyword: 'Website design & digital marketing Ajman',
+    blurb: 'Websites, e-commerce, branding & social media.',
+    intro:
+      'Put your business online and keep it growing — websites, online stores, branding and social media, built and managed from the same trusted desk that handles your paperwork.',
+    introAr:
+      'انقل أعمالك إلى الإنترنت واجعلها تنمو — مواقع إلكترونية ومتاجر وهوية بصرية وإدارة لوسائل التواصل، تُصمَّم وتُدار من المكتب نفسه الذي يتولى معاملاتك.',
+    subservices: [
+      {
+        id: 'website-design',
+        title: 'Website design & development',
+        titleAr: 'تصميم وتطوير المواقع',
+        desc: 'Modern, mobile-friendly business websites — designed, built and launched for you.',
+        tags: ['Web design', 'Development', 'Responsive'],
+        tagsAr: ['تصميم المواقع', 'التطوير', 'متجاوب'],
+      },
+      {
+        id: 'ecommerce',
+        title: 'E-commerce development',
+        titleAr: 'تطوير المتاجر الإلكترونية',
+        desc: 'Online stores with product catalogues, online payments and order management.',
+        tags: ['Online store', 'Payments', 'Catalogue'],
+        tagsAr: ['متجر إلكتروني', 'المدفوعات', 'كتالوج'],
+      },
+      {
+        id: 'social-media',
+        title: 'Social media management',
+        titleAr: 'إدارة وسائل التواصل',
+        desc: 'Content, scheduling and audience growth across Instagram, Facebook and beyond.',
+        tags: ['Content', 'Scheduling', 'Growth'],
+        tagsAr: ['المحتوى', 'الجدولة', 'النمو'],
+      },
+      {
+        id: 'branding-logo',
+        title: 'Logo design & branding',
+        titleAr: 'تصميم الشعار والهوية',
+        desc: 'Logos, brand colours and a visual identity that make your business memorable.',
+        tags: ['Logo design', 'Brand identity', 'Visuals'],
+        tagsAr: ['تصميم الشعار', 'الهوية التجارية', 'التصاميم'],
+      },
+      {
+        id: 'seo',
+        title: 'SEO services',
+        titleAr: 'تحسين محركات البحث',
+        desc: 'Search-engine optimisation so customers in the UAE find your business first.',
+        tags: ['SEO', 'Local search', 'Keywords'],
+        tagsAr: ['تحسين محركات البحث', 'البحث المحلي', 'الكلمات المفتاحية'],
+      },
+      {
+        id: 'business-email',
+        title: 'Business email setup',
+        titleAr: 'إعداد البريد الإلكتروني للأعمال',
+        desc: 'Professional business email on your own domain, set up and ready to use.',
+        tags: ['Business email', 'Domain', 'Setup'],
+        tagsAr: ['بريد الأعمال', 'النطاق', 'الإعداد'],
+      },
+    ],
+    whatToBring:
+      'Your business name and logo (if you have one), any existing website or social accounts, and a short description of what you offer.',
+    whatToBringAr:
+      'اسم نشاطك وشعارك (إن وُجد)، وأي موقع أو حسابات تواصل حالية، ووصف موجز لما تقدّمه.',
+  },
+  {
+    n: '15',
     slug: 'everyday-other',
     icon: 'printer',
     title: 'Everyday & Other Services',
@@ -759,6 +901,22 @@ export const SERVICES = [
         tags: ['Form filling', 'Online submission'],
         tagsAr: ['تعبئة النماذج', 'تقديم إلكتروني'],
       },
+      {
+        id: 'courier',
+        title: 'Courier & document delivery',
+        titleAr: 'الشحن وتوصيل المستندات',
+        desc: 'Local and international courier for your documents and parcels.',
+        tags: ['Courier', 'Document delivery', 'International'],
+        tagsAr: ['شحن', 'توصيل المستندات', 'دولي'],
+      },
+      {
+        id: 'utility-bills',
+        title: 'Utility bill payments',
+        titleAr: 'دفع فواتير الخدمات',
+        desc: 'Pay FEWA, telecom and other utility bills quickly at the counter.',
+        tags: ['Bill payment', 'FEWA', 'Telecom'],
+        tagsAr: ['دفع الفواتير', 'FEWA', 'الاتصالات'],
+      },
     ],
     whatToBring:
       'Your Emirates ID and passport, plus any specific documents or photos the application needs — message us first for the exact checklist.',
@@ -770,7 +928,7 @@ export const SERVICES = [
 // Look up a category by its slug (used by the dynamic /services/:slug route).
 export const getServiceBySlug = (slug) => SERVICES.find((s) => s.slug === slug)
 
-// Mega-menu / footer grouping of the 13 categories (by slug).
+// Mega-menu / footer grouping of the 15 categories (by slug).
 export const SERVICE_GROUPS = [
   {
     label: 'Government & Visas',
@@ -780,7 +938,13 @@ export const SERVICE_GROUPS = [
   {
     label: 'Business & Documents',
     labelAr: 'الأعمال والمستندات',
-    slugs: ['business-setup-pro', 'documentation-attestation', 'translation-court'],
+    slugs: [
+      'business-setup-pro',
+      'tax-accounting',
+      'documentation-attestation',
+      'translation-court',
+      'digital-marketing-it',
+    ],
   },
   {
     label: 'Personal & Everyday',
@@ -796,10 +960,27 @@ export const SERVICE_GROUPS = [
   },
 ]
 
+// ---------------------------------------------------------------------------
+// Brand photos (client-supplied, in /public/photos). To update the imagery,
+// just drop a replacement file at the same path. All are transparent cut-out
+// figures, rendered `object-contain` on a soft blue `.photo-panel` (defined in
+// index.css, no border) so the figures show in full and read as an intentional
+// graphic. (The "-dark" suffix is historical — these PNGs are transparent, not
+// dark scenes; don't render them object-cover or they crop heads/bodies.)
+// ---------------------------------------------------------------------------
+export const PHOTOS = {
+  aboutBand: '/photos/team-three-dark.png',
+  servicesBand: '/photos/visa-services-dark.png',
+  homeBand: '/photos/consultation-desk.png',
+  step1: '/photos/staff-documents.png',
+  step2: '/photos/team-duo.png',
+  step3: '/photos/team-three.png',
+}
+
 // Home — trust strip. [CONFIRM] every figure before launch — no invented numbers.
 export const HOME_STATS = [
   { value: '18+', label: 'Years of service' },
-  { value: '15,000+', label: 'Applications handled' }, // [CONFIRM]
+  { value: '15,000+', label: 'Applications handled' }, // owner-confirmed 2026-06-27
   { value: '5', label: 'Languages spoken' },
   { value: 'Same day', label: 'On most documents' },
 ]
@@ -816,7 +997,7 @@ export const CREDENTIALS = [
 // Home — section copy. Keep claims accurate; [CONFIRM] anything not yet verified.
 export const HOME = {
   hero: {
-    eyebrow: 'Nazir Plaza · Ajman, United Arab Emirates',
+    eyebrow: 'Nazir Plaza · Ajman',
     subline:
       'Visas, Emirates ID, attestation, business licences and PRO services — typed correctly, submitted through the right channel and followed up until they’re done. So you never have to think about the queue again.',
     trustLine: 'Serving Ajman’s residents & businesses in five languages', // [CONFIRM] scale wording
@@ -826,7 +1007,7 @@ export const HOME = {
     eyebrow: 'What We Do',
     title: 'Every formality, under one calm roof.',
     intro:
-      'Thirteen service areas — from a first residence visa to a full trade licence. We manage the forms, the fees and the follow-ups on your behalf.',
+      'Fifteen service areas — from a first residence visa to a full trade licence, VAT and your business website. We manage the forms, the fees and the follow-ups on your behalf.',
     allLabel: 'View all services',
   },
   why: {
@@ -877,8 +1058,8 @@ export const PROCESS = [
 // About — stats band + values.
 export const ABOUT_STATS = [
   { value: '18+', label: 'Years in service' },
-  { value: '15k+', label: 'Applications' }, // [CONFIRM]
-  { value: '13', label: 'Service areas' },
+  { value: '15k+', label: 'Applications' }, // owner-confirmed 2026-06-27
+  { value: '15', label: 'Service areas' },
   { value: '100%', label: 'Confidential', accent: true },
 ]
 
@@ -897,9 +1078,10 @@ export const VALUES = [
   },
 ]
 
-// Contact — enquiry form service options (mirrors the 13 categories).
+// Contact — enquiry form service options (mirrors the 15 categories).
 export const ENQUIRY_SERVICES = [
   'Business setup & PRO',
+  'Tax & accounting',
   'Visa & immigration',
   'Emirates ID',
   'Tasheel & MOHRE labour',
@@ -911,6 +1093,7 @@ export const ENQUIRY_SERVICES = [
   'Online registrations & utilities',
   'Insurance',
   'Travel services',
+  'Website & digital marketing',
   'Everyday & other services',
   'Something else',
 ]
