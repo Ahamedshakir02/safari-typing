@@ -17,7 +17,7 @@ export default function Services() {
     <div ref={root}>
       <Seo
         title="Services — Typing Centre in Ajman"
-        description="Thirteen service areas covering every government, immigration and business formality in Ajman — visas, Emirates ID, Tasheel, attestation, business setup & PRO, medical, vehicle, passport, FEWA and more."
+        description="Fifteen service areas covering every government, immigration and business formality in Ajman — visas, Emirates ID, Tasheel, attestation, business setup & PRO, VAT & tax, medical, vehicle, passport, FEWA, website design and more."
         path="/services"
       />
 
@@ -31,7 +31,7 @@ export default function Services() {
           </h1>
           <AccentLine className="mx-auto mb-6" />
           <p className="mx-auto max-w-[600px] font-body text-[19px] text-soft">
-            Thirteen service areas covering every government, immigration and business formality in
+            Fifteen service areas covering every government, immigration and business formality in
             Ajman — handled accurately, the first time.
           </p>
         </div>
@@ -39,11 +39,11 @@ export default function Services() {
 
       {/* Signature illustration band */}
       <section data-reveal className="mx-auto max-w-content px-5 pb-2 sm:px-7">
-        <div className="aspect-[16/9] overflow-hidden rounded-[28px] border border-line sm:aspect-[16/7] sm:rounded-[280px_280px_28px_28px]">
+        <div className="photo-panel aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/8] sm:rounded-[280px_280px_28px_28px]">
           <img
             src={PHOTOS.servicesBand}
             alt="Visa and passport documents prepared at the counter"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-contain"
             loading="lazy"
             decoding="async"
           />

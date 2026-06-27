@@ -121,7 +121,7 @@ export default function Home() {
             </p>
           </div>
           <div data-reveal>
-            <div className="photo-panel aspect-[4/3] overflow-hidden rounded-[28px] border border-line sm:rounded-[280px_280px_28px_28px]">
+            <div className="photo-panel aspect-[4/3] overflow-hidden rounded-[28px] sm:rounded-[280px_280px_28px_28px]">
               <img
                 src={PHOTOS.homeBand}
                 alt="Safari Typing Services staff helping a client at the counter"
@@ -194,7 +194,7 @@ export default function Home() {
         <div data-reveal-group className="grid gap-8 sm:grid-cols-3">
           {PROCESS.map((step, i) => (
             <div key={step.numeral}>
-              <div className="photo-panel mb-6 aspect-[16/10] overflow-hidden rounded-[24px] border border-line">
+              <div className="photo-panel mb-6 aspect-[16/10] overflow-hidden rounded-[24px]">
                 <img
                   src={STEP_IMAGES[i].src}
                   alt={STEP_IMAGES[i].alt}

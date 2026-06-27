@@ -47,11 +47,11 @@ export default function About() {
 
       {/* Illustration */}
       <section data-reveal className="mx-auto max-w-content px-5 pt-12 sm:px-7">
-        <div className="aspect-[16/9] overflow-hidden rounded-[28px] border border-line sm:aspect-[16/7] sm:rounded-[280px_280px_28px_28px]">
+        <div className="photo-panel aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/8] sm:rounded-[280px_280px_28px_28px]">
           <img
             src={PHOTOS.aboutBand}
             alt="The Safari Typing Services team"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-contain"
             loading="lazy"
             decoding="async"
           />

@@ -1,7 +1,7 @@
 /**
  * Per-service flat-vector illustration for the service-card header. Each scene
  * shares a backdrop + a simple person figure (people-illustration vibe, à la
- * sarmat) and swaps in the category's emblematic object, so all 13 read as one
+ * sarmat) and swaps in the category's emblematic object, so all 15 read as one
  * cohesive set in the brand blue. Keyed by service `slug`; slices to cover the
  * card header like a photo.
  */
@@ -145,7 +145,48 @@ const OBJECTS = {
       <path d="M246 144l92-22-70 58" fill="#3a6cbf" opacity=".55" />
     </g>
   ),
-  // 13 — Everyday & other: printer
+  // 13 — Tax & accounting: calculator + percent coin
+  'tax-accounting': (
+    <g>
+      <rect x="214" y="74" width="84" height="120" rx="10" fill="#1f54a6" />
+      <rect x="226" y="86" width="60" height="26" rx="4" fill="#dce6f7" />
+      <path d="M234 100h44" stroke="#9fb8e2" strokeWidth="3" strokeLinecap="round" />
+      <g fill="#3a6cbf">
+        <rect x="226" y="122" width="14" height="14" rx="3" />
+        <rect x="249" y="122" width="14" height="14" rx="3" />
+        <rect x="272" y="122" width="14" height="14" rx="3" />
+        <rect x="226" y="144" width="14" height="14" rx="3" />
+        <rect x="249" y="144" width="14" height="14" rx="3" />
+        <rect x="272" y="144" width="14" height="14" rx="3" />
+        <rect x="226" y="166" width="14" height="14" rx="3" />
+        <rect x="249" y="166" width="14" height="14" rx="3" />
+      </g>
+      <rect x="272" y="166" width="14" height="14" rx="3" fill="#0E9B7C" />
+      <circle cx="320" cy="84" r="18" fill="#0E9B7C" />
+      <path d="M313 91l14-14" stroke="#fff" strokeWidth="3.2" strokeLinecap="round" />
+      <circle cx="315" cy="79" r="2.4" fill="#fff" />
+      <circle cx="325" cy="89" r="2.4" fill="#fff" />
+    </g>
+  ),
+  // 14 — Digital marketing & IT: monitor with a rising chart
+  'digital-marketing-it': (
+    <g>
+      <rect x="210" y="78" width="128" height="92" rx="8" fill="#1f54a6" />
+      <rect x="210" y="78" width="128" height="20" rx="8" fill="#18437f" />
+      <g fill="#dce6f7">
+        <circle cx="222" cy="88" r="3" /><circle cx="232" cy="88" r="3" /><circle cx="242" cy="88" r="3" />
+      </g>
+      <rect x="222" y="108" width="104" height="50" rx="4" fill="#dce6f7" />
+      <g fill="#3a6cbf">
+        <rect x="234" y="138" width="14" height="14" />
+        <rect x="256" y="128" width="14" height="24" />
+        <rect x="278" y="118" width="14" height="34" />
+      </g>
+      <path d="M234 134l22-10 22-12" fill="none" stroke="#0E9B7C" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M248 184h52M274 170v14" stroke="#18437f" strokeWidth="6" strokeLinecap="round" />
+    </g>
+  ),
+  // 15 — Everyday & other: printer
   'everyday-other': (
     <g>
       <rect x="240" y="78" width="72" height="34" rx="4" fill="#dce6f7" />
