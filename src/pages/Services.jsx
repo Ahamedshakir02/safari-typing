@@ -40,7 +40,7 @@ export default function Services() {
         <div className="photo-panel aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/8] sm:rounded-[280px_280px_28px_28px]">
           <img
             src={PHOTOS.servicesBand}
-            alt="Visa and passport documents prepared at the counter"
+            alt="Safari Typing Services advisors presenting a completed UAE visa"
             className="h-full w-full object-contain"
             loading="lazy"
             decoding="async"

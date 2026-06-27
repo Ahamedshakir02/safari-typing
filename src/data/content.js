@@ -989,16 +989,15 @@ export const SERVICE_GROUPS = [
 // just drop a replacement file at the same path. All are transparent cut-out
 // figures, rendered `object-contain` on a soft blue `.photo-panel` (defined in
 // index.css, no border) so the figures show in full and read as an intentional
-// graphic. (The "-dark" suffix is historical — these PNGs are transparent, not
-// dark scenes; don't render them object-cover or they crop heads/bodies.)
+// graphic. (Don't render them object-cover or they crop heads/bodies.)
 // ---------------------------------------------------------------------------
 export const PHOTOS = {
-  aboutBand: '/photos/team-three-dark.png',
-  servicesBand: '/photos/visa-services-dark.png',
-  homeBand: '/photos/consultation-desk.png',
-  step1: '/photos/staff-documents.png',
-  step2: '/photos/team-duo.png',
-  step3: '/photos/team-three.png',
+  aboutBand: '/photos/team-four.png',
+  servicesBand: '/photos/services-visa-team.png',
+  homeBand: '/photos/home-typing-center.png',
+  step1: '/photos/step-welcome.png',
+  step2: '/photos/step-documents.png',
+  step3: '/photos/step-collect.png',
 }
 
 // Home — trust strip. [CONFIRM] every figure before launch — no invented numbers.

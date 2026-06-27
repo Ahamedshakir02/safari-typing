@@ -22,9 +22,9 @@ const primaryPhone = CONTACT.phones[0]
 
 // Photo for each of the three "How it works" steps (placeholders — see content.js).
 const STEP_IMAGES = [
-  { src: PHOTOS.step1, alt: 'Telling us what you need by phone or WhatsApp' },
-  { src: PHOTOS.step2, alt: 'Sharing your documents at the counter' },
-  { src: PHOTOS.step3, alt: 'Collecting your completed paperwork' },
+  { src: PHOTOS.step1, alt: 'A Safari Typing Services advisor welcoming a client' },
+  { src: PHOTOS.step2, alt: 'Sharing your documents and passport at the counter' },
+  { src: PHOTOS.step3, alt: 'Collecting your completed passport and travel documents' },
 ]
 
 export default function Home() {
@@ -124,7 +124,7 @@ export default function Home() {
             <div className="photo-panel aspect-[4/3] overflow-hidden rounded-[28px] sm:rounded-[280px_280px_28px_28px]">
               <img
                 src={PHOTOS.homeBand}
-                alt="Safari Typing Services staff helping a client at the counter"
+                alt="A Safari Typing Services advisor reviewing a client's UAE Typing Center paperwork"
                 className="h-full w-full object-contain"
                 loading="lazy"
                 decoding="async"
