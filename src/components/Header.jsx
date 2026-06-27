@@ -38,7 +38,7 @@ export default function Header() {
       onMouseLeave={() => setMegaOpen(false)}
     >
       <nav className="mx-auto flex max-w-content items-center gap-6 px-5 py-[18px] sm:px-7">
-        <Brand markSize={40} eager />
+        <Brand markSize={52} eager />
 
         {/* Desktop nav */}
         <div className="ml-auto hidden items-center gap-8 lg:flex">
