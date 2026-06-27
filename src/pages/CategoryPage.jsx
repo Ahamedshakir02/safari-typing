@@ -89,6 +89,21 @@ export default function CategoryPage() {
         </div>
       </section>
 
+      {/* Service photo */}
+      {service.photo && (
+        <section data-reveal className="mx-auto max-w-content px-5 pt-2 sm:px-7">
+          <div className="aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/9] sm:rounded-t-[96px]">
+            <img
+              src={service.photo}
+              alt={service.photoAlt}
+              className="h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </section>
+      )}
+
       {/* Credentials */}
       <section className="mx-auto max-w-content px-5 py-6 sm:px-7">
         <Credentials data-reveal />
