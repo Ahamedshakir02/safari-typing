@@ -23,7 +23,7 @@ export default function Privacy() {
         <div data-hero>
           <Eyebrow className="mb-5">Privacy</Eyebrow>
           <h1 className="mb-6 text-[40px] font-medium sm:text-[52px]">
-            Your information, <em className="italic text-sage">Handled with care.</em>
+            Your information, <em className="italic text-gradient-brand">Handled with care.</em>
           </h1>
           <AccentLine className="mx-auto" />
         </div>

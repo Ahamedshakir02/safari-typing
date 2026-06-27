@@ -24,7 +24,7 @@ export default function Terms() {
         <div data-hero>
           <Eyebrow className="mb-5">Terms</Eyebrow>
           <h1 className="mb-6 text-[40px] font-medium sm:text-[52px]">
-            Clear terms, <em className="italic text-sage">No surprises.</em>
+            Clear terms, <em className="italic text-gradient-brand">No surprises.</em>
           </h1>
           <AccentLine className="mx-auto" />
         </div>

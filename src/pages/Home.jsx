@@ -50,13 +50,13 @@ export default function Home() {
         />
         <div data-hero>
           <Eyebrow className="mb-[26px] inline-flex items-center gap-2.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-sage" />
+            <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-sage to-gold" />
             {HOME.hero.eyebrow}
           </Eyebrow>
           <h1 className="mb-[24px] text-[44px] font-medium leading-[1.05] sm:text-[60px] md:text-[78px]">
             Government paperwork,
             <br />
-            Handled with <em className="italic text-sage">quiet care.</em>
+            Handled with <em className="italic text-gradient-brand">quiet care.</em>
           </h1>
           <p className="mx-auto mb-9 max-w-[620px] font-body text-lg leading-[1.55] text-soft sm:text-[21px]">
             {HOME.hero.subline}
@@ -264,7 +264,7 @@ export default function Home() {
           className="font-display text-[28px] font-medium leading-[1.32] text-ink sm:text-[40px]"
         >
           Rules change constantly. We stay current so your application is{' '}
-          <em className="italic text-sage">right the first time</em> — no rejections, no wasted trips,
+          <em className="italic text-gradient-brand">right the first time</em> — no rejections, no wasted trips,
           no surprise fees.
         </p>
         <Link

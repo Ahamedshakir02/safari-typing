@@ -32,7 +32,7 @@ export default function About() {
         <div data-hero>
           <Eyebrow className="mb-5">About Us</Eyebrow>
           <h1 className="mb-6 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
-            Paperwork is our <em className="italic text-sage">Profession.</em>
+            Paperwork is our <em className="italic text-gradient-brand">Profession.</em>
           </h1>
           <AccentLine className="mx-auto mb-6" />
           <p className="mx-auto max-w-[640px] font-body text-[19px] text-soft">
