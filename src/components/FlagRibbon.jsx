@@ -1,14 +1,15 @@
 // Decorative flowing UAE-flag ribbon, drawn as inline SVG (transparent, no
 // watermark, crisp at any size). Four lengthwise stripes — red, green, white,
 // black — follow one S-curve, with a soft drop-shadow for depth and a one-sided
-// sheen for a 3D ribbon feel. Purely decorative: aria-hidden + no pointer events.
-// The gentle sway only runs when the user allows motion (motion-safe variant).
+// sheen for a 3D ribbon feel. Used in the dark CtaBlock corners.
+// Purely decorative: aria-hidden + no pointer events. The gentle sway only runs
+// when the user allows motion (motion-safe variant).
 
 // Shared centreline of the ribbon's vertical S-wave.
 const WAVE = 'M65 -8 C105 50 25 110 65 168 C105 226 25 286 65 392'
 
 // Four stripes offset across the ribbon's width (stroke 20, gap 18 → slight
-// overlap so no navy shows through the seams). Painted left → right.
+// overlap so no background shows through the seams). Painted left → right.
 const STRIPES = [
   { dx: -27, color: '#ce1126' }, // uae-red
   { dx: -9, color: '#007a3d' }, // uae-green
