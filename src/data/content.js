@@ -27,6 +27,8 @@ export const SERVICES = [
     titleAr: 'تأسيس الأعمال وخدمات العلاقات الحكومية (PRO)',
     keyword: 'Business setup & PRO services Ajman',
     blurb: 'Trade licences, company formation & PRO support.',
+    photo: '/photos/service-business-setup-pro.jpg',
+    photoAlt: 'A Safari Typing Services advisor handing completed paperwork to a client',
     intro:
       'Start, license and run a UAE company from one desk — mainland or free zone — with a dedicated PRO handling every government touchpoint.',
     introAr:
@@ -94,6 +96,8 @@ export const SERVICES = [
     titleAr: 'التأشيرات والهجرة',
     keyword: 'Visa typing & immigration services Ajman',
     blurb: 'Family & employment visas, ICP and Amer.',
+    photo: '/photos/service-visa-immigration.jpg',
+    photoAlt: 'A family reviewing their residency visa paperwork with a Safari Typing Services advisor',
     intro:
       'Residency and immigration handled end to end through the federal ICP system and Amer — for families and companies across Ajman and the northern emirates.',
     introAr:
@@ -161,6 +165,8 @@ export const SERVICES = [
     titleAr: 'الهوية الإماراتية',
     keyword: 'Emirates ID renewal Ajman',
     blurb: 'New, renewal, replacement & data fixes.',
+    photo: '/photos/service-emirates-id.jpg',
+    photoAlt: 'A customer holding his new Emirates ID at the counter',
     intro:
       'Every Emirates ID transaction through the ICP system — new applications, renewals, replacements and quick data fixes — typed correctly the first time.',
     introAr:
@@ -220,6 +226,8 @@ export const SERVICES = [
     titleAr: 'تسهيل ووزارة الموارد البشرية والتوطين',
     keyword: 'Tasheel & MOHRE labour services Ajman',
     blurb: 'Work permits, labour contracts & WPS.',
+    photo: '/photos/service-tasheel-mohre.jpg',
+    photoAlt: 'A consultant reviewing a labour contract and offer letter with a worker',
     intro:
       'All Ministry of Human Resources & Emiratisation (MOHRE) work through the official Tasheel system — from a new hire’s first permit to final settlement.',
     introAr:
@@ -295,6 +303,8 @@ export const SERVICES = [
     titleAr: 'الخدمات الطبية',
     keyword: 'Medical fitness test typing Ajman',
     blurb: 'Fitness tests, health cards & family medicals.',
+    photo: '/photos/service-medical-services.jpg',
+    photoAlt: 'A Safari Typing Services doctor reviewing a medical fitness report with a client',
     intro:
       'Medical fitness applications typed and booked so you arrive at the centre ready — for visas, family files and marriage.',
     introAr:
@@ -346,6 +356,8 @@ export const SERVICES = [
     titleAr: 'توثيق وتصديق المستندات',
     keyword: 'Certificate & MOFA attestation Ajman',
     blurb: 'MOFA, apostille & embassy attestation.',
+    photo: '/photos/service-documentation-attestation.jpg',
+    photoAlt: 'A consultant stamping and attesting a customer\'s document',
     intro:
       'Certificates and legal papers attested and ready to use in the UAE — MOFA, apostille, embassy and the full chain in between.',
     introAr:
@@ -413,6 +425,8 @@ export const SERVICES = [
     titleAr: 'الترجمة وأعمال المحاكم',
     keyword: 'Legal translation services Ajman',
     blurb: 'Legal translation, POA & court documents.',
+    photo: '/photos/service-translation-court.jpg',
+    photoAlt: 'A legal translator preparing certified court and translation documents',
     intro:
       'Legally recognised translation and court documentation — accurate, certified and accepted by UAE authorities.',
     introAr: 'ترجمة معتمدة ومستندات محاكم دقيقة ومقبولة لدى الجهات الرسمية في الإمارات.',
@@ -463,6 +477,8 @@ export const SERVICES = [
     titleAr: 'المركبات ورخص القيادة',
     keyword: 'Driving licence & vehicle services Ajman',
     blurb: 'Licences, EVG, fines & registration.',
+    photo: '/photos/service-vehicle-driving-licence.jpg',
+    photoAlt: 'A driver holding her UAE driving licence outside the Safari Typing Services office',
     intro:
       'Driving-licence and vehicle paperwork for Ajman and beyond — transport department, EVG and traffic transactions in one visit.',
     introAr:
@@ -522,6 +538,8 @@ export const SERVICES = [
     titleAr: 'خدمات جوازات السفر',
     keyword: 'Passport services Ajman',
     blurb: 'New, renewal, amendments & lost passports.',
+    photo: '/photos/service-passport-services.jpg',
+    photoAlt: 'A couple collecting their passports and boarding passes',
     intro:
       'Passport and home-country document applications prepared accurately and submitted on your behalf.',
     introAr: 'طلبات جوازات السفر ووثائق بلدك الأم تُجهّز بدقة وتُقدَّم نيابةً عنك.',
@@ -639,6 +657,8 @@ export const SERVICES = [
     titleAr: 'التأمين',
     keyword: 'Health & vehicle insurance Ajman',
     blurb: 'Health, motor & home cover.',
+    photo: '/photos/service-insurance.jpg',
+    photoAlt: 'Advisors reviewing insurance documents with a customer on a laptop',
     intro:
       'Straightforward cover arranged at the counter — health, motor and home insurance from trusted UAE providers.',
     introAr: 'تأمين سهل يُرتَّب عند المكتب — صحي ومركبات ومنزل من مزوّدين موثوقين في الإمارات.',
@@ -681,6 +701,8 @@ export const SERVICES = [
     titleAr: 'خدمات السفر',
     keyword: 'Visit visa & travel services Ajman',
     blurb: 'Visit visas, tickets & desert safari.',
+    photo: '/photos/service-travel-services.jpg',
+    photoAlt: 'A Safari Typing Services agent handing over a passport and boarding pass at the travel counter',
     intro: 'Visit visas, tickets and getaways — plan the trip and the paperwork in one place.',
     introAr: 'تأشيرات زيارة وتذاكر ورحلات — خطّط للرحلة وأوراقها في مكان واحد.',
     subservices: [
@@ -864,6 +886,8 @@ export const SERVICES = [
     titleAr: 'خدمات يومية وأخرى',
     keyword: 'Printing, PCC & typing services Ajman',
     blurb: 'Maid visas, PCC, printing & online forms.',
+    photo: '/photos/service-everyday-other.jpg',
+    photoAlt: 'The Safari Typing Services reception desk welcoming a customer',
     intro:
       'The day-to-day errands a typing centre should just handle — printing, clearances and the small things, done while you wait.',
     introAr:
@@ -987,11 +1011,21 @@ export const HOME_STATS = [
 
 // Home — "official channels" credentials strip. Defensible (these are the
 // systems we submit through), not unqualified "government authorised" claims.
+// `box` tunes each logo's size by its shape so they read at the same optical
+// weight on the uniform cards: 'tall' (square/portrait) get more height,
+// 'ultrawide' (long wordmarks) are capped by width. See Credentials.jsx.
 export const CREDENTIALS = [
-  { label: 'ICP e-Channel', icon: 'globe', logo: '/logos/icp.png' },
-  { label: 'Tasheel · MOHRE', icon: 'doc', logo: '/logos/tasheel.png' },
-  { label: 'Amer Immigration', icon: 'shield', logo: '/logos/amer.png' },
-  { label: 'MOFA Attestation', icon: 'check', logo: '/logos/mofa.png' },
+  { label: 'ICP e-Channel', icon: 'globe', logo: '/logos/icp.png', box: 'ultrawide' },
+  { label: 'Emirates Identity Authority', icon: 'shield', logo: '/logos/eida.png', box: 'wide' },
+  { label: 'Tasheel · MOHRE', icon: 'doc', logo: '/logos/tasheel.png', box: 'tall' },
+  { label: 'Amer Immigration', icon: 'shield', logo: '/logos/amer.png', box: 'tall' },
+  { label: 'MOFA Attestation', icon: 'check', logo: '/logos/mofa.png', box: 'ultrawide' },
+  { label: 'Government of Dubai', icon: 'building', logo: '/logos/dubai-gov.png', box: 'wide' },
+  { label: 'Government of Sharjah HRD', icon: 'doc', logo: '/logos/sharjah-hr.png', box: 'wide', cls: 'max-h-[58px] max-w-[170px]' },
+  { label: 'Ajman Dept. of Economic Development', icon: 'building', logo: '/logos/ded-ajman.png', box: 'wide', cls: 'max-h-16 max-w-[150px]' },
+  { label: 'Ajman Sewerage', icon: 'globe', logo: '/logos/ajman-sewerage.png', box: 'tall' },
+  { label: 'Tasdeeq attestation', icon: 'check', logo: '/logos/tasdeeq.png', box: 'wide' },
+  { label: 'Laiq medical fitness', icon: 'shield', logo: '/logos/laiq.png', box: 'tall' },
 ]
 
 // Home — section copy. Keep claims accurate; [CONFIRM] anything not yet verified.
