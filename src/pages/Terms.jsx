@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
-import UaeRibbon from '../components/UaeRibbon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import { CONTACT } from '../data/site.js'
 import { mailLink, telLink } from '../lib/wa.js'
@@ -23,7 +22,6 @@ export default function Terms() {
 
       <section className="mx-auto max-w-[760px] px-5 pb-6 pt-20 text-center sm:px-7">
         <div data-hero>
-          <UaeRibbon className="mb-6" />
           <Eyebrow className="mb-5">Terms</Eyebrow>
           <h1 className="mb-6 text-[40px] font-medium sm:text-[52px]">
             Clear terms, <em className="italic text-sage">No surprises.</em>

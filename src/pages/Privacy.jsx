@@ -1,6 +1,5 @@
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
-import UaeRibbon from '../components/UaeRibbon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import { CONTACT } from '../data/site.js'
 import { mailLink, telLink } from '../lib/wa.js'
@@ -22,7 +21,6 @@ export default function Privacy() {
 
       <section className="mx-auto max-w-[760px] px-5 pb-6 pt-20 text-center sm:px-7">
         <div data-hero>
-          <UaeRibbon className="mb-6" />
           <Eyebrow className="mb-5">Privacy</Eyebrow>
           <h1 className="mb-6 text-[40px] font-medium sm:text-[52px]">
             Your information, <em className="italic text-sage">Handled with care.</em>
