@@ -27,13 +27,8 @@
          cards and JSON-LD — is rendered by src/components/Seo.jsx through
          vite-react-ssg's <Head> and prerendered into each route's static HTML. -->
 
-    <!-- Fonts: EB Garamond (display serif) + Figtree (body) per the brand design. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Figtree:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Fonts: EB Garamond (display serif) + Figtree (body) are self-hosted via
+         @fontsource (imported in src/main.jsx) — no render-blocking Google Fonts. -->
 
     <!-- Analytics (privacy-friendly, cookieless). NOTE: the Plausible property for
          safaritypingservices.com must be created in the Plausible dashboard for
