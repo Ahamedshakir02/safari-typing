@@ -66,12 +66,16 @@ The **UAE flag** is shown in the top utility bar and the hero, per the client re
 
 All placeholders live in **`src/data/site.js`** (search for `[CONFIRM]`).
 
-- [x] **City / address** — confirmed **Ajman** (Nazir Plaza Building, Shop 4) by the
-      owner and on-site photos; `+971 6` landline is consistent with Ajman.
-- [ ] **Opening hours** — currently a placeholder (Sat–Thu 9:00 AM–9:00 PM, Fri 3:00–9:00 PM).
+- [x] **City / address** — confirmed **Ajman**, Nazir Plaza Building, Shop 4, **Al Mowaihat 3**
+      (owner Google Business Profile, 2026-06-27); `+971 6` landline is consistent with Ajman.
+- [x] **Opening hours** — confirmed from the Google Business Profile (2026-06-27): split
+      morning + evening sessions, **closed Sunday**. Mon–Thu 8AM–2PM & 5–10PM, Fri 8AM–12PM &
+      5–10PM, Sat 9AM–2PM & 5–10PM.
 - [ ] **WhatsApp number** — set to **+971 56 632 2299**. Confirm which line is WhatsApp.
 - [ ] **Map pin** — uses a name search ("Safari Typing Services, Nazir Plaza, Ajman").
-      Confirm the exact `CONTACT.geo` lat/lng for the shop.
+      Confirm the exact `CONTACT.geo` lat/lng for the shop. ⚠️ The Google Business Profile
+      pin is currently misconfigured to **Mountain View, California, USA** — owner must fix it
+      in Google so the embedded map and `geo` resolve to Al Mowaihat 3, Ajman.
 - [ ] **Reviews** — `REVIEWS` are placeholders; replace with real Google reviews.
 - [ ] **Stats** — `STATS` (years, customers) are placeholders; set real figures.
 - [ ] **Social links** — `CONTACT.socials` point to `#`; add real handles or remove.
