@@ -93,7 +93,7 @@ export default function About() {
                   }`}
                 />
                 <div data-reveal className="-mt-0.5">
-                  <span className="font-body text-[12.5px] uppercase tracking-[0.08em] text-gold">
+                  <span className="font-body text-[13px] uppercase tracking-[0.08em] text-gold">
                     {m.phase}
                   </span>
                   <h3 className="mt-1 text-[22px] font-medium">{m.title}</h3>
@@ -169,7 +169,8 @@ export default function About() {
           <AccentLine className="mx-auto mb-6" />
           <h2 className="mb-5 text-[34px] font-medium sm:text-[42px]">Right at Nazir Plaza, Shop 4.</h2>
           <p className="mb-[26px] font-body text-[16.5px] text-soft">
-            Drop in any day of the week. Free parking nearby, and our counter is rarely a long wait.
+            Drop in six days a week — we’re closed Sundays. Free parking nearby, and our counter is
+            rarely a long wait.
           </p>
           <div className="mx-auto inline-flex flex-col gap-3.5 text-left font-body">
             <div className="flex items-center gap-[13px]">
