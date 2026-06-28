@@ -14,11 +14,11 @@ export const CONTACT = {
   taglineAr: 'خدمات الطباعة والمعاملات الحكومية',
 
   address: {
-    line1: 'Nazir Plaza Building, Shop 4',
+    line1: 'Nazir Plaza Building, Shop 4, Al Mowaihat 3',
     city: 'Ajman',
     region: 'Ajman',
     country: 'United Arab Emirates',
-    full: 'Nazir Plaza Building, Shop 4, Ajman, UAE',
+    full: 'Nazir Plaza Building, Shop 4, Al Mowaihat 3, Ajman, UAE',
   },
 
   // [CONFIRM] exact pin — Ajman placeholder coordinates near Nazir Plaza.
@@ -38,12 +38,15 @@ export const CONTACT = {
   // it exists — a Gmail address reads as less official next to the rest of the site.
   email: 'safaritypingservices@gmail.com',
 
-  // [CONFIRM] actual opening days/times.
+  // Opening days/times — from the Google Business Profile (split morning +
+  // evening sessions; closed Sunday).
   hours: [
-    { days: 'Saturday – Thursday', time: '8:00 AM – 9:00 PM' },
-    { days: 'Friday', time: '2:00 PM – 9:00 PM' },
+    { days: 'Monday – Thursday', time: '8:00 AM – 2:00 PM · 5:00 PM – 10:00 PM' },
+    { days: 'Friday', time: '8:00 AM – 12:00 PM · 5:00 PM – 10:00 PM' },
+    { days: 'Saturday', time: '9:00 AM – 2:00 PM · 5:00 PM – 10:00 PM' },
+    { days: 'Sunday', time: 'Closed' },
   ],
-  hoursShort: 'Sat–Thu 8AM–9PM · Fri 2PM–9PM',
+  hoursShort: 'Mon–Sat · mornings & evenings · closed Sunday',
 
   // Google Maps embed query (no API key needed via &output=embed).
   mapsQuery: 'Safari Typing Services, Nazir Plaza, Ajman, UAE',
@@ -171,18 +174,43 @@ export const LOCAL_BUSINESS_JSONLD = {
     latitude: CONTACT.geo.lat,
     longitude: CONTACT.geo.lng,
   },
+  // Split morning + evening sessions; Sunday omitted = closed.
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
       opens: '08:00',
-      closes: '21:00',
+      closes: '14:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+      opens: '17:00',
+      closes: '22:00',
     },
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: 'Friday',
-      opens: '14:00',
-      closes: '21:00',
+      opens: '08:00',
+      closes: '12:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Friday',
+      opens: '17:00',
+      closes: '22:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Saturday',
+      opens: '09:00',
+      closes: '14:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Saturday',
+      opens: '17:00',
+      closes: '22:00',
     },
   ],
   contactPoint: [
