@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.safaritypingservices.ae/sitemap.xml
+Sitemap: https://www.safaritypingservices.com/sitemap.xml

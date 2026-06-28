@@ -10,6 +10,7 @@ import FeatureCard from '../components/FeatureCard.jsx'
 import Stat from '../components/Stat.jsx'
 import ServiceCard from '../components/ServiceCard.jsx'
 import Credentials from '../components/Credentials.jsx'
+import Picture from '../components/Picture.jsx'
 import TestimonialCard from '../components/TestimonialCard.jsx'
 import UaeFlag from '../components/UaeFlag.jsx'
 import AccentLine from '../components/AccentLine.jsx'
@@ -22,9 +23,9 @@ const primaryPhone = CONTACT.phones[0]
 
 // Photo for each of the three "How it works" steps (placeholders — see content.js).
 const STEP_IMAGES = [
-  { src: PHOTOS.step1, alt: 'Telling us what you need by phone or WhatsApp' },
-  { src: PHOTOS.step2, alt: 'Sharing your documents at the counter' },
-  { src: PHOTOS.step3, alt: 'Collecting your completed paperwork' },
+  { src: PHOTOS.step1, alt: 'A Safari Typing Services advisor ready to take your enquiry by phone or WhatsApp' },
+  { src: PHOTOS.step2, alt: 'Sharing your documents and passport at the counter' },
+  { src: PHOTOS.step3, alt: 'Collecting your completed passport and travel documents' },
 ]
 
 export default function Home() {
@@ -122,9 +123,9 @@ export default function Home() {
           </div>
           <div data-reveal>
             <div className="photo-panel aspect-[4/3] overflow-hidden rounded-[28px] sm:rounded-[280px_280px_28px_28px]">
-              <img
+              <Picture
                 src={PHOTOS.homeBand}
-                alt="Safari Typing Services staff helping a client at the counter"
+                alt="A Safari Typing Services advisor reviewing a client's UAE Typing Center paperwork"
                 className="h-full w-full object-contain"
                 loading="lazy"
                 decoding="async"
@@ -195,7 +196,7 @@ export default function Home() {
           {PROCESS.map((step, i) => (
             <div key={step.numeral}>
               <div className="photo-panel mb-6 aspect-[16/10] overflow-hidden rounded-[24px]">
-                <img
+                <Picture
                   src={STEP_IMAGES[i].src}
                   alt={STEP_IMAGES[i].alt}
                   className="h-full w-full object-contain"

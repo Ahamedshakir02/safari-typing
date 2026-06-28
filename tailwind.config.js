@@ -78,11 +78,16 @@ export default {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-7px)' },
         },
+        ribbonWave: {
+          '0%, 100%': { transform: 'translateX(0) rotate(0deg)' },
+          '50%': { transform: 'translateX(3px) rotate(1.5deg)' },
+        },
       },
       animation: {
         rise: 'rise 0.8s cubic-bezier(.16,.84,.44,1) both',
         bar: 'bar 1.2s ease-in-out infinite',
         float: 'float 2.6s ease-in-out infinite',
+        ribbonWave: 'ribbonWave 6s ease-in-out infinite',
       },
     },
   },

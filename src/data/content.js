@@ -989,16 +989,15 @@ export const SERVICE_GROUPS = [
 // just drop a replacement file at the same path. All are transparent cut-out
 // figures, rendered `object-contain` on a soft blue `.photo-panel` (defined in
 // index.css, no border) so the figures show in full and read as an intentional
-// graphic. (The "-dark" suffix is historical — these PNGs are transparent, not
-// dark scenes; don't render them object-cover or they crop heads/bodies.)
+// graphic. (Don't render them object-cover or they crop heads/bodies.)
 // ---------------------------------------------------------------------------
 export const PHOTOS = {
-  aboutBand: '/photos/team-three-dark.png',
-  servicesBand: '/photos/visa-services-dark.png',
-  homeBand: '/photos/consultation-desk.png',
-  step1: '/photos/staff-documents.png',
-  step2: '/photos/team-duo.png',
-  step3: '/photos/team-three.png',
+  aboutBand: '/photos/team-four.png',
+  servicesBand: '/photos/services-visa-team.png',
+  homeBand: '/photos/home-typing-center.png',
+  step1: '/photos/step-welcome-tablet.png',
+  step2: '/photos/step-documents.png',
+  step3: '/photos/step-collect.png',
 }
 
 // Home — trust strip. [CONFIRM] every figure before launch — no invented numbers.
@@ -1020,8 +1019,11 @@ export const CREDENTIALS = [
   { label: 'Tasheel · MOHRE', icon: 'doc', logo: '/logos/tasheel.png', box: 'tall' },
   { label: 'Amer Immigration', icon: 'shield', logo: '/logos/amer.png', box: 'tall' },
   { label: 'MOFA Attestation', icon: 'check', logo: '/logos/mofa.png', box: 'ultrawide' },
-  { label: 'Government of Dubai', icon: 'building', logo: '/logos/dubai-gov.png', box: 'wide' },
-  { label: 'Government of Sharjah HRD', icon: 'doc', logo: '/logos/sharjah-hr.png', box: 'wide', cls: 'max-h-[58px] max-w-[170px]' },
+  // [CONFIRM] "Government of Dubai" and "Government of Sharjah HRD" emblems were
+  // removed: the centre is Ajman-based and showing other emirates' official
+  // government marks implies endorsement (trademark risk) unless those services
+  // are genuinely offered. Owner can re-add (logos still in /public/logos) if
+  // confirmed — keep the strip Ajman-accurate (see README content checklist).
   { label: 'Ajman Dept. of Economic Development', icon: 'building', logo: '/logos/ded-ajman.png', box: 'wide', cls: 'max-h-16 max-w-[150px]' },
   { label: 'Ajman Sewerage', icon: 'globe', logo: '/logos/ajman-sewerage.png', box: 'tall' },
   { label: 'Tasdeeq attestation', icon: 'check', logo: '/logos/tasdeeq.png', box: 'wide' },

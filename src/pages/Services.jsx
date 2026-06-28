@@ -4,6 +4,7 @@ import AccentLine from '../components/AccentLine.jsx'
 import Credentials from '../components/Credentials.jsx'
 import ServiceCard from '../components/ServiceCard.jsx'
 import Section from '../components/Section.jsx'
+import Picture from '../components/Picture.jsx'
 import CtaBlock from '../components/CtaBlock.jsx'
 import LinkButton from '../components/LinkButton.jsx'
 import { SERVICE_GROUPS, getServiceBySlug, PHOTOS } from '../data/content.js'
@@ -37,10 +38,10 @@ export default function Services() {
 
       {/* Signature illustration band */}
       <section data-reveal className="mx-auto max-w-content px-5 pb-2 sm:px-7">
-        <div className="photo-panel aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/8] sm:rounded-[280px_280px_28px_28px]">
-          <img
+        <div className="photo-panel aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/8]">
+          <Picture
             src={PHOTOS.servicesBand}
-            alt="Visa and passport documents prepared at the counter"
+            alt="Safari Typing Services advisors presenting a completed UAE visa"
             className="h-full w-full object-contain"
             loading="lazy"
             decoding="async"

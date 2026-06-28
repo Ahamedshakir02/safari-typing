@@ -23,35 +23,17 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
     <meta name="theme-color" content="#f1eadd" />
 
-    <title>Safari Typing Services — Typing Centre in Ajman, UAE</title>
-    <meta
-      name="description"
-      content="Government paperwork handled with quiet care in Ajman — visas, Emirates ID, Tasheel, Amer, attestation, business licences and PRO services. Nazir Plaza, Shop 4, Ajman, UAE."
-    />
+    <!-- Per-route <head> — title, description, canonical, Open Graph, Twitter
+         cards and JSON-LD — is rendered by src/components/Seo.jsx through
+         vite-react-ssg's <Head> and prerendered into each route's static HTML. -->
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Safari Typing Services" />
-    <meta property="og:title" content="Safari Typing Services — Typing Centre in Ajman" />
-    <meta
-      property="og:description"
-      content="Government paperwork, handled with quiet care. Visas, Emirates ID, attestation, business licences and PRO services."
-    />
-    <meta property="og:image" content="/safari-banner.jpeg" />
-    <meta property="og:url" content="https://www.safaritypingservices.ae" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Fonts: EB Garamond (display serif) + Figtree (body) are self-hosted via
+         @fontsource (imported in src/main.jsx) — no render-blocking Google Fonts. -->
 
-    <!-- Fonts: EB Garamond (display serif) + Figtree (body) per the brand design. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Figtree:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Analytics (privacy-friendly, cookieless). [CONFIRM] create the Plausible
-         site for this domain, then uncomment. Swap in GA4 instead if preferred. -->
-    <!-- <script defer data-domain="safaritypingservices.ae" src="https://plausible.io/js/script.js"></script> -->
+    <!-- Analytics (privacy-friendly, cookieless). NOTE: the Plausible property for
+         safaritypingservices.com must be created in the Plausible dashboard for
+         data to record. Swap for GA4 here if preferred. -->
+    <script defer data-domain="safaritypingservices.com" src="https://plausible.io/js/script.js"></script>
   </head>
   <body>
     <div id="root"></div>

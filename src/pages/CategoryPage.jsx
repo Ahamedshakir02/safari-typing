@@ -4,6 +4,7 @@ import Eyebrow from '../components/Eyebrow.jsx'
 import Icon from '../components/Icon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import Credentials from '../components/Credentials.jsx'
+import Picture from '../components/Picture.jsx'
 import Section from '../components/Section.jsx'
 import LinkButton from '../components/LinkButton.jsx'
 import CtaBlock from '../components/CtaBlock.jsx'
@@ -25,6 +26,8 @@ export default function CategoryPage() {
   // Other categories, for internal linking at the foot of the page.
   const related = SERVICES.filter((s) => s.slug !== service.slug)
 
+  const canonical = `${SITE_URL}/services/${service.slug}`
+
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -35,9 +38,26 @@ export default function CategoryPage() {
         '@type': 'ListItem',
         position: 3,
         name: service.title,
-        item: `${SITE_URL}/services/${service.slug}`,
+        item: canonical,
       },
     ],
+  }
+
+  // Per-service structured data, tied back to the LocalBusiness on the home page
+  // via its @id so search engines connect the service to the business.
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    serviceType: service.keyword,
+    description: service.intro,
+    url: canonical,
+    areaServed: { '@type': 'City', name: 'Ajman' },
+    provider: {
+      '@type': 'LocalBusiness',
+      name: CONTACT.brand,
+      '@id': `${SITE_URL}/#business`,
+    },
   }
 
   return (
@@ -46,7 +66,7 @@ export default function CategoryPage() {
         title={`${service.title} in Ajman`}
         description={service.intro}
         path={`/services/${service.slug}`}
-        jsonLd={breadcrumbJsonLd}
+        jsonLd={[breadcrumbJsonLd, serviceJsonLd]}
       />
 
       {/* Hero */}
@@ -90,8 +110,8 @@ export default function CategoryPage() {
       {/* Service photo */}
       {service.photo && (
         <section data-reveal className="mx-auto max-w-content px-5 pt-2 sm:px-7">
-          <div className="aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/9] sm:rounded-t-[96px]">
-            <img
+          <div className="aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/9]">
+            <Picture
               src={service.photo}
               alt={service.photoAlt}
               className="h-full w-full object-cover"
