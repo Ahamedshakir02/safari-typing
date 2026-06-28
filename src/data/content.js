@@ -1212,6 +1212,6 @@ export const FAQS = [
   },
   {
     q: 'What are your opening hours?',
-    a: 'Saturday to Thursday, 8:00 AM to 9:00 PM, and Friday from 2:00 PM to 9:00 PM. Walk-ins are welcome, but a quick call ahead helps us prepare.',
+    a: 'We open in two sessions a day — mornings and evenings. Monday to Thursday: 8:00 AM–2:00 PM and 5:00 PM–10:00 PM. Friday: 8:00 AM–12:00 PM and 5:00 PM–10:00 PM. Saturday: 9:00 AM–2:00 PM and 5:00 PM–10:00 PM. We are closed on Sundays. Walk-ins are welcome, but a quick call ahead helps us prepare.',
   },
 ]
