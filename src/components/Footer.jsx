@@ -13,10 +13,10 @@ export default function Footer() {
         {/* Brand + hours */}
         <div>
           <Link to="/" aria-label="Safari Typing Services — home" className="mb-[18px] flex items-center gap-[13px]">
-            <img src="/safari-mark.svg" alt="Safari Typing Services" className="h-11 w-auto" loading="lazy" decoding="async" />
+            <img src="/safari-mark.svg" alt="Safari Typing Services" className="h-14 w-auto" loading="lazy" decoding="async" />
             <span className="flex flex-col leading-[1.05]">
-              <span className="font-display text-[20px] font-semibold text-ink">Safari</span>
-              <span className="font-body text-[8.5px] font-semibold tracking-[0.26em] text-sage">
+              <span className="font-display text-[28px] font-semibold text-ink">Safari</span>
+              <span className="font-body text-[12.5px] font-semibold tracking-[0.24em] text-sage">
                 TYPING SERVICES
               </span>
             </span>

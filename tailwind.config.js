@@ -23,7 +23,10 @@ export default {
         },
         body: '#3b4557', // default body text — cool slate
         soft: '#5b6678', // secondary text — muted slate
-        gold: '#48618c', // eyebrow labels — muted steel-blue (was warm brown)
+        // Eyebrow/label accent. Token name kept (`gold`, used ~13× site-wide) but
+        // now holds the LOGO RED (rgb(230,47,42) deepened a touch for legibility
+        // on the cool-white bg) — the secondary brand accent beside `sage` blue.
+        gold: '#cc2722', // eyebrow labels / small highlights — logo red
         sand: '#aebfd9', // serif numerals — soft periwinkle-grey
         // NOTE: the `sage` token name is kept (used ~100× site-wide) but now holds
         // the brand BLUE sampled from the logo mark (rgb(31,84,166)), so the whole

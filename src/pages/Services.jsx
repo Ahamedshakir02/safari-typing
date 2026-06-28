@@ -1,6 +1,5 @@
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
-import UaeRibbon from '../components/UaeRibbon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import Credentials from '../components/Credentials.jsx'
 import ServiceCard from '../components/ServiceCard.jsx'
@@ -24,7 +23,6 @@ export default function Services() {
       {/* Header */}
       <section className="mx-auto max-w-[860px] px-5 pb-12 pt-20 text-center sm:px-7">
         <div data-hero>
-          <UaeRibbon className="mb-6" />
           <Eyebrow className="mb-5">Our Services</Eyebrow>
           <h1 className="mb-5 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
             Everything your paperwork needs.

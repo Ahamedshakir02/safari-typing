@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
-import UaeRibbon from '../components/UaeRibbon.jsx'
 import Icon from '../components/Icon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import { ENQUIRY_SERVICES } from '../data/content.js'
@@ -57,7 +56,6 @@ export default function ContactPage() {
       {/* Header */}
       <section className="mx-auto max-w-[820px] px-5 pb-11 pt-20 text-center sm:px-7">
         <div data-hero>
-          <UaeRibbon className="mb-6" />
           <Eyebrow className="mb-5">Contact</Eyebrow>
           <h1 className="mb-5 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
             Let's get your paperwork moving.
