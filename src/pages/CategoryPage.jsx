@@ -4,6 +4,7 @@ import Eyebrow from '../components/Eyebrow.jsx'
 import Icon from '../components/Icon.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import Credentials from '../components/Credentials.jsx'
+import Picture from '../components/Picture.jsx'
 import Section from '../components/Section.jsx'
 import LinkButton from '../components/LinkButton.jsx'
 import CtaBlock from '../components/CtaBlock.jsx'
@@ -110,7 +111,7 @@ export default function CategoryPage() {
       {service.photo && (
         <section data-reveal className="mx-auto max-w-content px-5 pt-2 sm:px-7">
           <div className="aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/9]">
-            <img
+            <Picture
               src={service.photo}
               alt={service.photoAlt}
               className="h-full w-full object-cover"
