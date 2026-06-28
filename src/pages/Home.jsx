@@ -125,7 +125,7 @@ export default function Home() {
             <div className="photo-panel aspect-[4/3] overflow-hidden rounded-[28px] sm:rounded-[280px_280px_28px_28px]">
               <Picture
                 src={PHOTOS.homeBand}
-                alt="A Safari Typing Services advisor reviewing a client's UAE Typing Center paperwork"
+                alt="Two multilingual Safari Typing Services advisors at the Ajman counter, holding clients' UAE government paperwork"
                 className="h-full w-full object-contain"
                 loading="lazy"
                 decoding="async"
