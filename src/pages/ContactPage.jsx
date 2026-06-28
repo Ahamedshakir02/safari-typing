@@ -118,7 +118,14 @@ export default function ContactPage() {
             </ContactRow>
             <div className="h-px bg-line" />
             <ContactRow icon="clock" label="HOURS">
-              <div className="font-body text-[15px] font-medium text-ink">{CONTACT.hoursShort}</div>
+              <ul className="space-y-1.5">
+                {CONTACT.hours.map((h) => (
+                  <li key={h.days} className="font-body text-[14.5px] leading-snug">
+                    <span className="font-semibold text-ink">{h.days}</span>
+                    <span className="text-soft"> · {h.time}</span>
+                  </li>
+                ))}
+              </ul>
             </ContactRow>
           </div>
 
