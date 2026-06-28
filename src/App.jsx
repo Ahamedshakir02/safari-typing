@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Layout from './Layout.jsx'
+import Seo from './components/Seo.jsx'
 import Home from './pages/Home.jsx' // eager — the primary route
 import { SERVICES } from './data/content.js'
 
@@ -12,7 +13,8 @@ function RedirectToPrivacyPolicy() {
   useEffect(() => {
     navigate('/privacy-policy', { replace: true })
   }, [navigate])
-  return null
+  // noindex the empty redirect stub and point its canonical at the real page.
+  return <Seo title="Privacy Policy" path="/privacy-policy" noindex />
 }
 
 // vite-react-ssg data routes. The root route renders the site chrome (Layout)
