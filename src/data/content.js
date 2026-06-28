@@ -1096,7 +1096,7 @@ export const ABOUT_STATS = [
   { value: '18+', label: 'Years in service' },
   { value: '15k+', label: 'Applications' }, // owner-confirmed 2026-06-27
   { value: '15', label: 'Service areas' },
-  { value: '100%', label: 'Confidential', accent: true },
+  { value: '100%', label: 'Confidential' }, // ink, not brand-blue (owner request)
 ]
 
 export const VALUES = [
@@ -1112,6 +1112,44 @@ export const VALUES = [
     title: 'Presence',
     body: 'Call, WhatsApp or walk in. We keep you updated at every stage, so you’re never left guessing.',
   },
+]
+
+// About — "Our journey" roadmap (vertical timeline). Phase-based milestones,
+// deliberately undated — keep these qualitative unless the owner confirms real
+// years. Figures used (18+ years, 15 service areas, five languages) are the
+// owner-confirmed ones already shown elsewhere on the site.
+export const ABOUT_JOURNEY = [
+  {
+    phase: 'The beginning',
+    title: 'A single typing desk',
+    body: 'Safari Typing Services opens at Nazir Plaza, Ajman — a small desk typing documents for neighbours and nearby businesses.',
+  },
+  {
+    phase: 'Finding our feet',
+    title: 'More of the paperwork',
+    body: 'As word spreads, we take on visa processing, Emirates ID, and labour and immigration work — handling each family’s file from start to finish.',
+  },
+  {
+    phase: 'A full service centre',
+    title: 'Everything under one roof',
+    body: 'Fifteen service areas grow around that desk — business setup and PRO, attestation, tax, insurance and travel — all from one calm counter.',
+  },
+  {
+    phase: 'Today & ahead',
+    title: 'Trusted across the UAE',
+    body: 'Eighteen years on, we serve thousands of residents and businesses — in five languages, in person or online, wherever you are in the Emirates.',
+  },
+]
+
+// About — "Why choose us" checklist.
+export const ABOUT_WHY = [
+  'Over 18 years of experience',
+  'Comprehensive document processing',
+  'Fast and reliable service',
+  'Experienced, professional team',
+  'Support for individuals and businesses',
+  'UAE-wide service coverage',
+  'Customer-centric approach',
 ]
 
 // Contact — enquiry form service options (mirrors the 15 categories).
