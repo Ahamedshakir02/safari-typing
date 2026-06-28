@@ -249,4 +249,21 @@ html.lenis body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  /* Credentials marquee: stop the scroll and lay all logos out as a static,
+     centred wrap (the duplicate copies are hidden) instead of a frozen strip. */
+  .cred-row {
+    overflow: visible !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+  .cred-track {
+    width: 100% !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    transform: none !important;
+    animation: none !important;
+  }
+  .cred-track > [aria-hidden='true'] {
+    display: none;
+  }
 }

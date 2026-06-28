@@ -7,12 +7,10 @@ import FeatureCard from '../components/FeatureCard.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Section from '../components/Section.jsx'
 import Picture from '../components/Picture.jsx'
-import { ABOUT_STATS, VALUES, PHOTOS } from '../data/content.js'
+import { ABOUT_STATS, VALUES, ABOUT_JOURNEY, ABOUT_WHY, PHOTOS } from '../data/content.js'
 import { CONTACT } from '../data/site.js'
 import { telLink } from '../lib/wa.js'
 import { usePageMotion } from '../lib/usePageMotion.js'
-
-const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(CONTACT.mapsQuery)}&output=embed`
 
 // Map each value to an icon from the shared set.
 const VALUE_ICONS = { Accuracy: 'check', Honesty: 'shield', Presence: 'chat' }
@@ -57,6 +55,56 @@ export default function About() {
         </div>
       </section>
 
+      {/* Journey roadmap */}
+      <Section containerClassName="pb-6 pt-16">
+        <SectionHeading
+          data-reveal
+          align="center"
+          eyebrow="Our Journey"
+          title="From one desk to a full centre."
+          intro="Eighteen years of growing alongside the families and businesses of Ajman."
+          className="mb-14"
+        />
+        <ol data-timeline className="relative mx-auto max-w-[640px]">
+          {/* Sage progress line, drawn from first to last node as the section
+              scrolls. Positioned + revealed by usePageMotion; reduced-motion and
+              no-JS users keep the faint static track + nodes below. */}
+          <span
+            data-timeline-progress
+            aria-hidden="true"
+            className="pointer-events-none absolute left-[8px] z-[1] w-[2px] origin-top bg-sage opacity-0"
+          />
+          {ABOUT_JOURNEY.map((m, i) => {
+            const isLast = i === ABOUT_JOURNEY.length - 1
+            return (
+              <li key={m.phase} className="relative grid grid-cols-[20px_1fr] gap-x-5 pb-11 last:pb-0">
+                {/* faint static track (skipped on the final milestone) */}
+                {!isLast && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-[8px] top-3 bottom-0 w-[2px] bg-line"
+                  />
+                )}
+                {/* node — filled on the current ("today") milestone */}
+                <span
+                  data-timeline-node
+                  className={`relative z-10 mt-1.5 h-[18px] w-[18px] rounded-full border-2 border-sage ${
+                    isLast ? 'bg-sage' : 'bg-cream'
+                  }`}
+                />
+                <div data-reveal className="-mt-0.5">
+                  <span className="font-body text-[12.5px] uppercase tracking-[0.08em] text-gold">
+                    {m.phase}
+                  </span>
+                  <h3 className="mt-1 text-[22px] font-medium">{m.title}</h3>
+                  <p className="mt-2 font-body text-[15.5px] leading-[1.65] text-soft">{m.body}</p>
+                </div>
+              </li>
+            )
+          })}
+        </ol>
+      </Section>
+
       {/* Stats */}
       <Section containerClassName="py-14">
         <div
@@ -92,50 +140,61 @@ export default function About() {
         </div>
       </Section>
 
+      {/* Why choose us */}
+      <Section tone="raised" containerClassName="py-16">
+        <SectionHeading
+          data-reveal
+          align="center"
+          accent
+          eyebrow="Why Choose Us"
+          title="Reasons people keep coming back."
+          className="mb-12"
+        />
+        <ul data-reveal-group className="mx-auto grid max-w-[820px] gap-x-10 gap-y-5 sm:grid-cols-2">
+          {ABOUT_WHY.map((item) => (
+            <li key={item} className="flex items-center gap-3.5">
+              <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-tag-bg text-sage">
+                <Icon name="check" size={16} strokeWidth={2} />
+              </span>
+              <span className="font-body text-[16.5px] font-medium text-ink">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
       {/* Location */}
       <Section tone="sunken" containerClassName="py-20">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-          <div data-reveal>
-            <Eyebrow className="mb-4">Find Us</Eyebrow>
-            <AccentLine className="mb-6" />
-            <h2 className="mb-5 text-[34px] font-medium sm:text-[42px]">Right at Nazir Plaza, Shop 4.</h2>
-            <p className="mb-[26px] font-body text-[16.5px] text-soft">
-              Drop in any day of the week. Free parking nearby, and our counter is rarely a long wait.
-            </p>
-            <div className="flex flex-col gap-3.5 font-body">
-              <div className="flex items-center gap-[13px]">
-                <span className="shrink-0 text-sage">
-                  <Icon name="pin" size={18} strokeWidth={1.7} />
-                </span>
-                <span className="text-[15.5px] font-medium text-ink">{CONTACT.address.line1}</span>
-              </div>
-              <div className="flex items-center gap-[13px]">
-                <span className="shrink-0 text-sage">
-                  <Icon name="phone" size={18} strokeWidth={1.7} />
-                </span>
-                <a
-                  href={telLink(CONTACT.phones[0].e164)}
-                  className="text-[15.5px] font-medium text-ink transition-colors hover:text-sage"
-                >
-                  {CONTACT.phones[0].display}
-                </a>
-              </div>
-              <div className="flex items-center gap-[13px]">
-                <span className="shrink-0 text-sage">
-                  <Icon name="clock" size={18} strokeWidth={1.7} />
-                </span>
-                <span className="text-[15.5px] font-medium text-ink">{CONTACT.hoursShort}</span>
-              </div>
+        <div data-reveal className="mx-auto max-w-[620px] text-center">
+          <Eyebrow className="mb-4">Find Us</Eyebrow>
+          <AccentLine className="mx-auto mb-6" />
+          <h2 className="mb-5 text-[34px] font-medium sm:text-[42px]">Right at Nazir Plaza, Shop 4.</h2>
+          <p className="mb-[26px] font-body text-[16.5px] text-soft">
+            Drop in any day of the week. Free parking nearby, and our counter is rarely a long wait.
+          </p>
+          <div className="mx-auto inline-flex flex-col gap-3.5 text-left font-body">
+            <div className="flex items-center gap-[13px]">
+              <span className="shrink-0 text-sage">
+                <Icon name="pin" size={18} strokeWidth={1.7} />
+              </span>
+              <span className="text-[15.5px] font-medium text-ink">{CONTACT.address.line1}</span>
             </div>
-          </div>
-          <div data-reveal className="overflow-hidden rounded-[24px] border border-line shadow-soft">
-            <iframe
-              title="Map to Safari Typing Services, Nazir Plaza"
-              src={mapSrc}
-              className="aspect-[4/3] w-full"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+            <div className="flex items-center gap-[13px]">
+              <span className="shrink-0 text-sage">
+                <Icon name="phone" size={18} strokeWidth={1.7} />
+              </span>
+              <a
+                href={telLink(CONTACT.phones[0].e164)}
+                className="text-[15.5px] font-medium text-ink transition-colors hover:text-sage"
+              >
+                {CONTACT.phones[0].display}
+              </a>
+            </div>
+            <div className="flex items-center gap-[13px]">
+              <span className="shrink-0 text-sage">
+                <Icon name="clock" size={18} strokeWidth={1.7} />
+              </span>
+              <span className="text-[15.5px] font-medium text-ink">{CONTACT.hoursShort}</span>
+            </div>
           </div>
         </div>
       </Section>

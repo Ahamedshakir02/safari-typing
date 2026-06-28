@@ -18,7 +18,7 @@ const QUALITY = 80
 const USED_PNGS = [
   'team-four.png',
   'services-visa-team.png',
-  'home-typing-center.png',
+  'team-duo.png',
   'step-welcome-tablet.png',
   'step-documents.png',
   'step-collect.png',

@@ -9,9 +9,9 @@ const year = new Date().getFullYear()
 export default function Footer() {
   return (
     <footer className="border-t border-line">
-      <div className="mx-auto grid max-w-content gap-11 px-5 pb-8 pt-16 sm:px-7 md:grid-cols-[1.4fr_1.6fr_1fr_1.2fr]">
+      <div className="mx-auto grid max-w-content grid-cols-2 gap-x-6 gap-y-10 px-5 pb-8 pt-14 sm:px-7 md:grid-cols-[1.4fr_1.6fr_1fr_1.2fr] md:gap-11 md:pt-16">
         {/* Brand + hours */}
-        <div>
+        <div className="col-span-2 md:col-span-1">
           <Link to="/" aria-label="Safari Typing Services — home" className="mb-[18px] flex items-center gap-[13px]">
             <img src="/safari-mark.svg" alt="Safari Typing Services" className="h-14 w-auto" loading="lazy" decoding="async" />
             <span className="flex flex-col leading-[1.05]">
@@ -33,9 +33,9 @@ export default function Footer() {
         </div>
 
         {/* Services */}
-        <div>
+        <div className="col-span-2 border-t border-line pt-9 md:col-span-1 md:border-t-0 md:pt-0">
           <h4 className="mb-[18px] font-body text-[12.5px] font-bold tracking-[0.12em] text-ink">SERVICES</h4>
-          <div className="grid grid-cols-1 gap-x-6 gap-y-[10px] font-body text-[14px] text-soft sm:grid-cols-2">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-[10px] font-body text-[14px] text-soft">
             {SERVICES.map((s) => (
               <Link key={s.slug} to={`/services/${s.slug}`} className="transition-colors hover:text-sage">
                 {s.title}
