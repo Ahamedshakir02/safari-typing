@@ -1019,8 +1019,11 @@ export const CREDENTIALS = [
   { label: 'Tasheel · MOHRE', icon: 'doc', logo: '/logos/tasheel.png', box: 'tall' },
   { label: 'Amer Immigration', icon: 'shield', logo: '/logos/amer.png', box: 'tall' },
   { label: 'MOFA Attestation', icon: 'check', logo: '/logos/mofa.png', box: 'ultrawide' },
-  { label: 'Government of Dubai', icon: 'building', logo: '/logos/dubai-gov.png', box: 'wide' },
-  { label: 'Government of Sharjah HRD', icon: 'doc', logo: '/logos/sharjah-hr.png', box: 'wide', cls: 'max-h-[58px] max-w-[170px]' },
+  // [CONFIRM] "Government of Dubai" and "Government of Sharjah HRD" emblems were
+  // removed: the centre is Ajman-based and showing other emirates' official
+  // government marks implies endorsement (trademark risk) unless those services
+  // are genuinely offered. Owner can re-add (logos still in /public/logos) if
+  // confirmed — keep the strip Ajman-accurate (see README content checklist).
   { label: 'Ajman Dept. of Economic Development', icon: 'building', logo: '/logos/ded-ajman.png', box: 'wide', cls: 'max-h-16 max-w-[150px]' },
   { label: 'Ajman Sewerage', icon: 'globe', logo: '/logos/ajman-sewerage.png', box: 'tall' },
   { label: 'Tasdeeq attestation', icon: 'check', logo: '/logos/tasdeeq.png', box: 'wide' },
