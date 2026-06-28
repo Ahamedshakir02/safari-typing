@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { SITE_URL } from '../data/site.js'
 
-const DEFAULT_OG_IMAGE = `${SITE_URL}/safari-banner.jpeg`
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`
 
 const upsertMeta = (selector, attrs) => {
   let el = document.head.querySelector(selector)
