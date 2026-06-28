@@ -994,7 +994,7 @@ export const SERVICE_GROUPS = [
 export const PHOTOS = {
   aboutBand: '/photos/team-four.png',
   servicesBand: '/photos/services-visa-team.png',
-  homeBand: '/photos/home-typing-center.png',
+  homeBand: '/photos/team-duo.png',
   step1: '/photos/step-welcome-tablet.png',
   step2: '/photos/step-documents.png',
   step3: '/photos/step-collect.png',
