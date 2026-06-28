@@ -11,7 +11,7 @@ export default function Stat({ value, label, accent = false, className = '' }) {
       >
         {value}
       </div>
-      <div className="mt-2 font-body text-[12.5px] uppercase tracking-[0.08em] text-gold">{label}</div>
+      <div className="mt-2 font-body text-[13px] uppercase tracking-[0.08em] text-gold">{label}</div>
     </div>
   )
 }
