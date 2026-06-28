@@ -17,7 +17,7 @@ export default function Services() {
     <div ref={root}>
       <Seo
         title="Services — Typing Centre in Ajman"
-        description="Fifteen service areas covering every government, immigration and business formality in Ajman — visas, Emirates ID, Tasheel, attestation, business setup & PRO, VAT & tax, medical, vehicle, passport, FEWA, website design and more."
+        description="Fifteen service areas covering every government, immigration and business formality in Ajman — Visas, Emirates ID, Tasheel, Attestation, Business setup & PRO, VAT & tax, Medical, Vehicle, Passport, FEWA, Website design and more."
         path="/services"
       />
 

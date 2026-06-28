@@ -38,7 +38,7 @@ export default function Home() {
     <div ref={root}>
       <Seo
         title="Typing Centre in Ajman — Visas, Emirates ID, Tasheel & Attestation"
-        description="Government typing services in Ajman (Nazir Plaza, Shop 4): visas, Emirates ID, Tasheel, Amer, attestation, business licences and PRO services — handled calmly and correctly."
+        description="Government typing services in Ajman (Nazir Plaza, Shop 4): Visas, Emirates ID, Tasheel, Amer, Attestation, Business licences and PRO services — handled calmly and correctly."
         path="/"
         jsonLd={LOCAL_BUSINESS_JSONLD}
       />
