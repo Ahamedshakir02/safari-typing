@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { NavLink, Link, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import NavItem from './NavItem.jsx'
 import Brand from './Brand.jsx'
 import Icon from './Icon.jsx'
 import { NAV_LINKS, CONTACT } from '../data/site.js'
@@ -49,7 +50,7 @@ export default function Header() {
                 className="flex items-center"
                 onMouseEnter={() => setMegaOpen(true)}
               >
-                <NavLink
+                <NavItem
                   to={link.to}
                   className={({ isActive }) =>
                     `inline-flex items-center gap-1 ${linkClass({ isActive })}`
@@ -66,10 +67,10 @@ export default function Header() {
                       megaOpen ? '-rotate-90' : ''
                     }`}
                   />
-                </NavLink>
+                </NavItem>
               </div>
             ) : (
-              <NavLink
+              <NavItem
                 key={link.to}
                 to={link.to}
                 end={link.to === '/'}
@@ -77,7 +78,7 @@ export default function Header() {
                 onMouseEnter={() => setMegaOpen(false)}
               >
                 {link.label}
-              </NavLink>
+              </NavItem>
             ),
           )}
         </div>
@@ -157,7 +158,7 @@ export default function Header() {
               link.label === 'Services' ? (
                 <div key={link.to}>
                   <div className="flex items-center">
-                    <NavLink
+                    <NavItem
                       to={link.to}
                       className={({ isActive }) =>
                         `flex-1 rounded-xl px-3 py-3 font-body text-base font-medium transition-colors ${
@@ -166,7 +167,7 @@ export default function Header() {
                       }
                     >
                       {link.label}
-                    </NavLink>
+                    </NavItem>
                     <button
                       type="button"
                       onClick={() => setMobileServices((v) => !v)}
@@ -193,7 +194,7 @@ export default function Header() {
                             {group.label}
                           </div>
                           {group.services.map((s) => (
-                            <NavLink
+                            <NavItem
                               key={s.slug}
                               to={`/services/${s.slug}`}
                               className={({ isActive }) =>
@@ -204,7 +205,7 @@ export default function Header() {
                             >
                               <Icon name={s.icon} size={16} strokeWidth={1.8} />
                               {s.title}
-                            </NavLink>
+                            </NavItem>
                           ))}
                         </div>
                       ))}
@@ -212,7 +213,7 @@ export default function Header() {
                   )}
                 </div>
               ) : (
-                <NavLink
+                <NavItem
                   key={link.to}
                   to={link.to}
                   end={link.to === '/'}
@@ -223,7 +224,7 @@ export default function Header() {
                   }
                 >
                   {link.label}
-                </NavLink>
+                </NavItem>
               ),
             )}
             <div className="mt-2 flex gap-3">

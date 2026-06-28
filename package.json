@@ -6,7 +6,7 @@
   "description": "Multi-page marketing website for Safari Typing Services — government typing & document services, Ajman, UAE.",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite-react-ssg build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -15,7 +15,8 @@
     "lenis": "^1.3.23",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.2"
+    "react-router-dom": "^6.26.2",
+    "vite-react-ssg": "0.9.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.7.0",
