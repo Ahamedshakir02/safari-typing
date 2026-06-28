@@ -303,8 +303,6 @@ export const SERVICES = [
     titleAr: 'الخدمات الطبية',
     keyword: 'Medical fitness test typing Ajman',
     blurb: 'Fitness tests, health cards & family medicals.',
-    photo: '/photos/service-medical-services.jpg',
-    photoAlt: 'A Safari Typing Services doctor reviewing a medical fitness report with a client',
     intro:
       'Medical fitness applications typed and booked so you arrive at the centre ready — for visas, family files and marriage.',
     introAr:
@@ -1035,7 +1033,7 @@ export const HOME = {
   hero: {
     eyebrow: 'Nazir Plaza · Ajman',
     subline:
-      'Visas, Emirates ID, attestation, business licences and PRO services — typed correctly, submitted through the right channel and followed up until they’re done. So you never have to think about the queue again.',
+      'Visas, Emirates ID, Attestation, Business licences and PRO services — typed correctly, submitted through the right channel and followed up until they’re done. So you never have to think about the queue again.',
     trustLine: 'Serving Ajman’s residents & businesses in five languages', // [CONFIRM] scale wording
   },
   credentialsLabel: 'We work through the official government channels',
@@ -1132,7 +1130,7 @@ export const ABOUT_JOURNEY = [
   {
     phase: 'A full service centre',
     title: 'Everything under one roof',
-    body: 'Fifteen service areas grow around that desk — business setup and PRO, attestation, tax, insurance and travel — all from one calm counter.',
+    body: 'Fifteen service areas grow around that desk — Business setup and PRO, Attestation, Tax, Insurance and Travel — all from one calm counter.',
   },
   {
     phase: 'Today & ahead',
@@ -1154,22 +1152,22 @@ export const ABOUT_WHY = [
 
 // Contact — enquiry form service options (mirrors the 15 categories).
 export const ENQUIRY_SERVICES = [
-  'Business setup & PRO',
-  'Tax & accounting',
-  'Visa & immigration',
+  'Business Setup & PRO',
+  'Tax & Accounting',
+  'Visa & Immigration',
   'Emirates ID',
-  'Tasheel & MOHRE labour',
-  'Medical services',
-  'Documentation & attestation',
-  'Translation & court works',
-  'Vehicle & driving licence',
-  'Passport services',
-  'Online registrations & utilities',
+  'Tasheel & MOHRE Labour',
+  'Medical Services',
+  'Documentation & Attestation',
+  'Translation & Court Works',
+  'Vehicle & Driving Licence',
+  'Passport Services',
+  'Online Registrations & Utilities',
   'Insurance',
-  'Travel services',
-  'Website & digital marketing',
-  'Everyday & other services',
-  'Something else',
+  'Travel Services',
+  'Website & Digital Marketing',
+  'Everyday & Other Services',
+  'Something Else',
 ]
 
 // FAQ — accordion (feeds FAQPage JSON-LD on /faq).
@@ -1208,7 +1206,7 @@ export const FAQS = [
   },
   {
     q: 'Which areas do you serve?',
-    a: 'We’re based at Nazir Plaza, Shop 4 in Ajman, and handle transactions for clients across Ajman and the northern emirates. Many services — typing, attestation, visa follow-ups — can be done remotely wherever you are in the UAE.',
+    a: 'We’re based at Nazir Plaza, Shop 4 in Ajman, and handle transactions for clients across Ajman and the northern emirates. Many services — Typing, Attestation, Visa follow-ups — can be done remotely wherever you are in the UAE.',
   },
   {
     q: 'What are your opening hours?',

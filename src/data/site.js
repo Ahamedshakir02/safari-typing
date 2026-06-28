@@ -97,7 +97,7 @@ export const WHY_US = [
   {
     icon: 'layers',
     title: 'Everything under one roof',
-    body: 'Visas, Emirates ID, attestation, translation, insurance — one centre.',
+    body: 'Visas, Emirates ID, Attestation, Translation, Insurance — one centre.',
   },
   {
     icon: 'chat',
