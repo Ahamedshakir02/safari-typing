@@ -34,6 +34,8 @@ export const CONTACT = {
   // wa.me requires the number WITHOUT the leading '+'.  [CONFIRM] WhatsApp line.
   whatsapp: { display: '+971 50 405 7575', number: '971504057575' },
 
+  // [CONFIRM] move to a domain mailbox (e.g. info@safaritypingservices.com) once
+  // it exists — a Gmail address reads as less official next to the rest of the site.
   email: 'safaritypingservices@gmail.com',
 
   // [CONFIRM] actual opening days/times.
