@@ -22,7 +22,7 @@ const primaryPhone = CONTACT.phones[0]
 
 // Photo for each of the three "How it works" steps (placeholders — see content.js).
 const STEP_IMAGES = [
-  { src: PHOTOS.step1, alt: 'A Safari Typing Services advisor welcoming a client' },
+  { src: PHOTOS.step1, alt: 'A Safari Typing Services advisor ready to take your enquiry by phone or WhatsApp' },
   { src: PHOTOS.step2, alt: 'Sharing your documents and passport at the counter' },
   { src: PHOTOS.step3, alt: 'Collecting your completed passport and travel documents' },
 ]

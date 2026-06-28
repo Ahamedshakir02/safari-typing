@@ -90,7 +90,7 @@ export default function CategoryPage() {
       {/* Service photo */}
       {service.photo && (
         <section data-reveal className="mx-auto max-w-content px-5 pt-2 sm:px-7">
-          <div className="aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/9] sm:rounded-t-[96px]">
+          <div className="aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/9]">
             <img
               src={service.photo}
               alt={service.photoAlt}

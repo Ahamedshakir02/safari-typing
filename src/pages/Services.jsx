@@ -37,7 +37,7 @@ export default function Services() {
 
       {/* Signature illustration band */}
       <section data-reveal className="mx-auto max-w-content px-5 pb-2 sm:px-7">
-        <div className="photo-panel aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/8] sm:rounded-[280px_280px_28px_28px]">
+        <div className="photo-panel aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/8]">
           <img
             src={PHOTOS.servicesBand}
             alt="Safari Typing Services advisors presenting a completed UAE visa"
