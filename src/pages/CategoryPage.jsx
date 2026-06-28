@@ -72,7 +72,7 @@ export default function CategoryPage() {
       {/* Hero */}
       <section className="mx-auto max-w-[860px] px-5 pb-10 pt-16 text-center sm:px-7 sm:pt-20">
         <div data-hero>
-          <nav className="mb-6 font-body text-[13px] font-semibold text-sand" aria-label="Breadcrumb">
+          <nav className="mb-6 font-body text-[13px] font-semibold text-soft" aria-label="Breadcrumb">
             <Link to="/services" className="transition-colors hover:text-sage">
               Services
             </Link>
@@ -153,7 +153,7 @@ export default function CategoryPage() {
               className="group flex scroll-mt-28 flex-col rounded-[22px] border border-line bg-cream-50 p-7 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage/40 hover:shadow-lift sm:p-8"
             >
               <h2 className="mb-1.5 text-[22px] font-medium sm:text-[24px]">{sub.title}</h2>
-              <p dir="rtl" lang="ar" className="mb-3 font-body text-[15px] text-sand">
+              <p dir="rtl" lang="ar" className="mb-3 font-body text-[15px] text-soft">
                 {sub.titleAr}
               </p>
               <p className="mb-5 font-body text-[15.5px] leading-[1.6] text-soft">{sub.desc}</p>
@@ -184,7 +184,7 @@ export default function CategoryPage() {
           <div>
             <h2 className="mb-2 font-display text-[24px] font-medium text-ink">What to bring</h2>
             <p className="font-body text-[16px] leading-[1.65] text-soft">{service.whatToBring}</p>
-            <p className="mt-3 font-body text-[14px] text-sand">
+            <p className="mt-3 font-body text-[14px] text-soft">
               Not sure what applies to you? Message us first and we&rsquo;ll send the exact checklist so
               you only make one trip.
             </p>
