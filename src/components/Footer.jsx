@@ -26,9 +26,12 @@ export default function Footer() {
             and the northern emirates.
           </p>
           <h4 className="mb-2 font-body text-[12.5px] font-bold tracking-[0.12em] text-ink">HOURS</h4>
-          <div className="font-body text-[14px] leading-[1.7] text-soft">
-            <div>Sat – Thu · <span className="text-ink">8:00 AM – 9:00 PM</span></div>
-            <div>Friday · <span className="text-ink">2:00 PM – 9:00 PM</span></div>
+          <div className="font-body text-[14px] leading-[1.6] text-soft">
+            {CONTACT.hours.map((h) => (
+              <div key={h.days} className="mb-1 last:mb-0">
+                {h.days} · <span className="text-ink">{h.time}</span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -91,7 +94,7 @@ export default function Footer() {
         </span>
         <span className="inline-flex items-center gap-2">
           <UaeFlag className="w-4 shrink-0" />
-          Nazir Plaza Building, Shop 4 · Ajman, UAE
+          {CONTACT.address.line1} · {CONTACT.address.city}, UAE
         </span>
       </div>
     </footer>
