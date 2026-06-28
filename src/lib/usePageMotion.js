@@ -78,6 +78,53 @@ export function usePageMotion() {
             })
           })
 
+          // ---- Journey timeline: draw the progress line down the spine, and
+          // pop each milestone node as the line reaches it ----
+          const timeline = q('[data-timeline]')[0]
+          if (timeline) {
+            const progress = timeline.querySelector('[data-timeline-progress]')
+            const nodes = gsap.utils.toArray(timeline.querySelectorAll('[data-timeline-node]'))
+            if (progress && nodes.length > 1) {
+              // Stretch the line from the first node's centre to the last's,
+              // re-measuring on every ScrollTrigger refresh (resize / reflow).
+              const place = () => {
+                const top = timeline.getBoundingClientRect().top
+                const a = nodes[0].getBoundingClientRect()
+                const b = nodes[nodes.length - 1].getBoundingClientRect()
+                const y0 = a.top - top + a.height / 2
+                gsap.set(progress, { top: y0, height: b.top - top + b.height / 2 - y0, autoAlpha: 1 })
+              }
+              place()
+              gsap.fromTo(
+                progress,
+                { scaleY: 0 },
+                {
+                  scaleY: 1,
+                  ease: 'none',
+                  transformOrigin: 'top',
+                  scrollTrigger: {
+                    trigger: timeline,
+                    start: 'top 78%',
+                    end: 'bottom 62%',
+                    scrub: 0.5,
+                    onRefresh: place,
+                  },
+                }
+              )
+
+              nodes.forEach((node) => {
+                gsap.from(node, {
+                  scale: 0.3,
+                  autoAlpha: 0,
+                  duration: 0.45,
+                  ease: 'back.out(1.8)',
+                  clearProps: 'transform,opacity,visibility',
+                  scrollTrigger: { trigger: node, start: 'top 82%', once: true },
+                })
+              })
+            }
+          }
+
           // ---- Card/row sequences ----
           const services = q('[data-services]')[0]
           if (services) {
