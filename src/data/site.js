@@ -5,7 +5,7 @@
 // (see the README "Content to confirm" checklist).
 // ---------------------------------------------------------------------------
 
-export const SITE_URL = 'https://www.safaritypingservices.ae' // [CONFIRM] final domain
+export const SITE_URL = 'https://www.safaritypingservices.com'
 
 export const CONTACT = {
   brand: 'Safari Typing Services',
