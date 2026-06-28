@@ -86,7 +86,7 @@ export default function Faq() {
         <div className="rounded-[28px] border border-line bg-cream-100 px-6 py-12 text-center sm:p-[52px]">
           <h2 className="mb-3 text-[30px] font-medium sm:text-[36px]">Still have a question?</h2>
           <p className="mb-7 font-body text-[16.5px] text-soft">
-            Reach us any day of the week — we usually reply within minutes.
+            Message us during opening hours — we usually reply within minutes.
           </p>
           <div className="flex flex-wrap justify-center gap-3.5">
             <LinkButton href={waLink()} target="_blank" rel="noopener noreferrer" variant="solid">
