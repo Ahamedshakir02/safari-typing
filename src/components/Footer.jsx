@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import UaeFlag from './UaeFlag.jsx'
+import SocialLinks from './SocialLinks.jsx'
 import { NAV_LINKS, CONTACT } from '../data/site.js'
 import { SERVICES } from '../data/content.js'
 import { telLink, mailLink } from '../lib/wa.js'
@@ -79,6 +80,8 @@ export default function Footer() {
               {CONTACT.email}
             </a>
           </div>
+          <h4 className="mb-3 mt-7 font-body text-[12.5px] font-bold tracking-[0.12em] text-ink">FOLLOW US</h4>
+          <SocialLinks />
         </div>
       </div>
 
