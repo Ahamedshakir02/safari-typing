@@ -48,8 +48,8 @@ export default function ContactPage() {
   return (
     <div ref={root}>
       <Seo
-        title="Contact — Typing Centre in Ajman"
-        description="Call, WhatsApp, email or step into Shop 4 at Nazir Plaza, Ajman. Send an enquiry and we'll reply by WhatsApp or email, usually within the hour."
+        title="Contact — Typing Centre In Ajman"
+        description="Call, WhatsApp, Email Or Step Into Shop 4 At Nazir Plaza, Ajman. Send An Enquiry And We'll Reply By WhatsApp Or Email, Usually Within The Hour."
         path="/contact"
       />
 
@@ -58,11 +58,11 @@ export default function ContactPage() {
         <div data-hero>
           <Eyebrow className="mb-5">Contact</Eyebrow>
           <h1 className="mb-5 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
-            Let's get your paperwork moving.
+            Let's Get Your Paperwork Moving.
           </h1>
           <AccentLine className="mx-auto mb-6" />
           <p className="mx-auto max-w-[540px] font-body text-[19px] text-soft">
-            Call, WhatsApp, email or step into Shop 4 — whatever's easiest for you.
+            Call, WhatsApp, Email Or Step Into Shop 4 — Whatever's Easiest For You.
           </p>
         </div>
       </section>
@@ -131,7 +131,7 @@ export default function ContactPage() {
 
           <div className="overflow-hidden rounded-[20px] border border-line">
             <iframe
-              title="Map to Safari Typing Services, Nazir Plaza"
+              title="Map To Safari Typing Services, Nazir Plaza"
               src={mapSrc}
               className="aspect-[16/9] w-full"
               loading="lazy"
@@ -142,17 +142,17 @@ export default function ContactPage() {
 
         {/* Form */}
         <div className="rounded-[24px] border border-line bg-cream-50 p-7 sm:p-[38px]">
-          <h2 className="mb-1.5 text-[32px] font-medium">Send an enquiry</h2>
+          <h2 className="mb-1.5 text-[32px] font-medium">Send An Enquiry</h2>
           <p className="mb-7 font-body text-[15px] text-soft">
-            Fill this in and we'll reply by WhatsApp or email, usually within the hour.
+            Fill This In And We'll Reply By WhatsApp Or Email, Usually Within The Hour.
           </p>
 
           {sent ? (
             <div className="rounded-[18px] border border-tag-line bg-tag-bg p-9 text-center">
-              <div className="mb-2 font-display text-[40px] italic text-sage">Thank you</div>
+              <div className="mb-2 font-display text-[40px] italic text-sage">Thank You</div>
               <p className="font-body text-[15px] text-soft">
-                Your enquiry is ready in WhatsApp — just press send. Or message us directly any time for
-                an instant reply.
+                Your Enquiry Is Ready In WhatsApp — Just Press Send. Or Message Us Directly Any Time For
+                An Instant Reply.
               </p>
             </div>
           ) : (
@@ -160,14 +160,14 @@ export default function ContactPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label className={labelClass} htmlFor="cf-name">
-                    Full name
+                    Full Name
                   </label>
                   <input
                     id="cf-name"
                     className={inputClass}
                     value={form.name}
                     onChange={set('name')}
-                    placeholder="Your name"
+                    placeholder="Your Name"
                     autoComplete="name"
                     required
                     minLength={2}
@@ -187,13 +187,13 @@ export default function ContactPage() {
                     autoComplete="tel"
                     required
                     pattern="[0-9+()\-\s]{7,}"
-                    title="Enter a valid phone number (at least 7 digits)"
+                    title="Enter A Valid Phone Number (At Least 7 Digits)"
                   />
                 </div>
               </div>
               <div>
                 <label className={labelClass} htmlFor="cf-service">
-                  Service needed
+                  Service Needed
                 </label>
                 <select id="cf-service" className={inputClass} value={form.service} onChange={set('service')}>
                   {ENQUIRY_SERVICES.map((s) => (
@@ -203,7 +203,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <label className={labelClass} htmlFor="cf-message">
-                  How can we help?
+                  How Can We Help?
                 </label>
                 <textarea
                   id="cf-message"
@@ -211,19 +211,19 @@ export default function ContactPage() {
                   rows={4}
                   value={form.message}
                   onChange={set('message')}
-                  placeholder="Tell us a little about what you need..."
+                  placeholder="Tell Us A Little About What You Need..."
                 />
               </div>
               <button
                 type="submit"
                 className="rounded-full bg-sage py-4 font-body text-base font-semibold text-paper transition-[transform,background-color,box-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:bg-sage-dark hover:shadow-lift"
               >
-                Send enquiry
+                Send Enquiry
               </button>
               <p className="text-center font-body text-[12.5px] text-gold">
-                By sending you agree to be contacted about your request. See our{' '}
+                By Sending You Agree To Be Contacted About Your Request. See Our{' '}
                 <Link to="/privacy" className="underline underline-offset-2 transition-colors hover:text-sage">
-                  privacy policy
+                  Privacy Policy
                 </Link>
                 .
               </p>
