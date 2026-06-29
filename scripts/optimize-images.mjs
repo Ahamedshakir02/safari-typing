@@ -22,6 +22,7 @@ const USED_PNGS = [
   'step-welcome-tablet.png',
   'step-documents.png',
   'step-collect.png',
+  'uae-flag-ribbon.png',
 ]
 
 const all = await readdir(PHOTOS)
