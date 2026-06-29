@@ -10,7 +10,7 @@ export const SITE_URL = 'https://www.safaritypingservices.com'
 export const CONTACT = {
   brand: 'Safari Typing Services',
   brandAr: 'سفاري لخدمات الطباعة',
-  tagline: 'Government typing & document services',
+  tagline: 'Government Typing & Document Services',
   taglineAr: 'خدمات الطباعة والمعاملات الحكومية',
 
   address: {
@@ -46,7 +46,7 @@ export const CONTACT = {
     { days: 'Saturday', time: '9:00 AM – 2:00 PM · 5:00 PM – 10:00 PM' },
     { days: 'Sunday', time: 'Closed' },
   ],
-  hoursShort: 'Mon–Sat · mornings & evenings · closed Sunday',
+  hoursShort: 'Mon–Sat · Mornings & Evenings · Closed Sunday',
 
   // Google Maps embed query (no API key needed via &output=embed).
   mapsQuery: 'Safari Typing Services, Nazir Plaza, Ajman, UAE',
@@ -81,33 +81,33 @@ export const LANGUAGES = [
 export const WHY_US = [
   {
     icon: 'clock',
-    title: 'Fast turnaround',
-    body: 'Most everyday transactions are submitted the same day.',
+    title: 'Fast Turnaround',
+    body: 'Most Everyday Transactions Are Submitted The Same Day.',
   },
   {
     icon: 'shield',
-    title: 'We know the process',
-    body: 'ICP e-Channel and MOHRE / Tasheel handled correctly, every time.',
+    title: 'We Know The Process',
+    body: 'ICP e-Channel And MOHRE / Tasheel Handled Correctly, Every Time.',
   },
   {
     icon: 'globe',
-    title: 'Multilingual staff',
-    body: 'We serve you in Arabic, English, Hindi, Malayalam and Urdu.',
+    title: 'Multilingual Staff',
+    body: 'We Serve You In Arabic, English, Hindi, Malayalam And Urdu.',
   },
   {
     icon: 'layers',
-    title: 'Everything under one roof',
-    body: 'Visas, Emirates ID, Attestation, Translation, Insurance — one centre.',
+    title: 'Everything Under One Roof',
+    body: 'Visas, Emirates ID, Attestation, Translation, Insurance — One Centre.',
   },
   {
     icon: 'chat',
-    title: 'WhatsApp from home',
-    body: 'Send your documents on WhatsApp — skip the queue and the travel.',
+    title: 'WhatsApp From Home',
+    body: 'Send Your Documents On WhatsApp — Skip The Queue And The Travel.',
   },
   {
     icon: 'wallet',
-    title: 'Affordable Ajman rates',
-    body: 'Clear, honest pricing that suits Ajman families and businesses.',
+    title: 'Affordable Ajman Rates',
+    body: 'Clear, Honest Pricing That Suits Ajman Families And Businesses.',
   },
 ]
 
@@ -117,14 +117,14 @@ export const REVIEWS = [
     name: 'Ahmed',
     lang: 'en',
     stars: 5,
-    text: "Renewed my family's visas through them — quick, clear, and no hidden charges. Highly recommend.",
+    text: "Renewed My Family's Visas Through Them — Quick, Clear, And No Hidden Charges. Highly Recommend.",
     placeholder: true,
   },
   {
     name: 'Priya',
     lang: 'en',
     stars: 5,
-    text: 'Got my degree attested and Emirates ID done in one visit. The staff explained every step in my language.',
+    text: 'Got My Degree Attested And Emirates ID Done In One Visit. The Staff Explained Every Step In My Language.',
     placeholder: true,
   },
   {
@@ -138,14 +138,14 @@ export const REVIEWS = [
     name: 'Anjali',
     lang: 'en',
     stars: 4,
-    text: 'Helpful team for tenancy attestation and Ajman Sewerage registration. Friendly and patient with all my questions.',
+    text: 'Helpful Team For Tenancy Attestation And Ajman Sewerage Registration. Friendly And Patient With All My Questions.',
     placeholder: true,
   },
   {
     name: 'Rashid',
     lang: 'en',
     stars: 5,
-    text: 'Sorted my company labour contracts through Tasheel without me leaving the office. Saved me so much time.',
+    text: 'Sorted My Company Labour Contracts Through Tasheel Without Me Leaving The Office. Saved Me So Much Time.',
     placeholder: true,
   },
 ]
@@ -217,7 +217,7 @@ export const LOCAL_BUSINESS_JSONLD = {
     {
       '@type': 'ContactPoint',
       telephone: CONTACT.whatsapp.display,
-      contactType: 'customer service',
+      contactType: 'Customer Service',
       availableLanguage: ['English', 'Arabic', 'Urdu', 'Hindi', 'Malayalam'],
     },
   ],
