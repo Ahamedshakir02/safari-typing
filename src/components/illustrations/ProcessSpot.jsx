@@ -43,7 +43,7 @@ export default function ProcessSpot({ name = 'chat', className = '' }) {
     <svg
       viewBox="0 0 400 250"
       role="img"
-      aria-label="Step illustration"
+      aria-label="Step Illustration"
       className={`h-full w-full ${className}`}
       preserveAspectRatio="xMidYMid slice"
     >
