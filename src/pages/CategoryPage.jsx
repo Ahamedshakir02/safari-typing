@@ -98,7 +98,7 @@ export default function CategoryPage() {
 
           <div className="mt-8 flex flex-wrap justify-center gap-3.5">
             <LinkButton href={waLink()} target="_blank" rel="noopener noreferrer">
-              WhatsApp us
+              WhatsApp Us
             </LinkButton>
             <LinkButton href={telLink(primaryPhone.e164)} variant="outline">
               Call {primaryPhone.display}
@@ -182,11 +182,11 @@ export default function CategoryPage() {
             <Icon name="doc" size={22} strokeWidth={1.7} />
           </span>
           <div>
-            <h2 className="mb-2 font-display text-[24px] font-medium text-ink">What to bring</h2>
+            <h2 className="mb-2 font-display text-[24px] font-medium text-ink">What To Bring</h2>
             <p className="font-body text-[16px] leading-[1.65] text-soft">{service.whatToBring}</p>
             <p className="mt-3 font-body text-[14px] text-soft">
-              Not sure what applies to you? Message us first and we&rsquo;ll send the exact checklist so
-              you only make one trip.
+              Not Sure What Applies To You? Message Us First And We&rsquo;ll Send The Exact Checklist So
+              You Only Make One Trip.
             </p>
           </div>
         </div>
@@ -195,7 +195,7 @@ export default function CategoryPage() {
       {/* Other services */}
       <Section tone="sunken" containerClassName="py-14 sm:py-16">
         <h2 data-reveal className="mb-6 font-display text-[24px] font-medium sm:text-[28px]">
-          Other services
+          Other Services
         </h2>
         <div data-reveal className="flex flex-wrap gap-2.5">
           {related.map((s) => (
@@ -213,12 +213,12 @@ export default function CategoryPage() {
 
       {/* CTA */}
       <CtaBlock
-        heading={`Need help with ${service.title}?`}
-        body="Tell us your situation on WhatsApp and we'll confirm the documents and exact fees before we start."
-        primaryLabel="WhatsApp us"
+        heading={`Need Help With ${service.title}?`}
+        body="Tell Us Your Situation On WhatsApp And We'll Confirm The Documents And Exact Fees Before We Start."
+        primaryLabel="WhatsApp Us"
         secondary={
           <LinkButton to="/contact" variant="onDarkOutline">
-            Contact page
+            Contact Page
           </LinkButton>
         }
         className="my-16"
