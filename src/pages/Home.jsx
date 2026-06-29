@@ -8,6 +8,7 @@ import Section from '../components/Section.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import FeatureCard from '../components/FeatureCard.jsx'
 import Stat from '../components/Stat.jsx'
+import PayLater from '../components/PayLater.jsx'
 import ServiceCard from '../components/ServiceCard.jsx'
 import Credentials from '../components/Credentials.jsx'
 import Picture from '../components/Picture.jsx'
@@ -103,6 +104,9 @@ export default function Home() {
           ))}
         </div>
       </Section>
+
+      {/* 3.5 — Pay Later (Tabby & Tamara) */}
+      <PayLater />
 
       {/* 4 — Inside Shop 4 (image band, replaces the old banner) */}
       <Section containerClassName="py-16 sm:py-24">
