@@ -213,7 +213,7 @@ export default function ServiceArt({ slug, className = '' }) {
     <svg
       viewBox="0 0 400 250"
       role="img"
-      aria-label="Service illustration"
+      aria-label="Service Illustration"
       className={`h-full w-full ${className}`}
       preserveAspectRatio="xMidYMid slice"
     >
