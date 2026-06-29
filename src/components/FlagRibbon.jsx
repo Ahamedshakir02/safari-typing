@@ -37,22 +37,36 @@ export default function FlagRibbon({ className = '' }) {
           <stop offset="0.5" stopColor="#ffffff" stopOpacity="0" />
           <stop offset="1" stopColor="#ffffff" stopOpacity="0.05" />
         </linearGradient>
+        {/* Top fade so the ribbon dissolves instead of ending in a hard cut.
+            On tall (desktop) panels the top is clipped off-panel anyway; on short
+            mobile panels the flat top would otherwise show mid-panel and read as
+            "broken" — this makes it look finished at any height. */}
+        <linearGradient id="flagRibbonFade" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="380">
+          <stop offset="0" stopColor="#000000" />
+          <stop offset="0.26" stopColor="#ffffff" />
+          <stop offset="1" stopColor="#ffffff" />
+        </linearGradient>
+        <mask id="flagRibbonMask">
+          <rect x="-20" y="-20" width="170" height="420" fill="url(#flagRibbonFade)" />
+        </mask>
       </defs>
 
-      <g filter="url(#flagRibbonShadow)">
-        {STRIPES.map((s) => (
-          <path
-            key={s.dx}
-            d={WAVE}
-            transform={`translate(${s.dx} 0)`}
-            stroke={s.color}
-            strokeWidth="20"
-            strokeLinecap="round"
-            fill="none"
-          />
-        ))}
-        {/* Sheen overlay across the full ribbon width. */}
-        <path d={WAVE} stroke="url(#flagRibbonSheen)" strokeWidth="74" strokeLinecap="round" fill="none" />
+      <g mask="url(#flagRibbonMask)">
+        <g filter="url(#flagRibbonShadow)">
+          {STRIPES.map((s) => (
+            <path
+              key={s.dx}
+              d={WAVE}
+              transform={`translate(${s.dx} 0)`}
+              stroke={s.color}
+              strokeWidth="20"
+              strokeLinecap="round"
+              fill="none"
+            />
+          ))}
+          {/* Sheen overlay across the full ribbon width. */}
+          <path d={WAVE} stroke="url(#flagRibbonSheen)" strokeWidth="74" strokeLinecap="round" fill="none" />
+        </g>
       </g>
     </svg>
   )
