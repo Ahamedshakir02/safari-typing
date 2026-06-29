@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
 import Icon from '../components/Icon.jsx'
+import SocialLinks from '../components/SocialLinks.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import { ENQUIRY_SERVICES } from '../data/content.js'
 import { CONTACT } from '../data/site.js'
@@ -126,6 +127,10 @@ export default function ContactPage() {
                   </li>
                 ))}
               </ul>
+            </ContactRow>
+            <div className="h-px bg-line" />
+            <ContactRow icon="chat" label="FOLLOW US">
+              <SocialLinks className="mt-1" />
             </ContactRow>
           </div>
 
