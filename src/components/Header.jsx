@@ -90,7 +90,7 @@ export default function Header() {
           className="ml-auto hidden items-center gap-2 rounded-full bg-sage px-[22px] py-[11px] font-body text-sm font-semibold text-paper transition-[transform,background-color,box-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:bg-sage-dark hover:shadow-lift sm:flex lg:ml-0"
         >
           <Icon name="phone" size={15} strokeWidth={1.9} />
-          Call now
+          Call Now
         </a>
 
         {/* Mobile menu toggle */}
@@ -142,7 +142,7 @@ export default function Header() {
                 onClick={() => setMegaOpen(false)}
                 className="group inline-flex items-center gap-2 font-body text-[14.5px] font-semibold text-sage transition-colors hover:text-ink"
               >
-                View all services
+                View All Services
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
             </div>
@@ -232,7 +232,7 @@ export default function Header() {
                 href={telLink(primaryPhone.e164)}
                 className="flex flex-1 items-center justify-center gap-2 rounded-full bg-sage px-5 py-3 font-body text-sm font-semibold text-paper transition-shadow duration-300 ease-out hover:shadow-lift"
               >
-                <Icon name="phone" size={16} /> Call now
+                <Icon name="phone" size={16} /> Call Now
               </a>
               <a
                 href={waLink()}
