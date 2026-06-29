@@ -16,8 +16,8 @@ export default function Services() {
   return (
     <div ref={root}>
       <Seo
-        title="Services — Typing Centre in Ajman"
-        description="Fifteen service areas covering every government, immigration and business formality in Ajman — Visas, Emirates ID, Tasheel, Attestation, Business setup & PRO, VAT & tax, Medical, Vehicle, Passport, FEWA, Website design and more."
+        title="Services — Typing Centre In Ajman"
+        description="Fifteen Service Areas Covering Every Government, Immigration And Business Formality In Ajman — Visas, Emirates ID, Tasheel, Attestation, Business Setup & PRO, VAT & Tax, Medical, Vehicle, Passport, FEWA, Website Design And More."
         path="/services"
       />
 
@@ -26,12 +26,12 @@ export default function Services() {
         <div data-hero>
           <Eyebrow className="mb-5">Our Services</Eyebrow>
           <h1 className="mb-5 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
-            Everything your paperwork needs.
+            Everything Your Paperwork Needs.
           </h1>
           <AccentLine className="mx-auto mb-6" />
           <p className="mx-auto max-w-[600px] font-body text-[19px] text-soft">
-            Fifteen service areas covering every government, immigration and business formality in
-            Ajman — handled accurately, the first time.
+            Fifteen Service Areas Covering Every Government, Immigration And Business Formality In
+            Ajman — Handled Accurately, The First Time.
           </p>
         </div>
       </section>
@@ -41,7 +41,7 @@ export default function Services() {
         <div className="photo-panel aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/8]">
           <Picture
             src={PHOTOS.servicesBand}
-            alt="Safari Typing Services advisors presenting a completed UAE visa"
+            alt="Safari Typing Services Advisors Presenting A Completed UAE Visa"
             className="h-full w-full object-contain"
             loading="lazy"
             decoding="async"
@@ -84,12 +84,12 @@ export default function Services() {
 
       {/* CTA */}
       <CtaBlock
-        heading="Not sure which service you need?"
-        body="Tell us your situation and we'll point you to the right one — free of charge."
-        primaryLabel="WhatsApp us"
+        heading="Not Sure Which Service You Need?"
+        body="Tell Us Your Situation And We'll Point You To The Right One — Free Of Charge."
+        primaryLabel="WhatsApp Us"
         secondary={
           <LinkButton to="/contact" variant="onDarkOutline">
-            Contact page
+            Contact Page
           </LinkButton>
         }
         className="my-16"
