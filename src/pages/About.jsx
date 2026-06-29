@@ -21,8 +21,8 @@ export default function About() {
   return (
     <div ref={root}>
       <Seo
-        title="About — Typing Centre in Ajman"
-        description="For over 18 years, Safari Typing Services has been the neighbourhood document-services centre at Nazir Plaza, Ajman — trusted by thousands of residents and businesses."
+        title="About — Typing Centre In Ajman"
+        description="For Over 18 Years, Safari Typing Services Has Been The Neighbourhood Document-services Centre At Nazir Plaza, Ajman — Trusted By Thousands Of Residents And Businesses."
         path="/about"
       />
 
@@ -31,13 +31,13 @@ export default function About() {
         <div data-hero>
           <Eyebrow className="mb-5">About Us</Eyebrow>
           <h1 className="mb-6 text-[40px] font-medium sm:text-[52px] md:text-[62px]">
-            Paperwork is our <em className="italic text-gradient-brand">Profession.</em>
+            Paperwork Is Our <em className="italic text-gradient-brand">Profession.</em>
           </h1>
           <AccentLine className="mx-auto mb-6" />
           <p className="mx-auto max-w-[640px] font-body text-[19px] text-soft">
-            For over 18 years, Safari Typing Services has been the neighbourhood go-to at Nazir Plaza
-            — a small typing desk grown into a full document-services centre trusted by thousands of
-            residents and businesses.
+            For Over 18 Years, Safari Typing Services Has Been The Neighbourhood Go-to At Nazir Plaza
+            — A Small Typing Desk Grown Into A Full Document-services Centre Trusted By Thousands Of
+            Residents And Businesses.
           </p>
         </div>
       </section>
@@ -47,7 +47,7 @@ export default function About() {
         <div className="photo-panel aspect-[16/10] overflow-hidden rounded-[28px] sm:aspect-[16/8] sm:rounded-[280px_280px_28px_28px]">
           <Picture
             src={PHOTOS.aboutBand}
-            alt="The Safari Typing Services team"
+            alt="The Safari Typing Services Team"
             className="h-full w-full object-contain"
             loading="lazy"
             decoding="async"
@@ -61,8 +61,8 @@ export default function About() {
           data-reveal
           align="center"
           eyebrow="Our Journey"
-          title="From one desk to a full centre."
-          intro="Eighteen years of growing alongside the families and businesses of Ajman."
+          title="From One Desk To A Full Centre."
+          intro="Eighteen Years Of Growing Alongside The Families And Businesses Of Ajman."
           className="mb-14"
         />
         <ol data-timeline className="relative mx-auto max-w-[640px]">
@@ -130,7 +130,7 @@ export default function About() {
           align="center"
           accent
           eyebrow="How We Work"
-          title="The values behind every file."
+          title="The Values Behind Every File."
           className="mb-14"
         />
         <div data-reveal-group className="grid gap-5 sm:grid-cols-3">
@@ -147,7 +147,7 @@ export default function About() {
           align="center"
           accent
           eyebrow="Why Choose Us"
-          title="Reasons people keep coming back."
+          title="Reasons People Keep Coming Back."
           className="mb-12"
         />
         <ul data-reveal-group className="mx-auto grid max-w-[820px] gap-x-10 gap-y-5 sm:grid-cols-2">
@@ -167,10 +167,10 @@ export default function About() {
         <div data-reveal className="mx-auto max-w-[620px] text-center">
           <Eyebrow className="mb-4">Find Us</Eyebrow>
           <AccentLine className="mx-auto mb-6" />
-          <h2 className="mb-5 text-[34px] font-medium sm:text-[42px]">Right at Nazir Plaza, Shop 4.</h2>
+          <h2 className="mb-5 text-[34px] font-medium sm:text-[42px]">Right At Nazir Plaza, Shop 4.</h2>
           <p className="mb-[26px] font-body text-[16.5px] text-soft">
-            Drop in six days a week — we’re closed Sundays. Free parking nearby, and our counter is
-            rarely a long wait.
+            Drop In Six Days A Week — We’re Closed Sundays. Free Parking Nearby, And Our Counter Is
+            Rarely A Long Wait.
           </p>
           <div className="mx-auto inline-flex flex-col gap-3.5 text-left font-body">
             <div className="flex items-center gap-[13px]">
