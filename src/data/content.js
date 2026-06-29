@@ -1163,6 +1163,7 @@ export const ABOUT_WHY = [
   'Support For Individuals And Businesses',
   'UAE-wide Service Coverage',
   'Customer-centric Approach',
+  'Multilingual Team In Five Languages',
 ]
 
 // Contact — enquiry form service options (mirrors the 15 categories).
