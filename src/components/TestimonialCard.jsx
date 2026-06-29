@@ -7,7 +7,7 @@ export default function TestimonialCard({ stars = 5, text, name, lang, className
       dir={lang === 'ar' ? 'rtl' : undefined}
       className={`flex h-full flex-col rounded-[22px] border border-line bg-cream-50 p-7 ${className}`}
     >
-      <div className="mb-4 flex gap-1 text-sage" aria-label={`${stars} out of 5 stars`}>
+      <div className="mb-4 flex gap-1 text-sage" aria-label={`${stars} Out Of 5 Stars`}>
         {Array.from({ length: 5 }).map((_, i) => (
           <Icon
             key={i}
