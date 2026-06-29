@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-content grid-cols-2 gap-x-6 gap-y-10 px-5 pb-8 pt-14 sm:px-7 md:grid-cols-[1.4fr_1.6fr_1fr_1.2fr] md:gap-11 md:pt-16">
         {/* Brand + hours */}
         <div className="col-span-2 md:col-span-1">
-          <Link to="/" aria-label="Safari Typing Services — home" className="mb-[18px] flex items-center gap-[13px]">
+          <Link to="/" aria-label="Safari Typing Services — Home" className="mb-[18px] flex items-center gap-[13px]">
             <img src="/safari-mark.svg" alt="Safari Typing Services" className="h-14 w-auto" loading="lazy" decoding="async" />
             <span className="flex flex-col leading-[1.05]">
               <span className="font-display text-[28px] font-semibold text-ink">Safari</span>
@@ -22,8 +22,8 @@ export default function Footer() {
             </span>
           </Link>
           <p className="mb-6 max-w-[280px] font-body text-[14.5px] text-soft">
-            A trusted typing centre for government, immigration and business formalities across Ajman
-            and the northern emirates.
+            A Trusted Typing Centre For Government, Immigration And Business Formalities Across Ajman
+            And The Northern Emirates.
           </p>
           <h4 className="mb-2 font-body text-[12.5px] font-bold tracking-[0.12em] text-ink">HOURS</h4>
           <div className="font-body text-[14px] leading-[1.6] text-soft">
@@ -60,7 +60,7 @@ export default function Footer() {
               Privacy Policy
             </Link>
             <Link to="/terms" className="transition-colors hover:text-sage">
-              Terms of Service
+              Terms Of Service
             </Link>
           </div>
         </div>
