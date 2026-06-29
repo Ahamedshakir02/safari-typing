@@ -12,10 +12,6 @@ import '@fontsource/figtree/400.css'
 import '@fontsource/figtree/500.css'
 import '@fontsource/figtree/600.css'
 import '@fontsource/figtree/700.css'
-// Wordmark fonts for the "Pay Later" badges — Baloo 2 echoes Tabby's rounded
-// wordmark, Poppins echoes Tamara's geometric one (single weight each).
-import '@fontsource/baloo-2/700.css'
-import '@fontsource/poppins/600.css'
 import './index.css'
 
 // vite-react-ssg drives rendering: it prerenders each route to static HTML at

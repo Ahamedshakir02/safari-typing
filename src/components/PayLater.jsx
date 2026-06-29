@@ -4,14 +4,12 @@ import AccentLine from './AccentLine.jsx'
 
 /**
  * "Pay Later" band — tells visitors the centre accepts the two big UAE BNPL
- * providers, Tabby and Tamara. The wordmarks are set in their own brand colours
- * and lookalike fonts (Baloo 2 ≈ Tabby, Poppins ≈ Tamara) on uniform white
- * cards, matching the official-channels logo strip. Swap the styled wordmarks
- * for official /logos/tabby.svg + /logos/tamara.svg if the client supplies them.
+ * providers, Tabby and Tamara. Uses their official wordmark logos on uniform
+ * white cards, matching the official-channels logo strip.
  */
 const PROVIDERS = [
-  { name: 'tabby', color: '#16BE9C', font: '"Baloo 2", system-ui, cursive', tracking: '-0.01em' },
-  { name: 'tamara', color: '#7A4DFF', font: 'Poppins, system-ui, sans-serif', tracking: '-0.02em' },
+  { name: 'Tabby', src: '/logos/tabby.png' },
+  { name: 'Tamara', src: '/logos/tamara.jpg' },
 ]
 
 export default function PayLater() {
@@ -35,14 +33,14 @@ export default function PayLater() {
           {PROVIDERS.map((p) => (
             <div
               key={p.name}
-              className="flex h-[78px] w-[188px] items-center justify-center rounded-2xl border border-line bg-white shadow-soft"
+              className="flex h-[80px] w-[180px] items-center justify-center rounded-2xl bg-white p-1.5 shadow-soft"
             >
-              <span
-                className="text-[34px] leading-none"
-                style={{ fontFamily: p.font, fontWeight: 700, color: p.color, letterSpacing: p.tracking }}
-              >
-                {p.name}
-              </span>
+              <img
+                src={p.src}
+                alt={`${p.name} — Pay Later`}
+                loading="lazy"
+                className="h-full w-full object-contain"
+              />
             </div>
           ))}
         </div>
