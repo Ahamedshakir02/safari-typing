@@ -37,8 +37,8 @@ export default function Home() {
   return (
     <div ref={root}>
       <Seo
-        title="Typing Centre in Ajman — Visas, Emirates ID, Tasheel & Attestation"
-        description="Government typing services in Ajman (Nazir Plaza, Shop 4): Visas, Emirates ID, Tasheel, Amer, Attestation, Business licences and PRO services — handled calmly and correctly."
+        title="Typing Centre In Ajman — Visas, Emirates ID, Tasheel & Attestation"
+        description="Government Typing Services In Ajman (Nazir Plaza, Shop 4): Visas, Emirates ID, Tasheel, Amer, Attestation, Business Licences And PRO Services — Handled Calmly And Correctly."
         path="/"
         jsonLd={LOCAL_BUSINESS_JSONLD}
       />
@@ -55,9 +55,9 @@ export default function Home() {
             {HOME.hero.eyebrow}
           </Eyebrow>
           <h1 className="mb-[24px] text-[44px] font-medium leading-[1.05] sm:text-[60px] md:text-[78px]">
-            Government paperwork,
+            Government Paperwork,
             <br />
-            Handled with <em className="italic text-gradient-brand">quiet care.</em>
+            Handled With <em className="italic text-gradient-brand">Quiet Care.</em>
           </h1>
           <p className="mx-auto mb-9 max-w-[620px] font-body text-lg leading-[1.55] text-soft sm:text-[21px]">
             {HOME.hero.subline}
@@ -67,7 +67,7 @@ export default function Home() {
               <Icon name="phone" size={17} /> Call {primaryPhone.display}
             </LinkButton>
             <LinkButton href={waLink()} target="_blank" rel="noopener noreferrer" variant="outline">
-              <Icon name="whatsapp" size={18} /> WhatsApp us
+              <Icon name="whatsapp" size={18} /> WhatsApp Us
             </LinkButton>
           </div>
           <div className="mt-7 inline-flex items-center gap-2.5 font-body text-[13.5px] text-gold">
@@ -111,21 +111,21 @@ export default function Home() {
             <Eyebrow className="mb-4">Inside Shop 4</Eyebrow>
             <AccentLine className="mb-6" />
             <h2 className="mb-5 text-[32px] font-medium sm:text-[42px]">
-              A calm counter for complicated paperwork.
+              A Calm Counter For Complicated Paperwork.
             </h2>
             <p className="mb-4 font-body text-lg leading-[1.6] text-soft">
-              Step into our office at Nazir Plaza and you’re met by a multilingual team who handle the
-              forms, the fees and the follow-ups — so you don’t have to.
+              Step Into Our Office At Nazir Plaza And You’re Met By A Multilingual Team Who Handle The
+              Forms, The Fees And The Follow-ups — So You Don’t Have To.
             </p>
             <p className="font-body text-[15.5px] leading-[1.6] text-soft">
-              Prefer to stay home? Send your documents on WhatsApp and we’ll begin straight away.
+              Prefer To Stay Home? Send Your Documents On WhatsApp And We’ll Begin Straight Away.
             </p>
           </div>
           <div data-reveal>
             <div className="photo-panel aspect-[4/3] overflow-hidden rounded-[28px] sm:rounded-[280px_280px_28px_28px]">
               <Picture
                 src={PHOTOS.homeBand}
-                alt="Two multilingual Safari Typing Services advisors at the Ajman counter, holding clients' UAE government paperwork"
+                alt="Two Multilingual Safari Typing Services Advisors At The Ajman Counter, Holding Clients' UAE Government Paperwork"
                 className="h-full w-full object-contain"
                 loading="lazy"
                 decoding="async"
@@ -264,16 +264,16 @@ export default function Home() {
           data-quote
           className="font-display text-[28px] font-medium leading-[1.32] text-ink sm:text-[40px]"
         >
-          Rules change constantly. We stay current so your application is{' '}
-          <em className="italic text-gradient-brand">right the first time</em> — no rejections, no wasted trips,
-          no surprise fees.
+          Rules Change Constantly. We Stay Current So Your Application Is{' '}
+          <em className="italic text-gradient-brand">Right The First Time</em> — No Rejections, No Wasted Trips,
+          No Surprise Fees.
         </p>
         <Link
           to="/about"
           data-reveal
           className="mt-8 inline-block font-body text-base font-semibold text-sage transition-colors hover:text-ink"
         >
-          Read our story →
+          Read Our Story →
         </Link>
       </section>
 
@@ -301,8 +301,8 @@ export default function Home() {
 
       {/* 12 — CTA */}
       <CtaBlock
-        heading="Need it done today?"
-        body="Message us on WhatsApp or step into Shop 4 — we'll take it from here."
+        heading="Need It Done Today?"
+        body="Message Us On WhatsApp Or Step Into Shop 4 — We'll Take It From Here."
         className="my-20 sm:my-24"
       />
     </div>
