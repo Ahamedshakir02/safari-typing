@@ -8,7 +8,7 @@ export default function DocumentsScene({ className = '' }) {
     <svg
       viewBox="0 0 640 480"
       role="img"
-      aria-label="Illustration of government documents and a ministry building"
+      aria-label="Illustration Of Government Documents And A Ministry Building"
       className={`h-full w-full ${className}`}
       preserveAspectRatio="xMidYMid slice"
     >
