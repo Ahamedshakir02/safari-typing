@@ -50,23 +50,6 @@ export default function Home() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[460px] bg-[radial-gradient(60%_60%_at_50%_-5%,rgba(31,84,166,0.12),transparent_70%)]"
         />
-        {/* Decorative UAE-flag ribbon — descends from the top-right, behind the
-            centred copy. Mirrored so the red end leads the eye inward; gentle
-            sway only when motion is allowed. Hidden on smaller screens so the
-            centred hero stays uncluttered (and never collides with the copy). */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute right-[-60px] top-[14px] -z-10 hidden w-[190px] origin-top motion-safe:animate-ribbonWave xl:block xl:right-[-72px] xl:w-[208px] 2xl:right-[-84px] 2xl:w-[236px]"
-        >
-          {/* Soft top fade so the ribbon's red end eases in below the
-              translucent header instead of smudging through its blur. */}
-          <Picture
-            src="/photos/uae-flag-ribbon.png"
-            alt=""
-            className="h-auto w-full -scale-x-100 opacity-90 [mask-image:linear-gradient(to_bottom,transparent_0%,black_16%)] [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_16%)]"
-            decoding="async"
-          />
-        </div>
         <div data-hero>
           <Eyebrow className="mb-[26px] inline-flex items-center gap-2.5">
             <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-sage to-gold" />
