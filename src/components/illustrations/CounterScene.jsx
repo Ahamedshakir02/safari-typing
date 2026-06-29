@@ -8,7 +8,7 @@ export default function CounterScene({ className = '' }) {
     <svg
       viewBox="0 0 640 480"
       role="img"
-      aria-label="Illustration of the Safari Typing Services counter — documents, a stamp and a service desk"
+      aria-label="Illustration Of The Safari Typing Services Counter — Documents, A Stamp And A Service Desk"
       className={`h-full w-full ${className}`}
       preserveAspectRatio="xMidYMid slice"
     >
