@@ -15,8 +15,8 @@ export default function Terms() {
   return (
     <div ref={root}>
       <Seo
-        title="Terms of Service"
-        description="The terms on which Safari Typing Services in Ajman provides government typing, document and PRO services to residents and businesses."
+        title="Terms Of Service"
+        description="The Terms On Which Safari Typing Services In Ajman Provides Government Typing, Document And PRO Services To Residents And Businesses."
         path="/terms"
       />
 
@@ -24,7 +24,7 @@ export default function Terms() {
         <div data-hero>
           <Eyebrow className="mb-5">Terms</Eyebrow>
           <h1 className="mb-6 text-[40px] font-medium sm:text-[52px]">
-            Clear terms, <em className="italic text-gradient-brand">No surprises.</em>
+            Clear Terms, <em className="italic text-gradient-brand">No Surprises.</em>
           </h1>
           <AccentLine className="mx-auto" />
         </div>
@@ -35,66 +35,66 @@ export default function Terms() {
         className="mx-auto max-w-[760px] px-5 pb-24 font-body text-[16px] leading-[1.7] text-soft sm:px-7"
       >
         <p className="mb-7">
-          These terms apply when you ask Safari Typing Services (&ldquo;we&rdquo;, &ldquo;us&rdquo;) to
-          handle a typing, document or government transaction for you at {CONTACT.address.full}. By
-          using our services you agree to them. We keep them short and honest.{' '}
-          <em>Last updated: June 2026.</em>
+          These Terms Apply When You Ask Safari Typing Services (&ldquo;We&rdquo;, &ldquo;Us&rdquo;) To
+          Handle A Typing, Document Or Government Transaction For You At {CONTACT.address.full}. By
+          Using Our Services You Agree To Them. We Keep Them Short And Honest.{' '}
+          <em>Last Updated: June 2026.</em>
         </p>
 
-        <TermsBlock title="What we do">
-          We are a typing and document-services centre. We prepare, type and submit applications and
-          transactions through the relevant official government channels (for example ICP,
-          Tasheel/MOHRE, Amer, MOFA, FEWA and Ajman Municipality) on your behalf, and follow up until
-          they are completed. We are an independent service provider and are not a government
-          department.
+        <TermsBlock title="What We Do">
+          We Are A Typing And Document-services Centre. We Prepare, Type And Submit Applications And
+          Transactions Through The Relevant Official Government Channels (For Example ICP,
+          Tasheel/MOHRE, Amer, MOFA, FEWA And Ajman Municipality) On Your Behalf, And Follow Up Until
+          They Are Completed. We Are An Independent Service Provider And Are Not A Government
+          Department.
         </TermsBlock>
 
-        <TermsBlock title="Government decisions are not ours">
-          We prepare and submit your application accurately, but the approval, rejection, timing and
-          fees of any government transaction are decided by the relevant authority — not by us. We
-          cannot guarantee a particular outcome or processing time, and government fees and rules can
-          change without notice.
+        <TermsBlock title="Government Decisions Are Not Ours">
+          We Prepare And Submit Your Application Accurately, But The Approval, Rejection, Timing And
+          Fees Of Any Government Transaction Are Decided By The Relevant Authority — Not By Us. We
+          Cannot Guarantee A Particular Outcome Or Processing Time, And Government Fees And Rules Can
+          Change Without Notice.
         </TermsBlock>
 
-        <TermsBlock title="Fees &amp; government charges">
-          Our charge is a clear service fee for our work. Official government fees are separate and are
-          charged at cost. We confirm the full amount — our service fee plus the government portion —
-          before we begin, so there are no hidden costs. Payments made to government authorities are
-          non-refundable once a transaction has been submitted.
+        <TermsBlock title="Fees &amp; Government Charges">
+          Our Charge Is A Clear Service Fee For Our Work. Official Government Fees Are Separate And Are
+          Charged At Cost. We Confirm The Full Amount — Our Service Fee Plus The Government Portion —
+          Before We Begin, So There Are No Hidden Costs. Payments Made To Government Authorities Are
+          Non-refundable Once A Transaction Has Been Submitted.
         </TermsBlock>
 
-        <TermsBlock title="Your responsibilities">
-          You are responsible for giving us accurate, genuine and complete information and documents.
-          We rely on what you provide, and we are not responsible for delays or rejections caused by
-          incorrect, incomplete, expired or fraudulent documents. Please review the details we prepare
-          before they are submitted.
+        <TermsBlock title="Your Responsibilities">
+          You Are Responsible For Giving Us Accurate, Genuine And Complete Information And Documents.
+          We Rely On What You Provide, And We Are Not Responsible For Delays Or Rejections Caused By
+          Incorrect, Incomplete, Expired Or Fraudulent Documents. Please Review The Details We Prepare
+          Before They Are Submitted.
         </TermsBlock>
 
-        <TermsBlock title="Documents &amp; turnaround">
-          Most typing and form submissions are completed the same day; visa, labour and other
-          government transactions depend on the authority&rsquo;s processing time. We handle your
-          original documents with care and return them to you, but we recommend you keep your own
-          copies of anything important.
+        <TermsBlock title="Documents &amp; Turnaround">
+          Most Typing And Form Submissions Are Completed The Same Day; Visa, Labour And Other
+          Government Transactions Depend On The Authority&rsquo;s Processing Time. We Handle Your
+          Original Documents With Care And Return Them To You, But We Recommend You Keep Your Own
+          Copies Of Anything Important.
         </TermsBlock>
 
         <TermsBlock title="Liability">
-          We take care to do our work accurately. To the extent permitted by law, our responsibility
-          for any single transaction is limited to the service fee you paid us for that transaction. We
-          are not liable for government fees, third-party charges, or losses outside our control.
+          We Take Care To Do Our Work Accurately. To The Extent Permitted By Law, Our Responsibility
+          For Any Single Transaction Is Limited To The Service Fee You Paid Us For That Transaction. We
+          Are Not Liable For Government Fees, Third-party Charges, Or Losses Outside Our Control.
         </TermsBlock>
 
         <TermsBlock title="Privacy">
-          We handle your personal information and documents confidentially. How we collect, use and
-          protect your data is explained in our{' '}
+          We Handle Your Personal Information And Documents Confidentially. How We Collect, Use And
+          Protect Your Data Is Explained In Our{' '}
           <Link to="/privacy-policy" className="font-medium text-ink transition-colors hover:text-sage">
             Privacy Policy
           </Link>
           .
         </TermsBlock>
 
-        <TermsBlock title="Changes &amp; contact">
-          We may update these terms from time to time; the current version always applies. These terms
-          are governed by the laws of the United Arab Emirates. If you have any question, contact us:
+        <TermsBlock title="Changes &amp; Contact">
+          We May Update These Terms From Time To Time; The Current Version Always Applies. These Terms
+          Are Governed By The Laws Of The United Arab Emirates. If You Have Any Question, Contact Us:
           <span className="mt-3 block">
             <a href={mailLink()} className="font-medium text-ink transition-colors hover:text-sage">
               {CONTACT.email}
