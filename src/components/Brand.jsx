@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
  */
 export default function Brand({ markSize = 52, eager = false }) {
   return (
-    <Link to="/" aria-label="Safari Typing Services — home" className="flex shrink-0 items-center gap-[13px]">
+    <Link to="/" aria-label="Safari Typing Services — Home" className="flex shrink-0 items-center gap-[13px]">
       <img
         src="/safari-mark.svg"
         alt="Safari Typing Services"
