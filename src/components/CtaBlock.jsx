@@ -22,7 +22,7 @@ export default function CtaBlock({
     <section ref={ref} className={`reveal ${inView ? 'is-visible' : ''} mx-auto max-w-content px-5 sm:px-7 ${className}`}>
       <div className="relative overflow-hidden rounded-[32px] bg-ink px-6 py-16 text-center sm:px-12 sm:py-[72px]">
         {ribbon && (
-          <FlagRibbon className="pointer-events-none absolute -bottom-8 -left-6 z-0 w-28 opacity-90 sm:w-36 lg:w-44" />
+          <FlagRibbon className="pointer-events-none absolute -bottom-8 -left-6 z-0 hidden w-28 opacity-90 sm:block sm:w-36 lg:w-44" />
         )}
         <div className="relative z-10">
           <h2 className="text-[34px] font-medium text-paper sm:text-[44px] md:text-[50px]">{heading}</h2>
