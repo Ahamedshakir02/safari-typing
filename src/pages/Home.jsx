@@ -16,11 +16,33 @@ import TestimonialCard from '../components/TestimonialCard.jsx'
 import UaeFlag from '../components/UaeFlag.jsx'
 import AccentLine from '../components/AccentLine.jsx'
 import { SERVICES, HOME_STATS, PROCESS, HOME, FAQS, PHOTOS } from '../data/content.js'
-import { CONTACT, LOCAL_BUSINESS_JSONLD, WHY_US, REVIEWS, LANGUAGES } from '../data/site.js'
+import { SITE_URL, CONTACT, LOCAL_BUSINESS_JSONLD, WHY_US, REVIEWS, LANGUAGES } from '../data/site.js'
 import { waLink, telLink } from '../lib/wa.js'
 import { usePageMotion } from '../lib/usePageMotion.js'
 
 const primaryPhone = CONTACT.phones[0]
+
+// LocalBusiness schema enriched with the full service menu as an OfferCatalog —
+// tells Google this one business offers all 15 services in Ajman, each linked to
+// its own page. A strong "we do everything a typing centre does, here" signal
+// for the local pack. Built here (not in site.js) so site.js stays import-free.
+const HOME_BUSINESS_JSONLD = {
+  ...LOCAL_BUSINESS_JSONLD,
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Typing & Document Services In Ajman',
+    itemListElement: SERVICES.map((s) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: s.title,
+        serviceType: s.keyword,
+        url: `${SITE_URL}/services/${s.slug}`,
+        areaServed: { '@type': 'City', name: 'Ajman' },
+      },
+    })),
+  },
+}
 
 // Photo for each of the three "How it works" steps (placeholders — see content.js).
 const STEP_IMAGES = [
@@ -41,7 +63,7 @@ export default function Home() {
         title="Typing Centre In Ajman — Visas, Emirates ID, Tasheel & Attestation"
         description="Government Typing Services In Ajman (Nazir Plaza, Shop 4): Visas, Emirates ID, Tasheel, Amer, Attestation, Business Licences And PRO Services — Handled Calmly And Correctly."
         path="/"
-        jsonLd={LOCAL_BUSINESS_JSONLD}
+        jsonLd={HOME_BUSINESS_JSONLD}
       />
 
       {/* 1 — Hero */}

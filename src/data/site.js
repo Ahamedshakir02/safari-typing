@@ -151,16 +151,29 @@ export const REVIEWS = [
 ]
 
 // LocalBusiness structured data for local SEO / trust (embedded on Home).
+// The richer this block is (and the more it agrees with the Google Business
+// Profile), the stronger the "this is THE Ajman typing centre" relevance signal.
 export const LOCAL_BUSINESS_JSONLD = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   '@id': `${SITE_URL}/#business`,
   name: CONTACT.brand,
+  // Alternate spellings/names people actually search — American "Center", the
+  // "+ Ajman" form, and the Arabic name. Helps us match those queries without
+  // changing any visible copy. (Not invented businesses — just name variants.)
+  alternateName: ['Safari Typing Center', 'Safari Typing Center Ajman', CONTACT.brandAr],
+  description:
+    'Safari Typing Services Is A Government Typing Centre In Ajman (Nazir Plaza, Al Mowaihat 3) Handling Visa Typing, Emirates ID, Tasheel & MOHRE, Amer, Attestation, Translation, Business Setup And PRO Services.',
+  slogan: CONTACT.tagline,
   image: `${SITE_URL}/safari-banner.jpeg`,
+  logo: `${SITE_URL}/safari-logo.jpeg`,
   url: SITE_URL,
   email: CONTACT.email,
   telephone: CONTACT.phones[0].e164,
   priceRange: '$$',
+  currenciesAccepted: 'AED',
+  knowsLanguage: ['English', 'Arabic', 'Hindi', 'Malayalam', 'Urdu'],
+  hasMap: CONTACT.mapsLink,
   address: {
     '@type': 'PostalAddress',
     streetAddress: CONTACT.address.line1,
@@ -221,7 +234,15 @@ export const LOCAL_BUSINESS_JSONLD = {
       availableLanguage: ['English', 'Arabic', 'Urdu', 'Hindi', 'Malayalam'],
     },
   ],
-  areaServed: { '@type': 'City', name: 'Ajman' },
+  // Ajman is the priority; the Northern Emirates match the "across Ajman and the
+  // Northern Emirates" claim already in the FAQ — keep these two in sync.
+  areaServed: [
+    { '@type': 'City', name: 'Ajman' },
+    { '@type': 'City', name: 'Sharjah' },
+    { '@type': 'City', name: 'Umm Al Quwain' },
+    { '@type': 'City', name: 'Ras Al Khaimah' },
+    { '@type': 'City', name: 'Fujairah' },
+  ],
   sameAs: [
     'https://www.instagram.com/safariajman/',
     'https://www.facebook.com/profile.php?id=61586441787823',
