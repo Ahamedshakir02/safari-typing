@@ -11,12 +11,24 @@
 
 // The 15 service categories. Each is self-describing enough to render its own
 // page (`/services/<slug>`), a home tile, a mega-menu column and a footer link.
-//   slug        → route param + sitemap entry + anchor base
-//   icon        → glyph name in Icon.jsx
-//   keyword     → SEO phrase (always includes "Ajman")
-//   blurb       → short home/menu descriptor
-//   intro       → category-page intro paragraph
+//   slug            → route param + sitemap entry + anchor base
+//   icon            → glyph name in Icon.jsx
+//   keyword         → SEO phrase (always includes "Ajman")
+//   blurb           → short home/menu descriptor
+//   metaDescription → sentence-case <meta description>/JSON-LD text (SERP-only —
+//                     never rendered on the page, so it stays out of the
+//                     Title Case convention that governs visible copy)
+//   intro           → category-page intro paragraph (visible, Title Case)
 //   subservices → [{ id (in-page anchor), title, desc, tags }]
+//     detail (optional) → promotes this sub-service off the anchor and onto its
+//       own prerendered page at /services/<slug>/<id> (see SUBSERVICE_PAGES
+//       below + src/pages/SubServicePage.jsx). Only the highest-intent
+//       sub-services get one — most stay anchor-only.
+//       { metaDescription, overview, steps: [{ title, body }], documents: [],
+//         feeNote, timelineNote, faqs: [{ q, a }] } — visible fields (overview,
+//         steps, documents, feeNote, timelineNote, faq answers) are Title Case;
+//         no invented AED figures or day counts — keep fee/timeline language
+//         qualitative and confirm exact numbers on WhatsApp instead.
 //   whatToBring → "what to bring" note
 export const SERVICES = [
   {
@@ -26,6 +38,8 @@ export const SERVICES = [
     title: 'Business Setup & PRO',
     titleAr: 'تأسيس الأعمال وخدمات العلاقات الحكومية (PRO)',
     keyword: 'Business Setup & PRO Services Ajman',
+    metaDescription:
+      'Start, license and run a UAE company from one desk in Ajman — mainland or free zone formation, trade licences and PRO support handled end to end.',
     blurb: 'Trade Licences, Company Formation & PRO Support.',
     photo: '/photos/service-business-setup-pro.jpg',
     photoAlt: 'A Safari Typing Services Advisor Handing Completed Paperwork To A Client',
@@ -95,6 +109,8 @@ export const SERVICES = [
     title: 'Visa & Immigration',
     titleAr: 'التأشيرات والهجرة',
     keyword: 'Visa Typing & Immigration Services Ajman',
+    metaDescription:
+      'Visa typing and immigration services in Ajman — family and employment visas, Golden Visa, Amer and ICP transactions handled correctly the first time.',
     blurb: 'Family & Employment Visas, ICP And Amer.',
     photo: '/photos/service-visa-immigration.jpg',
     photoAlt: 'A Family Reviewing Their Residency Visa Paperwork With A Safari Typing Services Advisor',
@@ -110,6 +126,65 @@ export const SERVICES = [
         desc: 'Sponsor Your Spouse, Children Or Parents — Entry Permit, Status Change, Medical, Emirates ID And Stamping, Plus Renewals And Cancellation.',
         tags: ['Entry Permit', 'Status Change', 'Renewal', 'Cancellation'],
         tagsAr: ['تصريح دخول', 'تغيير الوضع', 'تجديد', 'إلغاء'],
+        detail: {
+          metaDescription:
+            'How to get a family visa in Ajman — eligibility, documents, entry permit vs. status change, medical test and Emirates ID, explained step by step.',
+          overview:
+            'Sponsoring A Spouse, Child Or Parent Means Proving To ICP That You Can Support Them — The Right Salary, The Right Accommodation And A Complete File — Before Any Entry Permit Or Status Change Is Approved. We Check Your Eligibility First So You Are Not Surprised Later, Then Carry The Application Through Every Stage Until The Visa Is Stamped.',
+          steps: [
+            {
+              title: 'Eligibility & Document Check',
+              body: 'We Review Your Salary, Accommodation And The Family Member’s Paperwork Against Current ICP Sponsorship Rules Before Anything Is Submitted.',
+            },
+            {
+              title: 'Entry Permit Or Status Change',
+              body: 'If Your Family Member Is Abroad We Apply For An Entry Permit; If They Are Already In The UAE On Another Visa We File A Status Change Instead.',
+            },
+            {
+              title: 'Medical Fitness Test',
+              body: 'We Book The Appointment At An Approved Centre Where The Applicant’s Age Or Visa Type Requires One, So There Is No Wasted Trip.',
+            },
+            {
+              title: 'Emirates ID Application',
+              body: 'Biometrics And The Emirates ID Application Are Submitted Alongside The Visa File Through The ICP System.',
+            },
+            {
+              title: 'Visa Stamping',
+              body: 'Once Approved, The Residence Visa Is Stamped Into The Family Member’s Passport And We Hand You The Completed File.',
+            },
+          ],
+          documents: [
+            'Sponsor’s Passport, Visa Page And Emirates ID',
+            'Sponsor’s Salary Certificate Or Labour Contract',
+            'Tenancy Contract Showing Suitable Accommodation',
+            'Family Member’s Passport Copy And Recent Photograph',
+            'Attested Marriage Certificate (Spouse Sponsorship)',
+            'Attested Birth Certificate (Child Sponsorship)',
+            'Previous Visa Page, If This Is A Renewal',
+          ],
+          feeNote:
+            'You Pay The Official ICP Government Fee At Cost Plus Our Service Charge For Preparing And Submitting The File — We Confirm The Full Amount On WhatsApp Before We Start, So There Are No Surprises.',
+          timelineNote:
+            'Entry Permits And Status Changes Are Usually The Fastest Stage Once Your File Is Complete; The Medical Appointment And Emirates ID Step Add More Time Depending On Slot Availability. We Give You A Realistic Timeline For Your Specific Case Before We Begin.',
+          faqs: [
+            {
+              q: 'Can I Sponsor My Parents On A Family Visa In Ajman?',
+              a: 'Generally Yes, Subject To ICP’s Current Conditions On Your Salary And Accommodation Type. Send Us Your Salary Certificate And Tenancy Contract On WhatsApp And We’ll Confirm Whether Your Case Qualifies Before You Pay Anything.',
+            },
+            {
+              q: 'Do I Need A Medical Test For A Family Visa Renewal?',
+              a: 'It Depends On The Applicant’s Age And Visa Type. We Check This Against The Current Rule Before Booking An Appointment, So You’re Never Sent For A Test You Don’t Need.',
+            },
+            {
+              q: 'What If My Family Member’s Visa Has Already Expired?',
+              a: 'We Can Usually Settle The Overstay Fine And Regularise Their Status In The Same Visit — See Our Overstay Fine Settlement Page For How That Process Works.',
+            },
+            {
+              q: 'Do I Have To Visit Immigration Myself?',
+              a: 'No — We Handle The Entry Permit, Status Change And Stamping On Your Behalf. Only The Medical Test And Emirates ID Biometrics Need The Applicant In Person, And We Book Both For You.',
+            },
+          ],
+        },
       },
       {
         id: 'company-visa',
@@ -126,6 +201,63 @@ export const SERVICES = [
         desc: 'Eligibility Check And Full Application Support For The UAE 5- And 10-Year Golden Visa.',
         tags: ['Golden Visa', 'Eligibility', '5 & 10 Year'],
         tagsAr: ['الإقامة الذهبية', 'الأهلية', '5 و10 سنوات'],
+        detail: {
+          metaDescription:
+            'Golden Visa assistance in Ajman — eligibility check across investor, business and professional categories, document prep and full application support.',
+          overview:
+            'The UAE Golden Visa Gives Investors, Entrepreneurs, Specialised Professionals And A Few Other Categories A Long-term Residence Visa Without Needing A Local Sponsor. The Hardest Part Is Usually Confirming Which Category You Qualify Under And Gathering The Right Proof — We Check That First, Then Carry The Nomination Or Application Through To The Stamped Visa.',
+          steps: [
+            {
+              title: 'Eligibility Review',
+              body: 'We Go Through The Current Golden Visa Categories With You — Property, Business, Salary Or Specialised Profession — And Confirm Which One Fits Your Situation.',
+            },
+            {
+              title: 'Document Preparation',
+              body: 'We Prepare The Specific Proof Your Category Needs, Whether That’s A Title Deed, Salary Certificate, Trade Licence Or Qualification Certificate.',
+            },
+            {
+              title: 'Application Submission',
+              body: 'The File Is Submitted Through ICP e-Channel Or The Relevant Nominating Authority, Depending On Your Category.',
+            },
+            {
+              title: 'Medical & Emirates ID',
+              body: 'Once Approved, We Book Your Medical Fitness Test And Emirates ID Biometrics Like Any Other Residence Visa.',
+            },
+            {
+              title: 'Visa Stamping',
+              body: 'Your 5- Or 10-year Golden Visa Is Stamped Into Your Passport — No Local Sponsor Required, Renewable On The Same Terms.',
+            },
+          ],
+          documents: [
+            'Valid Passport (At Least Six Months Remaining)',
+            'Recent Passport-size Photograph',
+            'Proof Of Your Qualifying Category (Title Deed, Salary Certificate, Trade Licence Or Degree)',
+            'Current Visa Or Entry Permit',
+            'No-objection Letter, Where Your Category Requires One',
+          ],
+          feeNote:
+            'The Golden Visa Government Fee Is Set By ICP And Differs By Category And Duration, Charged At Cost. Our Service Charge Covers The Eligibility Review, Document Preparation And Submission — We Confirm The Full Amount On WhatsApp Before We Start.',
+          timelineNote:
+            'Timelines Depend On Which Category You Apply Under And How Quickly Your Supporting Documents Are Ready. We Give You A Realistic Estimate Once We’ve Reviewed Your File, Rather Than A Generic Number.',
+          faqs: [
+            {
+              q: 'Who Qualifies For The UAE Golden Visa?',
+              a: 'Property Investors, Business Owners, Specialised Professionals, Outstanding Students And A Few Other Categories Can Qualify — The Exact Criteria Are Set By ICP And Do Change. Send Us Your Details On WhatsApp And We’ll Check Your Case Against The Current Rules.',
+            },
+            {
+              q: 'Do I Need A Sponsor For A Golden Visa?',
+              a: 'No — Golden Visa Holders Are Self-sponsored And Aren’t Tied To A Mainland Employer Or Company Visa Quota.',
+            },
+            {
+              q: 'Can I Add My Family To My Golden Visa?',
+              a: 'In Most Categories, Yes — Typically Your Spouse And Children, And In Some Cases Parents Or Domestic Staff. We Confirm Exactly Who You Can Sponsor Once We Know Your Category.',
+            },
+            {
+              q: 'How Long Does A Golden Visa Application Take?',
+              a: 'It Varies By Category And Nominating Authority. Once We’ve Reviewed Your Documents We’ll Give You A Realistic Timeline For Your Specific Case.',
+            },
+          ],
+        },
       },
       {
         id: 'amer-services',
@@ -150,6 +282,58 @@ export const SERVICES = [
         desc: 'Calculation And Settlement Of Overstay And Immigration Fines, With Guidance On Regularising Status.',
         tags: ['Fine Calculation', 'Fine Payment', 'Status Regularisation'],
         tagsAr: ['احتساب الغرامة', 'دفع الغرامة', 'تصحيح الوضع'],
+        detail: {
+          metaDescription:
+            'Overstay fine payment in Ajman — how immigration fines are calculated, settled and how to regularise your residency status afterwards.',
+          overview:
+            'An Expired Visa Starts Accruing An Immigration Fine From The Day It Lapses, And The Longer It’s Left, The More It Usually Costs To Clear. We Check Your Exact Status Through ICP Or Amer First, Then Settle The Fine And Arrange Whatever Comes Next — A New Entry Permit, A Status Change Or An Exit — So You’re Compliant Again.',
+          steps: [
+            {
+              title: 'Status Check',
+              body: 'We Verify The Exact Overstay Period And Current Immigration Status Through The ICP Or Amer System Before Calculating Anything.',
+            },
+            {
+              title: 'Fine Calculation',
+              body: 'We Work Out The Total Fine Owed, Including Any Additional Charges That Have Accrued Since The Visa Expired.',
+            },
+            {
+              title: 'Fine Payment',
+              body: 'The Fine Is Settled Through The Correct Official Channel, With A Receipt Confirming The Amount Paid.',
+            },
+            {
+              title: 'Status Regularisation',
+              body: 'Depending On Your Case, We Arrange A New Entry Permit, A Status Change Or Confirm The Exit Requirements So Your File Is Fully Closed.',
+            },
+          ],
+          documents: [
+            'Passport Copy Of The Person Who Overstayed',
+            'Original Entry Permit Or Previous Visa Page',
+            'Sponsor’s Documents, If Switching Status Rather Than Exiting',
+            'Any Immigration Notice Or Travel Ban Letter Already Received',
+          ],
+          feeNote:
+            'The Fine Amount Is Set By ICP And Increases The Longer It’s Left Unpaid, So The Sooner You Bring Us The File, The Lower The Total Usually Is. You Pay The Government Fine At Cost Plus Our Service Charge For Handling The Calculation And Payment — Confirmed On WhatsApp Before We Start.',
+          timelineNote:
+            'Fine Calculation And Payment Are Usually The Quickest Part Once We Have Your Passport Details. Status Regularisation Afterwards Can Take Longer Depending On What’s Required For Your Case.',
+          faqs: [
+            {
+              q: 'What Happens If I Ignore An Overstay Fine?',
+              a: 'It Keeps Accruing And Can Affect Future UAE Visa Applications Or Entry, So It’s Better Resolved As Soon As Possible.',
+            },
+            {
+              q: 'Can I Pay An Overstay Fine And Stay In The UAE?',
+              a: 'Sometimes — It Depends On Your Specific Case. In Some Situations You Can Regularise Your Status Without Leaving; In Others An Exit Is Required. Send Us Your Details And We’ll Review It.',
+            },
+            {
+              q: 'Do I Need To Visit Immigration Myself?',
+              a: 'In Most Cases We Handle The Fine Calculation And Payment On Your Behalf. Only Certain Status Changes Need Your Presence For Biometrics.',
+            },
+            {
+              q: 'Will An Overstay Affect My Future Visa Applications?',
+              a: 'It Can, Depending On The Length Of The Overstay And Your Immigration History — Regularising It Quickly Reduces That Risk.',
+            },
+          ],
+        },
       },
     ],
     whatToBring:
@@ -164,6 +348,8 @@ export const SERVICES = [
     title: 'Emirates ID',
     titleAr: 'الهوية الإماراتية',
     keyword: 'Emirates ID Renewal Ajman',
+    metaDescription:
+      'Emirates ID services in Ajman — new applications, renewals, replacements and quick data corrections through the official ICP system.',
     blurb: 'New, Renewal, Replacement & Data Fixes.',
     photo: '/photos/service-emirates-id.jpg',
     photoAlt: 'A Customer Holding His New Emirates ID At The Counter',
@@ -187,6 +373,62 @@ export const SERVICES = [
         desc: 'Emirates ID Renewals Before Or After Expiry, With Fine Guidance Where Needed.',
         tags: ['ID Renewal', 'Expiry Check'],
         tagsAr: ['تجديد الهوية', 'فحص الانتهاء'],
+        detail: {
+          metaDescription:
+            'Emirates ID renewal in Ajman — how to renew before or after expiry, required documents, late fees and typical processing steps.',
+          overview:
+            'Your Emirates ID Validity Follows Your Residence Visa, So The Two Are Usually Renewed Together. We Check Both Expiry Dates, Submit The Renewal Through ICP And Book Biometrics If The System Requests An Update — So You Only Make One Trip.',
+          steps: [
+            {
+              title: 'Expiry Check',
+              body: 'We Confirm Your Emirates ID’s Expiry Date And Whether Your Residence Visa Also Needs Renewing At The Same Time.',
+            },
+            {
+              title: 'Application Submission',
+              body: 'The Renewal Application Is Typed And Submitted Through The ICP System On Your Behalf.',
+            },
+            {
+              title: 'Biometrics, If Requested',
+              body: 'If The System Asks For An Updated Fingerprint Or Photo, We Book Your Appointment At An Approved Centre.',
+            },
+            {
+              title: 'Fee Payment',
+              body: 'The Government Renewal Fee — Plus A Late Fee If The ID Has Already Expired — Is Settled Through The Official Channel.',
+            },
+            {
+              title: 'Collection',
+              body: 'Your New Emirates ID Is Printed And Made Available For Collection Or Delivery, Depending On The Option You Choose.',
+            },
+          ],
+          documents: [
+            'Current Or Expired Emirates ID',
+            'Valid Passport Copy',
+            'Valid Residence Visa Page, Or Proof Renewal Is In Progress',
+            'A Recent Passport-size Photo, If Biometrics Are Being Updated',
+          ],
+          feeNote:
+            'A Late Fee Applies For Every Day The Emirates ID Is Renewed After Expiry, So The Earlier You Start The Lower The Total. You Pay The Government Fee At Cost Plus Our Service Charge — Confirmed On WhatsApp Before We Start.',
+          timelineNote:
+            'Renewal Is Usually Quick Once The Application Is Submitted; It Can Take A Little Longer If A New Biometrics Appointment Is Needed Or If Your Residence Visa Is Being Renewed At The Same Time.',
+          faqs: [
+            {
+              q: 'How Early Can I Renew My Emirates ID?',
+              a: 'You Can Generally Renew Before It Expires, Usually In The Same Window As Your Visa Renewal. Send Us Your Current ID And Visa Details And We’ll Confirm The Earliest Date For Your File.',
+            },
+            {
+              q: 'What If My Emirates ID Has Already Expired?',
+              a: 'Renewal Is Still Possible. A Late Fee Applies And Increases The Longer It’s Left, So It’s Worth Bringing It In As Soon As You Can.',
+            },
+            {
+              q: 'Do I Need To Renew My Visa And Emirates ID Together?',
+              a: 'In Most Cases Yes, Since The ID’s Validity Follows The Visa. We Check Both Dates And Handle Them In The Right Order.',
+            },
+            {
+              q: 'Can Someone Else Submit My Renewal For Me?',
+              a: 'Yes — We Can Handle Submission And Payment On Your Behalf. Only A Biometrics Appointment, If The System Requests One, Needs You In Person.',
+            },
+          ],
+        },
       },
       {
         id: 'id-replacement',
@@ -225,6 +467,8 @@ export const SERVICES = [
     title: 'Tasheel & MOHRE',
     titleAr: 'تسهيل ووزارة الموارد البشرية والتوطين',
     keyword: 'Tasheel & MOHRE Labour Services Ajman',
+    metaDescription:
+      'Tasheel and MOHRE labour services in Ajman — work permits, labour contracts, WPS registration and offer letters handled through the official system.',
     blurb: 'Work Permits, Labour Contracts & WPS.',
     photo: '/photos/service-tasheel-mohre.jpg',
     photoAlt: 'A Consultant Reviewing A Labour Contract And Offer Letter With A Worker',
@@ -302,6 +546,8 @@ export const SERVICES = [
     title: 'Medical Services',
     titleAr: 'الخدمات الطبية',
     keyword: 'Medical Fitness Test Typing Ajman',
+    metaDescription:
+      'Medical fitness typing and appointment booking in Ajman for visas, family files and marriage — arrive at the centre ready, no queue confusion.',
     blurb: 'Fitness Tests, Health Cards & Family Medicals.',
     intro:
       'Medical Fitness Applications Typed And Booked So You Arrive At The Centre Ready — For Visas, Family Files And Marriage.',
@@ -353,6 +599,8 @@ export const SERVICES = [
     title: 'Documentation & Attestation',
     titleAr: 'توثيق وتصديق المستندات',
     keyword: 'Certificate & MOFA Attestation Ajman',
+    metaDescription:
+      'Certificate and MOFA attestation in Ajman — apostille and embassy attestation, with the full chain handled so your documents are accepted without delay.',
     blurb: 'MOFA, Apostille & Embassy Attestation.',
     photo: '/photos/service-documentation-attestation.jpg',
     photoAlt: 'A Consultant Stamping And Attesting A Customer\'s Document',
@@ -422,6 +670,8 @@ export const SERVICES = [
     title: 'Translation & Court Works',
     titleAr: 'الترجمة وأعمال المحاكم',
     keyword: 'Legal Translation Services Ajman',
+    metaDescription:
+      'Certified legal translation and court documentation in Ajman — accurate Arabic-English translation accepted by UAE authorities.',
     blurb: 'Legal Translation, POA & Court Documents.',
     photo: '/photos/service-translation-court.jpg',
     photoAlt: 'A Legal Translator Preparing Certified Court And Translation Documents',
@@ -474,6 +724,8 @@ export const SERVICES = [
     title: 'Vehicle & Driving Licence',
     titleAr: 'المركبات ورخص القيادة',
     keyword: 'Driving Licence & Vehicle Services Ajman',
+    metaDescription:
+      'Driving licence and vehicle services in Ajman — RTA transactions, EVG registration, traffic fines and vehicle registration in one visit.',
     blurb: 'Licences, EVG, Fines & Registration.',
     photo: '/photos/service-vehicle-driving-licence.jpg',
     photoAlt: 'A Driver Holding Her UAE Driving Licence Outside The Safari Typing Services Office',
@@ -535,6 +787,8 @@ export const SERVICES = [
     title: 'Passport Services',
     titleAr: 'خدمات جوازات السفر',
     keyword: 'Passport Services Ajman',
+    metaDescription:
+      'Passport services in Ajman — new applications, renewals, amendments and lost passport support for your home-country documents.',
     blurb: 'New, Renewal, Amendments & Lost Passports.',
     photo: '/photos/service-passport-services.jpg',
     photoAlt: 'A Couple Collecting Their Passports And Boarding Passes',
@@ -595,6 +849,8 @@ export const SERVICES = [
     title: 'Online Registrations & Utilities',
     titleAr: 'التسجيلات الإلكترونية والمرافق',
     keyword: 'FEWA & Utility Registration Ajman',
+    metaDescription:
+      'FEWA and utility registration in Ajman — electricity and water connection, Ajman Sewerage, tenancy registration and civil defence approvals.',
     blurb: 'FEWA, Ajman Sewerage & Tenancy Registration.',
     intro:
       'Get Connected And Registered The Ajman Way — FEWA, Ajman Sewerage, Ajman Municipality Tenancy And Civil Defence, Without The Queues.',
@@ -654,6 +910,8 @@ export const SERVICES = [
     title: 'Insurance',
     titleAr: 'التأمين',
     keyword: 'Health & Vehicle Insurance Ajman',
+    metaDescription:
+      'Health and vehicle insurance in Ajman, arranged at the counter — visa-compliant health cover plus motor and home insurance from trusted UAE providers.',
     blurb: 'Health, Motor & Home Cover.',
     photo: '/photos/service-insurance.jpg',
     photoAlt: 'Advisors Reviewing Insurance Documents With A Customer On A Laptop',
@@ -698,6 +956,8 @@ export const SERVICES = [
     title: 'Travel Services',
     titleAr: 'خدمات السفر',
     keyword: 'Visit Visa & Travel Services Ajman',
+    metaDescription:
+      'Visit visas and travel services in Ajman — tourist visa applications, flight bookings, tour packages and desert safari, all in one place.',
     blurb: 'Visit Visas, Tickets & Desert Safari.',
     photo: '/photos/service-travel-services.jpg',
     photoAlt: 'A Safari Typing Services Agent Handing Over A Passport And Boarding Pass At The Travel Counter',
@@ -757,6 +1017,8 @@ export const SERVICES = [
     title: 'Tax & Accounting',
     titleAr: 'الضرائب والمحاسبة',
     keyword: 'VAT & Corporate Tax Registration Ajman',
+    metaDescription:
+      'VAT and corporate tax registration in Ajman — FTA-compliant VAT and corporate tax filing plus monthly bookkeeping for small businesses.',
     blurb: 'VAT, Corporate Tax, Filing & Bookkeeping.',
     intro:
       'Stay Compliant With The Federal Tax Authority — VAT And Corporate-tax Registration, Return Filing And Day-to-day Bookkeeping, Handled By People Who Do It Every Week.',
@@ -816,6 +1078,8 @@ export const SERVICES = [
     title: 'Digital Marketing & IT',
     titleAr: 'التسويق الرقمي وتقنية المعلومات',
     keyword: 'Website Design & Digital Marketing Ajman',
+    metaDescription:
+      'Website design and digital marketing in Ajman — business websites, e-commerce stores, branding and social media management from one trusted team.',
     blurb: 'Websites, E-commerce, Branding & Social Media.',
     intro:
       'Put Your Business Online And Keep It Growing — Websites, Online Stores, Branding And Social Media, Built And Managed From The Same Trusted Desk That Handles Your Paperwork.',
@@ -883,6 +1147,8 @@ export const SERVICES = [
     title: 'Everyday & Other Services',
     titleAr: 'خدمات يومية وأخرى',
     keyword: 'Printing, PCC & Typing Services Ajman',
+    metaDescription:
+      'Printing, PCC and everyday typing services in Ajman — police clearance certificates, printing, online form submission and courier support.',
     blurb: 'Maid Visas, PCC, Printing & Online Forms.',
     photo: '/photos/service-everyday-other.jpg',
     photoAlt: 'The Safari Typing Services Reception Desk Welcoming A Customer',
@@ -949,6 +1215,17 @@ export const SERVICES = [
 
 // Look up a category by its slug (used by the dynamic /services/:slug route).
 export const getServiceBySlug = (slug) => SERVICES.find((s) => s.slug === slug)
+
+// Sub-services promoted to their own page (see `detail` above), each paired
+// with its parent category. Powers /services/:slug/:subId's getStaticPaths
+// and the lookup below — used by SubServicePage and by CategoryPage to decide
+// which quick-jump pills/cards link out instead of scrolling to an anchor.
+export const SUBSERVICE_PAGES = SERVICES.flatMap((service) =>
+  service.subservices.filter((sub) => sub.detail).map((sub) => ({ service, sub })),
+)
+
+export const getSubServicePage = (categorySlug, subId) =>
+  SUBSERVICE_PAGES.find(({ service, sub }) => service.slug === categorySlug && sub.id === subId)
 
 // Mega-menu / footer grouping of the 15 categories (by slug).
 export const SERVICE_GROUPS = [
@@ -1046,7 +1323,7 @@ export const CREDENTIALS = [
 // Home — section copy. Keep claims accurate; [CONFIRM] anything not yet verified.
 export const HOME = {
   hero: {
-    eyebrow: 'Nazir Plaza · Ajman',
+    eyebrow: 'Typing Centre In Ajman · Nazir Plaza',
     subline:
       'Visas, Emirates ID, Attestation, Business Licences And PRO Services — Typed Correctly, Submitted Through The Right Channel And Followed Up Until They’re Done. So You Never Have To Think About The Queue Again.',
     trustLine: 'Serving Ajman’s Residents & Businesses In Five Languages', // [CONFIRM] scale wording

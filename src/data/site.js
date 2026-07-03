@@ -163,7 +163,7 @@ export const LOCAL_BUSINESS_JSONLD = {
   // changing any visible copy. (Not invented businesses — just name variants.)
   alternateName: ['Safari Typing Center', 'Safari Typing Center Ajman', CONTACT.brandAr],
   description:
-    'Safari Typing Services Is A Government Typing Centre In Ajman (Nazir Plaza, Al Mowaihat 3) Handling Visa Typing, Emirates ID, Tasheel & MOHRE, Amer, Attestation, Translation, Business Setup And PRO Services.',
+    'Safari Typing Services is a government typing centre in Ajman (Nazir Plaza, Al Mowaihat 3) handling visa typing, Emirates ID, Tasheel & MOHRE, Amer, attestation, translation, business setup and PRO services.',
   slogan: CONTACT.tagline,
   image: `${SITE_URL}/safari-banner.jpeg`,
   logo: `${SITE_URL}/safari-logo.jpeg`,
