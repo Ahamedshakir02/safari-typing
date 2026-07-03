@@ -9,7 +9,7 @@ export default function NotFound() {
 
   return (
     <div ref={root}>
-      <Seo title="Page Not Found" description="The Page You Were Looking For Could Not Be Found." noindex />
+      <Seo title="Page Not Found" description="The page you were looking for could not be found." noindex />
       <section className="flex min-h-[60vh] flex-col items-center justify-center px-5 py-24 text-center sm:px-7">
         <div data-hero className="flex flex-col items-center">
           <Logo size={72} />

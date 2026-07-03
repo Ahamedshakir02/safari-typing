@@ -16,7 +16,7 @@ export default function Terms() {
     <div ref={root}>
       <Seo
         title="Terms Of Service"
-        description="The Terms On Which Safari Typing Services In Ajman Provides Government Typing, Document And PRO Services To Residents And Businesses."
+        description="The terms on which Safari Typing Services in Ajman provides government typing, document and PRO services to residents and businesses."
         path="/terms"
       />
 

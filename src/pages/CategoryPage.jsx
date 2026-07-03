@@ -50,7 +50,7 @@ export default function CategoryPage() {
     '@type': 'Service',
     name: service.title,
     serviceType: service.keyword,
-    description: service.intro,
+    description: service.metaDescription,
     url: canonical,
     areaServed: { '@type': 'City', name: 'Ajman' },
     provider: {
@@ -64,7 +64,7 @@ export default function CategoryPage() {
     <div ref={root}>
       <Seo
         title={`${service.title} in Ajman`}
-        description={service.intro}
+        description={service.metaDescription}
         path={`/services/${service.slug}`}
         jsonLd={[breadcrumbJsonLd, serviceJsonLd]}
       />
@@ -86,8 +86,10 @@ export default function CategoryPage() {
             <Icon name={service.icon} size={26} strokeWidth={1.7} />
           </span>
 
-          <Eyebrow className="mb-4">{service.keyword}</Eyebrow>
-          <h1 className="mb-3 text-[38px] font-medium sm:text-[50px] md:text-[58px]">{service.title}</h1>
+          <Eyebrow as="h1" className="mb-4 leading-[1.6]">{service.keyword}</Eyebrow>
+          <p className="mb-3 font-display text-ink tracking-[-0.01em] leading-[1.08] text-[38px] font-medium sm:text-[50px] md:text-[58px]">
+            {service.title}
+          </p>
           <p dir="rtl" lang="ar" className="mb-5 font-body text-[20px] text-soft">
             {service.titleAr}
           </p>
@@ -127,18 +129,30 @@ export default function CategoryPage() {
         <Credentials data-reveal />
       </section>
 
-      {/* In-page anchor nav */}
+      {/* In-page anchor nav — sub-services with their own page (`detail`) link
+          out instead of jumping to the in-page card, so search engines and
+          visitors land on the dedicated URL rather than an anchor fragment. */}
       <section className="mx-auto max-w-content px-5 pb-2 pt-6 sm:px-7">
         <div data-reveal className="flex flex-wrap justify-center gap-2.5">
-          {service.subservices.map((sub) => (
-            <a
-              key={sub.id}
-              href={`#${sub.id}`}
-              className="rounded-full border border-line bg-cream-50 px-[15px] py-2 font-body text-[13.5px] font-semibold text-soft transition-colors hover:border-sage/40 hover:text-sage"
-            >
-              {sub.title}
-            </a>
-          ))}
+          {service.subservices.map((sub) =>
+            sub.detail ? (
+              <Link
+                key={sub.id}
+                to={`/services/${service.slug}/${sub.id}`}
+                className="rounded-full border border-sage/40 bg-tag-bg px-[15px] py-2 font-body text-[13.5px] font-semibold text-sage transition-colors hover:border-sage"
+              >
+                {sub.title}
+              </Link>
+            ) : (
+              <a
+                key={sub.id}
+                href={`#${sub.id}`}
+                className="rounded-full border border-line bg-cream-50 px-[15px] py-2 font-body text-[13.5px] font-semibold text-soft transition-colors hover:border-sage/40 hover:text-sage"
+              >
+                {sub.title}
+              </a>
+            ),
+          )}
         </div>
       </section>
 
@@ -157,15 +171,26 @@ export default function CategoryPage() {
                 {sub.titleAr}
               </p>
               <p className="mb-5 font-body text-[15.5px] leading-[1.6] text-soft">{sub.desc}</p>
-              <div className="mt-auto flex flex-wrap gap-2">
-                {sub.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-tag-bg px-[13px] py-[7px] font-body text-[13px] font-semibold text-tag-ink"
+              <div className="mt-auto flex flex-col gap-3">
+                <div className="flex flex-wrap gap-2">
+                  {sub.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-tag-bg px-[13px] py-[7px] font-body text-[13px] font-semibold text-tag-ink"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                {sub.detail && (
+                  <Link
+                    to={`/services/${service.slug}/${sub.id}`}
+                    className="inline-flex items-center gap-1.5 font-body text-[14px] font-semibold text-sage transition-colors hover:text-ink"
                   >
-                    {tag}
-                  </span>
-                ))}
+                    Read The Full Guide
+                    <Icon name="arrow" size={15} strokeWidth={2} />
+                  </Link>
+                )}
               </div>
             </article>
           ))}

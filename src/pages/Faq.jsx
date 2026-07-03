@@ -27,7 +27,7 @@ export default function Faq() {
     <div ref={root}>
       <Seo
         title="FAQ"
-        description="Answers To The Questions People Ask Us Most — What To Bring, How Long Applications Take, Pricing, Sending Documents On WhatsApp And Our Opening Hours."
+        description="Answers to the questions people ask us most — what to bring, how long applications take, pricing, sending documents on WhatsApp and our opening hours."
         path="/faq"
         jsonLd={FAQ_JSONLD}
       />

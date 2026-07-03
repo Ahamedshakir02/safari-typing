@@ -22,7 +22,7 @@ export default function About() {
     <div ref={root}>
       <Seo
         title="About — Typing Centre In Ajman"
-        description="For Over 18 Years, Safari Typing Services Has Been The Neighbourhood Document-services Centre At Nazir Plaza, Ajman — Trusted By Thousands Of Residents And Businesses."
+        description="For over 18 years, Safari Typing Services has been the neighbourhood document-services centre at Nazir Plaza, Ajman — trusted by thousands of residents and businesses."
         path="/about"
       />
 

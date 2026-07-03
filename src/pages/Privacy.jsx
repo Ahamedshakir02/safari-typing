@@ -15,7 +15,7 @@ export default function Privacy() {
     <div ref={root}>
       <Seo
         title="Privacy Policy"
-        description="How Safari Typing Services In Ajman Collects, Uses And Protects The Personal Information You Share With Us."
+        description="How Safari Typing Services in Ajman collects, uses and protects the personal information you share with us."
         path="/privacy-policy"
       />
 

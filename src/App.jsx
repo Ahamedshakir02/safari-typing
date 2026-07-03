@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Layout from './Layout.jsx'
 import Seo from './components/Seo.jsx'
 import Home from './pages/Home.jsx' // eager — the primary route
-import { SERVICES } from './data/content.js'
+import { SERVICES, SUBSERVICE_PAGES } from './data/content.js'
 
 // Client-side redirect for the legacy /privacy alias. Renders nothing during
 // prerender (the effect only runs in the browser), per vite-react-ssg's
@@ -37,6 +37,11 @@ export const routes = [
         path: 'services/:slug',
         lazy: async () => ({ Component: (await import('./pages/CategoryPage.jsx')).default }),
         getStaticPaths: () => SERVICES.map((s) => `services/${s.slug}`),
+      },
+      {
+        path: 'services/:slug/:subId',
+        lazy: async () => ({ Component: (await import('./pages/SubServicePage.jsx')).default }),
+        getStaticPaths: () => SUBSERVICE_PAGES.map(({ service, sub }) => `services/${service.slug}/${sub.id}`),
       },
       { path: 'about', lazy: async () => ({ Component: (await import('./pages/About.jsx')).default }) },
       { path: 'faq', lazy: async () => ({ Component: (await import('./pages/Faq.jsx')).default }) },

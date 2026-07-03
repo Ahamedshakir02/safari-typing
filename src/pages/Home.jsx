@@ -61,7 +61,7 @@ export default function Home() {
     <div ref={root}>
       <Seo
         title="Typing Centre In Ajman — Visas, Emirates ID, Tasheel & Attestation"
-        description="Government Typing Services In Ajman (Nazir Plaza, Shop 4): Visas, Emirates ID, Tasheel, Amer, Attestation, Business Licences And PRO Services — Handled Calmly And Correctly."
+        description="Government typing services in Ajman (Nazir Plaza, Shop 4): visas, Emirates ID, Tasheel, Amer, attestation, business licences and PRO services — handled calmly and correctly."
         path="/"
         jsonLd={HOME_BUSINESS_JSONLD}
       />
@@ -73,15 +73,15 @@ export default function Home() {
           className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[460px] bg-[radial-gradient(60%_60%_at_50%_-5%,rgba(31,84,166,0.12),transparent_70%)]"
         />
         <div data-hero>
-          <Eyebrow className="mb-[26px] inline-flex items-center gap-2.5">
+          <Eyebrow as="h1" className="mb-[26px] inline-flex items-center gap-2.5 leading-[1.6]">
             <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-sage to-gold" />
             {HOME.hero.eyebrow}
           </Eyebrow>
-          <h1 className="mb-[24px] text-[44px] font-medium leading-[1.05] sm:text-[60px] md:text-[78px]">
+          <p className="mb-[24px] font-display text-ink tracking-[-0.01em] text-[44px] font-medium leading-[1.05] sm:text-[60px] md:text-[78px]">
             Government Paperwork,
             <br />
             Handled With <em className="italic text-gradient-brand">Quiet Care.</em>
-          </h1>
+          </p>
           <p className="mx-auto mb-9 max-w-[620px] font-body text-lg leading-[1.55] text-soft sm:text-[21px]">
             {HOME.hero.subline}
           </p>

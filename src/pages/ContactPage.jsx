@@ -50,7 +50,7 @@ export default function ContactPage() {
     <div ref={root}>
       <Seo
         title="Contact — Typing Centre In Ajman"
-        description="Call, WhatsApp, Email Or Step Into Shop 4 At Nazir Plaza, Ajman. Send An Enquiry And We'll Reply By WhatsApp Or Email, Usually Within The Hour."
+        description="Call, WhatsApp, email or step into Shop 4 at Nazir Plaza, Ajman. Send an enquiry and we'll reply by WhatsApp or email, usually within the hour."
         path="/contact"
       />
 
