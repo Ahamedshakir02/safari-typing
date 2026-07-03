@@ -153,8 +153,23 @@ Get control back **before** optimising:
 
 ### B. Search Console & Bing (👤/🛠️)
 - [ ] Verify the site in **Google Search Console** (`search.google.com/search-console`).
+
+  **When it asks to "select property type"**, you get two boxes:
+
+  | Type | Covers | How to verify |
+  |------|--------|---------------|
+  | **Domain** (recommended) | `www` + non-`www`, `http` + `https`, all subdomains | Add a **TXT record** in your domain registrar's DNS (where you bought `safaritypingservices.com`) |
+  | **URL prefix** | Only the exact address you type | Easier — **HTML tag** / HTML file / Google Analytics |
+
+  - If you can log into the domain registrar → pick **Domain**, enter `safaritypingservices.com`, and paste the TXT record it gives you into your DNS. Best, most complete option.
+  - If you can't reach the DNS → pick **URL prefix**, enter `https://www.safaritypingservices.com`, choose the **"HTML tag"** method, and send the `<meta>` tag to the developer to drop into `index.html`.
+
 - [ ] Submit the sitemap: `https://www.safaritypingservices.com/sitemap.xml`.
-- [ ] Repeat in **Bing Webmaster Tools** (Bing/Edge + ChatGPT search pull from here).
+- [ ] Repeat in **Bing Webmaster Tools** (`bing.com/webmasters` — Bing/Edge + ChatGPT search pull from here).
+
+  **Easiest: import from Google.** After Search Console is verified, on the Bing home screen pick **"Import from Google Search Console"** → **Import** → allow access → select `safaritypingservices.com`. Bing copies the verified site **and the sitemap** across automatically — no DNS or tag needed.
+
+  **Or add it manually:** click **"Add site manually"**, enter `https://www.safaritypingservices.com`, verify with **XML file**, **meta tag** (send it to the developer for `index.html`), or **DNS (CNAME)**, then **Sitemaps → Submit sitemap** = `https://www.safaritypingservices.com/sitemap.xml`.
 - [ ] In Search Console, use **URL Inspection → Request indexing** for the homepage
       and the top service pages so they get crawled quickly.
 
