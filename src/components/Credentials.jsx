@@ -1,4 +1,5 @@
 import { CREDENTIALS } from '../data/content.js'
+import Picture from './Picture.jsx'
 
 /**
  * "Official channels" trust strip — the real service logos (ICP, Tasheel, Amer,
@@ -28,7 +29,7 @@ function LogoCard({ c, dup = false }) {
       aria-hidden={dup || undefined}
       className="mx-1.5 flex h-[84px] w-[206px] shrink-0 items-center justify-center rounded-2xl border border-line bg-white px-5 transition-shadow duration-300 ease-out hover:shadow-lift"
     >
-      <img
+      <Picture
         src={c.logo}
         alt={dup ? '' : c.label}
         className={`object-contain ${c.cls ?? LOGO_SIZE[c.box] ?? LOGO_SIZE.wide}`}
