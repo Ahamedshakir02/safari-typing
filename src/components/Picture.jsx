@@ -1,5 +1,5 @@
 // Serves a WebP version of a raster image with the original PNG/JPG as fallback.
-// Pass the original `src` (e.g. /photos/home-typing-center.png); the matching
+// Pass the original `src` (e.g. /photos/team-duo.png); the matching
 // `.webp` sibling (generated at build time, max 1400px) is offered first.
 //
 // <picture> uses display:contents so it doesn't disturb layout — the <img>
