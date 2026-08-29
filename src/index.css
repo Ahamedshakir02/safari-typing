@@ -158,7 +158,9 @@ html.lenis body {
 }
 
 /* ---------------------------------------------------------------------------
-   First-load brand loader. Fades out once the app + window have loaded.
+   First-load brand beat. Indeterminate by design — the page behind it is
+   prerendered, so there is no real progress to plot. Fades out once webfonts
+   are ready, capped at 600ms in SiteLoader.jsx.
 --------------------------------------------------------------------------- */
 .site-loader {
   position: fixed;
@@ -215,18 +217,22 @@ html.lenis body {
   overflow: hidden;
 }
 .site-loader .loader-bar {
-  width: 0;
+  width: 40%;
   height: 100%;
   background: theme('colors.sage.DEFAULT');
   border-radius: 3px;
-  transition: width 0.35s cubic-bezier(.16, .84, .44, 1);
+  animation: loader-slide 1s cubic-bezier(.65, 0, .35, 1) infinite;
 }
-.site-loader .loader-pct {
-  font-family: theme('fontFamily.body');
-  font-size: 12.5px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: theme('colors.gold');
+
+/* Indeterminate sweep: a short segment crossing the track, so the bar reads as
+   activity rather than as a percentage it cannot honestly report. */
+@keyframes loader-slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(250%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -238,6 +244,12 @@ html.lenis body {
   .site-loader .loader-logo,
   .site-loader .loader-bar {
     animation: none !important;
+  }
+  /* With the sweep stopped, a 40%-wide segment would read as a progress bar
+     frozen at 40%. Fill the track so it is plainly an accent rule, not a
+     stalled meter. */
+  .site-loader .loader-bar {
+    width: 100%;
   }
   /* Neutralise the hover/scroll micro-interactions (button lift, service-row
      accents, etc.) so motion-sensitive users get an essentially still page. */

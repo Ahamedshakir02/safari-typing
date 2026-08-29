@@ -1,46 +1,67 @@
 import { useEffect, useState } from 'react'
 
 /**
- * First-load brand loader: the Safari logo lockup + a determinate progress bar
- * with a live percentage. The bar eases toward ~90% while the page loads, then
- * completes to 100% on window.load (with a short minimum so it never flashes and
- * a fallback so it never hangs), fades out and unmounts. Shows once per full page
- * load, not per route.
+ * First-load brand beat: the Safari logo lockup over an indeterminate bar.
+ *
+ * This is deliberately NOT a progress meter. Every route is prerendered, so the
+ * real headline and Call button are in the HTML and paint within a few hundred
+ * milliseconds — there is no meaningful "loading" left to report, and a
+ * percentage here could only ever be theatre. It shows a short brand moment,
+ * then gets out of the way.
+ *
+ * The one thing worth waiting for is webfonts: the hero is type, not imagery,
+ * so a late font swap is what would otherwise reflow the headline mid entrance
+ * animation. Held between MIN_HOLD_MS (so it can't strobe on a warm cache) and
+ * MAX_HOLD_MS (so a slow network never turns it into a wall).
+ *
+ * Shows once per full page load, not per route.
  */
+
+// Never flash: below this the loader reads as a glitch rather than a beat.
+const MIN_HOLD_MS = 250
+// Never block: the content behind this has almost always painted already, so
+// the cap matters more than the thing being awaited.
+const MAX_HOLD_MS = 600
+
 export default function SiteLoader() {
   const [done, setDone] = useState(false)
   const [gone, setGone] = useState(false)
-  const [progress, setProgress] = useState(8)
 
-  // Ease the progress toward ~90% while we wait for the window to finish loading.
   useEffect(() => {
-    const id = setInterval(() => {
-      setProgress((p) => (p >= 90 ? p : p + Math.max(0.6, (90 - p) * 0.07)))
-    }, 110)
-    return () => clearInterval(id)
-  }, [])
+    const start = performance.now()
+    let settled = false
+    let minTimer
 
-  // Complete + fade out after load (or a fallback timeout).
-  useEffect(() => {
-    let fallback
     const finish = () => {
-      setProgress(100)
+      if (settled) return
+      settled = true
       setDone(true)
-      // Let the hero (and any other entrance animation) start as the loader
-      // fades. A flag covers the case where the loader finished before the
-      // listener was attached.
+      // The hero entrance animation is gated on this — usePageMotion listens
+      // for the event, and reads the flag for the case where the loader
+      // finished before the listener was attached. Both must always fire.
       window.__safariLoaderDone = true
       window.dispatchEvent(new Event('safari:loader-done'))
     }
-    if (document.readyState === 'complete') {
-      fallback = setTimeout(finish, 600)
-    } else {
-      window.addEventListener('load', finish)
-      fallback = setTimeout(finish, 2200)
+
+    // Hold for the remainder of the minimum, then go.
+    const finishAfterMin = () => {
+      if (settled) return
+      const waited = performance.now() - start
+      if (waited >= MIN_HOLD_MS) finish()
+      else minTimer = setTimeout(finish, MIN_HOLD_MS - waited)
     }
+
+    // Fonts are the real signal. `document.fonts.ready` resolves immediately on
+    // a warm cache, which is why the minimum hold exists.
+    const fonts = document.fonts ? document.fonts.ready : Promise.resolve()
+    fonts.then(finishAfterMin)
+
+    const cap = setTimeout(finish, MAX_HOLD_MS)
+
     return () => {
-      clearTimeout(fallback)
-      window.removeEventListener('load', finish)
+      settled = true
+      clearTimeout(cap)
+      clearTimeout(minTimer)
     }
   }, [])
 
@@ -53,8 +74,6 @@ export default function SiteLoader() {
 
   if (gone) return null
 
-  const pct = Math.round(progress)
-
   return (
     <div className={`site-loader${done ? ' is-done' : ''}`} aria-hidden="true">
       <div className="loader-brand">
@@ -65,9 +84,8 @@ export default function SiteLoader() {
         </span>
       </div>
       <div className="loader-track">
-        <div className="loader-bar" style={{ width: `${pct}%` }} />
+        <div className="loader-bar" />
       </div>
-      <div className="loader-pct">{pct}%</div>
     </div>
   )
 }
