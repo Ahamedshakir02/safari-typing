@@ -1,3 +1,5 @@
-# Netlify SPA fallback — serve index.html for every route so deep links and
-# refreshes (e.g. /services) don't 404. The app's router takes over client-side.
-/*    /index.html   200
+# Every route is prerendered to real HTML, so no SPA rewrite is needed — the
+# host serves the matching file directly. Anything that matches no file is a
+# genuine 404 and must say so (a 200 rewrite to index.html turns every typo
+# into a duplicate of the homepage in Google's index).
+/*    /404.html   404
