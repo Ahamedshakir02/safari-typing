@@ -15,12 +15,11 @@ const LOGOS = join(process.cwd(), 'public', 'logos')
 const MAX_WIDTH = 1400
 const QUALITY = 80
 
-// Photos referenced by content.js PHOTOS: the band/step PNG cut-outs plus the
-// one real photograph (the Nazir Plaza reception) used on the Home band.
+// Band/step PNG cut-outs referenced by content.js PHOTOS.
 const USED_PHOTOS = [
   'team-four.png',
   'services-visa-team.png',
-  'reception.jpg',
+  'home-typing-center.png',
   'step-welcome-tablet.png',
   'step-documents.png',
   'step-collect.png',
