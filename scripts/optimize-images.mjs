@@ -15,11 +15,12 @@ const LOGOS = join(process.cwd(), 'public', 'logos')
 const MAX_WIDTH = 1400
 const QUALITY = 80
 
-// Band/step PNG cut-outs referenced by content.js PHOTOS.
-const USED_PNGS = [
+// Photos referenced by content.js PHOTOS: the band/step PNG cut-outs plus the
+// one real photograph (the Nazir Plaza reception) used on the Home band.
+const USED_PHOTOS = [
   'team-four.png',
   'services-visa-team.png',
-  'team-duo.png',
+  'reception.jpg',
   'step-welcome-tablet.png',
   'step-documents.png',
   'step-collect.png',
@@ -56,15 +57,15 @@ async function convert(dir, files, { maxWidth = MAX_WIDTH, quality = QUALITY } =
 
 const photoFiles = await readdir(PHOTOS)
 const serviceJpgs = photoFiles.filter((f) => f.startsWith('service-') && /\.jpe?g$/i.test(f))
-// A name in USED_PNGS that isn't on disk means content.js points <Picture> at a
+// A name in USED_PHOTOS that isn't on disk means content.js points <Picture> at a
 // file nobody shipped: the WebP source is skipped here and the <img> fallback
 // 404s, so the photo silently disappears from the live page. Fail loudly.
-const missing = USED_PNGS.filter((f) => !photoFiles.includes(f))
+const missing = USED_PHOTOS.filter((f) => !photoFiles.includes(f))
 if (missing.length) {
   console.error(`Missing source images in public/photos: ${missing.join(', ')}`)
   process.exitCode = 1
 }
-const photoTargets = [...USED_PNGS.filter((f) => photoFiles.includes(f)), ...serviceJpgs]
+const photoTargets = [...USED_PHOTOS.filter((f) => photoFiles.includes(f)), ...serviceJpgs]
 const photoResult = await convert(PHOTOS, photoTargets)
 
 // Credentials marquee logos — small already, so a lower max width is plenty;

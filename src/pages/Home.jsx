@@ -151,8 +151,8 @@ export default function Home() {
             <div className="photo-panel aspect-[4/3] overflow-hidden rounded-[28px] sm:rounded-[280px_280px_28px_28px]">
               <Picture
                 src={PHOTOS.homeBand}
-                alt="Two Multilingual Safari Typing Services Advisors At The Ajman Counter, Holding Clients' UAE Government Paperwork"
-                className="h-full w-full object-contain"
+                alt="The Safari Typing Services Reception At Nazir Plaza, Ajman — Tas-heel, Ajman Sewerage And Government Of Ajman Signage Above The Counter"
+                className="h-full w-full object-cover"
                 loading="lazy"
                 decoding="async"
               />

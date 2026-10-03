@@ -1261,15 +1261,22 @@ export const SERVICE_GROUPS = [
 
 // ---------------------------------------------------------------------------
 // Brand photos (client-supplied, in /public/photos). To update the imagery,
-// just drop a replacement file at the same path. All are transparent cut-out
-// figures, rendered `object-contain` on a soft blue `.photo-panel` (defined in
-// index.css, no border) so the figures show in full and read as an intentional
-// graphic. (Don't render them object-cover or they crop heads/bodies.)
+// just drop a replacement file at the same path. The band/step PNGs are
+// transparent cut-out figures, rendered `object-contain` on a soft blue
+// `.photo-panel` (defined in index.css, no border) so the figures show in full
+// and read as an intentional graphic. (Don't render those object-cover or they
+// crop heads/bodies.) `homeBand` is the exception: a real photograph of the
+// Nazir Plaza counter, so it is rendered object-cover and fills its frame.
+//
+// Every figure here must be lit in the brand blue. The cut-outs were first
+// generated in the old sage-green era, and a leftover green-suited one
+// (team-duo.png) sat on the Home band for months before anyone spotted it
+// against its blue neighbours — check a replacement's wardrobe/lighting.
 // ---------------------------------------------------------------------------
 export const PHOTOS = {
   aboutBand: '/photos/team-four.png',
   servicesBand: '/photos/services-visa-team.png',
-  homeBand: '/photos/team-duo.png',
+  homeBand: '/photos/reception.jpg',
   step1: '/photos/step-welcome-tablet.png',
   step2: '/photos/step-documents.png',
   step3: '/photos/step-collect.png',
