@@ -33,6 +33,21 @@ export default function Header() {
     setMobileServices(false)
   }, [location.pathname])
 
+  // Escape closes whatever is open. The desktop panel opens on hover *and* on
+  // focus, so without this a keyboard user who tabs onto Services has no way to
+  // dismiss the panel short of tabbing through all 15 categories.
+  useEffect(() => {
+    if (!open && !megaOpen) return
+    const onKeyDown = (e) => {
+      if (e.key !== 'Escape') return
+      setOpen(false)
+      setMegaOpen(false)
+      setMobileServices(false)
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [open, megaOpen])
+
   return (
     <header
       className="sticky top-0 z-50 border-b border-line bg-cream/85 backdrop-blur-md"
