@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
 import ScrollToTop from './lib/ScrollToTop.jsx'
+import SiteLoader from './components/SiteLoader.jsx'
 import SmoothScroll from './components/SmoothScroll.jsx'
 import SkipLink from './components/SkipLink.jsx'
 import WhatsAppButton from './components/WhatsAppButton.jsx'
@@ -18,18 +19,21 @@ function RouteFallback() {
 }
 
 /**
- * The persistent site chrome (smooth scroll, header, footer, floating
+ * The persistent site chrome (loader, smooth scroll, header, footer, floating
  * WhatsApp) wrapped around the routed page <Outlet>. This is the root route's
  * element under vite-react-ssg, replacing the old App component shell.
  */
 export default function Layout() {
   return (
     <>
-      {/* No first-load splash by design. Every route is prerendered, so the
-          headline and Call button paint in a few hundred milliseconds — a
-          client-only overlay could only ever arrive *after* that paint and
-          cover content the visitor was already reading, which read as the page
-          reloading itself. The entrance animation is the brand beat now. */}
+      {/* Rendered into the prerendered HTML, NOT wrapped in <ClientOnly>. That
+          wrapper was the bug: it mounted the splash only after hydration, so
+          the static headline and Call button painted first and the overlay
+          dropped on top of content the visitor was already reading — which is
+          what made it look like the page reloaded itself. Its first render is
+          deterministic (nothing read from window), so there is no hydration
+          mismatch to avoid here. */}
+      <SiteLoader />
       <SmoothScroll />
       <div className="grain" aria-hidden="true" />
       <SkipLink />

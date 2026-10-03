@@ -5,7 +5,7 @@ import { gsap, useGSAP } from './gsap.js'
  * Shared page-entrance + scroll motion. Returns a ref to spread on a page's
  * root element; everything inside is animated by tagging elements with data
  * attributes:
- *   - [data-hero]          staggered entrance on mount
+ *   - [data-hero]          staggered entrance, handed off from the loader
  *   - [data-reveal]        fade-up once scrolled into view
  *   - [data-reveal-group]  its direct children fade-up in a stagger
  *   - [data-services] / [data-service-row]  sequenced card/row reveal
@@ -36,21 +36,26 @@ export function usePageMotion() {
           const { desktop } = ctx.conditions
           const q = gsap.utils.selector(root)
 
-          // ---- Header / hero entrance ----
-          // Plays immediately. It used to wait on a `safari:loader-done` event
-          // from the splash screen, which meant the already-painted hero was
-          // re-hidden at opacity 0 for the length of the splash and its fade —
-          // a second blank beat on top of the first. There is no splash now, so
-          // this runs the moment the branch mounts.
+          // ---- Header / hero entrance — plays as the brand loader hands off,
+          // or immediately on client-side navigation (loader already done) ----
+          let startHero
+          let heroSafety
           const heroItems = q('[data-hero] > *')
           if (heroItems.length) {
-            gsap.from(heroItems, {
-              opacity: 0,
-              y: 28,
-              duration: 0.85,
-              stagger: 0.1,
-              ease: 'power3.out',
-            })
+            gsap.set(heroItems, { opacity: 0, y: 28 })
+            const heroTl = gsap.timeline({ paused: true, defaults: { ease: 'power3.out' } })
+            heroTl.to(heroItems, { opacity: 1, y: 0, duration: 0.85, stagger: 0.1 })
+
+            startHero = () => heroTl.play()
+            if (window.__safariLoaderDone) startHero()
+            else {
+              window.addEventListener('safari:loader-done', startHero, { once: true })
+              // Safety net. The hero starts at opacity 0, so if the hand-off
+              // event never arrives the headline would stay invisible — a blank
+              // page is far worse than an un-choreographed entrance. Comfortably
+              // past the loader's own 600ms cap.
+              heroSafety = setTimeout(startHero, 1200)
+            }
           }
 
           // ---- Generic scroll reveals ----
@@ -210,6 +215,11 @@ export function usePageMotion() {
             }
           }
 
+          // Drop the loader listener if this branch reverts before it fired.
+          return () => {
+            if (startHero) window.removeEventListener('safari:loader-done', startHero)
+            clearTimeout(heroSafety)
+          }
         }
       )
 

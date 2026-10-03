@@ -8,6 +8,15 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
     <meta name="theme-color" content="#f1eadd" />
 
+    <!-- The first-load splash is prerendered into the HTML so it is there from
+         the first paint (see Layout.jsx). It is dismissed by JS, so without JS
+         it would sit over the page forever — hide it in that case. -->
+    <noscript>
+      <style>
+        .site-loader { display: none !important; }
+      </style>
+    </noscript>
+
     <!-- Per-route <head> — title, description, canonical, Open Graph, Twitter
          cards and JSON-LD — is rendered by src/components/Seo.jsx through
          vite-react-ssg's <Head> and prerendered into each route's static HTML. -->
