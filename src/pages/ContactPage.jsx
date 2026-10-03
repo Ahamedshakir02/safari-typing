@@ -227,7 +227,7 @@ export default function ContactPage() {
               </button>
               <p className="text-center font-body text-[12.5px] text-gold">
                 By Sending You Agree To Be Contacted About Your Request. See Our{' '}
-                <Link to="/privacy" className="underline underline-offset-2 transition-colors hover:text-sage">
+                <Link to="/privacy-policy" className="underline underline-offset-2 transition-colors hover:text-sage">
                   Privacy Policy
                 </Link>
                 .
