@@ -1,5 +1,8 @@
 # Build for Netlify. Every route is prerendered, so there is no SPA rewrite -
 # unmatched paths get the real 404 page. Mirrors public/_redirects.
+#
+# Security headers live in public/_headers (and mirror into vercel.json) rather
+# than here, so there is one Netlify-side copy to keep in step instead of two.
 [build]
   command = "npm run build"
   publish = "dist"
