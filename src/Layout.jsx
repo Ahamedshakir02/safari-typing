@@ -1,10 +1,8 @@
 import { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
-import { ClientOnly } from 'vite-react-ssg'
 import ScrollToTop from './lib/ScrollToTop.jsx'
 import SmoothScroll from './components/SmoothScroll.jsx'
 import SkipLink from './components/SkipLink.jsx'
-import SiteLoader from './components/SiteLoader.jsx'
 import WhatsAppButton from './components/WhatsAppButton.jsx'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
@@ -20,17 +18,18 @@ function RouteFallback() {
 }
 
 /**
- * The persistent site chrome (loader, smooth scroll, header, footer, floating
+ * The persistent site chrome (smooth scroll, header, footer, floating
  * WhatsApp) wrapped around the routed page <Outlet>. This is the root route's
  * element under vite-react-ssg, replacing the old App component shell.
  */
 export default function Layout() {
   return (
     <>
-      {/* The first-load splash is a purely client-side concern (animated
-          progress + window.load listeners). Rendering it only on the client
-          keeps it out of the prerendered HTML and avoids a hydration mismatch. */}
-      <ClientOnly>{() => <SiteLoader />}</ClientOnly>
+      {/* No first-load splash by design. Every route is prerendered, so the
+          headline and Call button paint in a few hundred milliseconds — a
+          client-only overlay could only ever arrive *after* that paint and
+          cover content the visitor was already reading, which read as the page
+          reloading itself. The entrance animation is the brand beat now. */}
       <SmoothScroll />
       <div className="grain" aria-hidden="true" />
       <SkipLink />
